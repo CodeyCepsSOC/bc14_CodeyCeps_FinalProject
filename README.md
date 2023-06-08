@@ -1,1 +1,1 @@
-# bc14_CodeyCeps_FinalProject
+# CodeyCeps 🍄 - WalkMate, a nature Walk App
