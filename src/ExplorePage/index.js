@@ -5,7 +5,8 @@ import RouteDetailCard from './RouteDetailCard';
 import Search from './Search';
 
 export default function ExplorePage() {
- let routeDetailCardProps = {
+ // defining route detail card props in an object to make it easier to pass to the component. Hard coded for now.
+    let routeDetailCardProps = {
     name: "Route Name",
     time: "1 hour",
     icons: ["dog", "water", "bathroom"],
@@ -14,7 +15,7 @@ export default function ExplorePage() {
 
     return (
         <div className="explore-page">
-            <div className="left-hand-map-panel">
+            <div className="left-hand-map-panel"> 
                 <Search/>
                 <div className="route-cards">
                     <RouteDetailCard {...routeDetailCardProps}/>
@@ -26,3 +27,9 @@ export default function ExplorePage() {
         </div>
     )
 }
+
+/* 
+This is the main page for the explore page. 
+It contains the search bar and the route cards in a panel on the left hand side. 
+Then it shows the map display on the right hand side.
+*/

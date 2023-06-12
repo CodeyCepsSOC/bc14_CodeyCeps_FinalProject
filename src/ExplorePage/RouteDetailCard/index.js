@@ -1,13 +1,9 @@
 //card on side of map to display info about route
 
-import { useEffect } from "react"
+//import { useEffect } from "react"
 
 export default function RouteDetailCard (props) {
 
-
-    useEffect( () => { 
-
-    }, [])
 
 return (
 <div className="route-detail-card">
@@ -22,3 +18,10 @@ return (
     <p>{props.description}</p>
 </div>)
 }
+
+/*
+This is the component for the route detail card.
+The information will get passed down as props from the explore page.
+The icons are mapped over to display the icons that are passed down. 
+The images are stored in the public folder and depending on what .
+*/
