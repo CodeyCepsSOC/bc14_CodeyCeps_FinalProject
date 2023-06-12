@@ -43,12 +43,25 @@ function handleClick () {
 
 }
 
+function aboutUs () {
+    return (
+        <div>
+            <p classname = >para 1</p>
+            <p2>para 2</p2>
+            <p3>para 3</p3>
+            <p4>para 3</p4>
+        </div>
+
+    )
+}
+
 function LandingPage () {
     return (
         <div>
             <h1>Want To Go For A Walk</h1>
             <img classname="heroimage" src={href} alt={hero.image}/>
             <button className="button" onClick={handleClick}>Start exploring...</button>
+            <p></p>
         </div>
     )
 }
