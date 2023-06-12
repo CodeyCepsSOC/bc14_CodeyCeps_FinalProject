@@ -1,7 +1,8 @@
 // page file for the route detail dropdown
-
+import "./explorepage.css"
 import MapDisplay from './MapDisplay';
 import RouteDetailCard from './RouteDetailCard';
+import Search from './Search';
 
 export default function ExplorePage() {
  let routeDetailCardProps = {
@@ -13,7 +14,14 @@ export default function ExplorePage() {
 
     return (
         <div className="explore-page">
-            <RouteDetailCard {...routeDetailCardProps}/>
+            <div className="left-hand-map-panel">
+                <Search/>
+                <div className="route-cards">
+                    <RouteDetailCard {...routeDetailCardProps}/>
+                    <RouteDetailCard {...routeDetailCardProps}/>
+                    <RouteDetailCard {...routeDetailCardProps}/>
+                </div>
+            </div>
             <MapDisplay />
         </div>
     )
