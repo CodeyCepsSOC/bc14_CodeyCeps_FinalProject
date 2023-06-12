@@ -43,25 +43,26 @@ function handleClick () {
 
 }
 
-function aboutUs () {
-    return (
-        <div>
-            <p classname = >para 1</p>
-            <p2>para 2</p2>
-            <p3>para 3</p3>
-            <p4>para 3</p4>
-        </div>
-
-    )
-}
 
 function LandingPage () {
     return (
         <div>
             <h1>Want To Go For A Walk</h1>
-            <img classname="heroimage" src={href} alt={hero.image}/>
+            <img classname="heroimage" src="href" alt="hero"/>
             <button className="button" onClick={handleClick}>Start exploring...</button>
-            <p></p>
+            <h2>Why WalkMate?</h2>
+            <h3>Community</h3>
+            <p classname="c1">lorem ipsum</p>
+            <img classname="c1img" src="href" alt="circle" />
+            <h3>Everyone Welcome</h3>
+            <p classname="ew1">lorem ipsum</p>
+            <img classname="ew1img" src="href" alt="triangle"/>
+            <h3>Everyone Welcome</h3>
+            <p classname="ew2">lorem ipsum</p>
+            <img classname="ew2img" src="href" alt="arrow1"/>
+            <h3>Reliable</h3>
+            <p classname="r1">lorem ipsum</p>
+            <img classname="r1img" src="href" alt="arrow2"/>
         </div>
     )
 }
