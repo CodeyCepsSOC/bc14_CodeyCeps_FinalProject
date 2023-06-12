@@ -45,22 +45,29 @@ function LandingPage() {
   return (
     <div>
       <h1>Want To Go For A Walk</h1>
-      <img classname="heroimage" src="href" alt="hero" />
+      <div>
+        <img style ={{width: "100%", height: "100%"}}
+          classname="heroimage1"
+          src="./hero_image.jpg"
+          alt="countryside scenic views"
+
+        />
+      </div>
       <button className="button" onClick={handleClick}>
         Start exploring...
       </button>
       <h2>Why WalkMate?</h2>
       <h3>Community</h3>
-      <p classname="c1">lorem ipsum</p>
+      <p classname="c1">WalkMate is community-driven, we regularly host events to suit everyone. We connect people through nature and nature through people.</p>
       <img classname="c1img" src="href" alt="circle" />
       <h3>Everyone Welcome</h3>
-      <p classname="ew1">lorem ipsum</p>
+      <p classname="ew1">Whether you’re an avid walker, or someone who has never taken advantage of our stunning landscapes. There is something for everyone at WalkMate.</p>
       <img classname="ew1img" src="href" alt="triangle" />
       <h3>Everyone Welcome</h3>
-      <p classname="ew2">lorem ipsum</p>
+      <p classname="ew2">WalkMate is community-driven, we regularly host events to suit everyone. We connect people through nature and nature through people.</p>
       <img classname="ew2img" src="href" alt="arrow1" />
       <h3>Reliable</h3>
-      <p classname="r1">lorem ipsum</p>
+      <p classname="r1">100% of our users have given us a 5 star rating in terms of reliability. Our routes are safe, secure and our events are all planned meticulously according to weather predictions.</p>
       <img classname="r1img" src="href" alt="arrow2" />
     </div>
   );

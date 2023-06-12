@@ -7,7 +7,7 @@ function App() {
       {<h1>
         WalkMate Coming Soon!
       </h1> }
-      {LandingPage}
+      <LandingPage/>
 
     </div>
   );
