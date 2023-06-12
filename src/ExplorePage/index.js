@@ -11,16 +11,42 @@ export default function ExplorePage() {
     time: "1 hour",
     icons: ["dog", "water", "bathroom"],
     description: "This is a route description"
- }
+ } 
+
+    let routeDetailArray = [
+        {
+            name: "Hildas Walk",
+            time: "1 hour",
+            icons: ["dog", "water", "bathroom"],
+            description: "This is a route description",
+            img: './walk1.jpeg',
+            id: 1
+         },
+         {
+            name: "Isaacs Walk",
+            time: "3 hour",
+            icons: ["dog", "water", "bathroom"],
+            description: "This is a route description",
+            img: './walk2.jpeg',
+            id:2
+         },
+         {
+            name: "Samis Walk",
+            time: "2 hour",
+            icons: ["dog", "water", "bathroom"],
+            description: "This is a route description",
+            img: './walk3.jpeg',
+            id:3
+         }
+    ]
 
     return (
         <div className="explore-page">
             <div className="left-hand-map-panel"> 
                 <Search/>
                 <div className="route-cards">
-                    <RouteDetailCard {...routeDetailCardProps}/>
-                    <RouteDetailCard {...routeDetailCardProps}/>
-                    <RouteDetailCard {...routeDetailCardProps}/>
+                {routeDetailArray.map((route)=> <RouteDetailCard key={route.id} {...route}/>)}
+
                 </div>
             </div>
             <MapDisplay />

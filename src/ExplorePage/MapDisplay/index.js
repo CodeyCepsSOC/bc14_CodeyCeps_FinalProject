@@ -29,3 +29,8 @@ useEffect(()=> {
         <div ref={mapContainer} className="map-container"/>
     )
 }
+
+/* this components renders the map onto the page, line 6 assigns the api key stored in the .env 
+file to the access token of the mapboxgl package. The use of useRef allows us to change the map container without causing a complete
+rerender of the page. We assign a new mapboxgl.map object to the map ref, which is then appended to the div below.
+*/
