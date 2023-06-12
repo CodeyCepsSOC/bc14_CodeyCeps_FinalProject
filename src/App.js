@@ -1,4 +1,5 @@
 import './App.css';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       {<h1>
         WalkMate Coming Soon!
       </h1> }
+      {LandingPage}
 
     </div>
   );

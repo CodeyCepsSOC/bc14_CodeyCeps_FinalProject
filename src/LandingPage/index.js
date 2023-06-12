@@ -1,5 +1,5 @@
-import React from 'react';
-import {useState} from 'react';
+import React from "react";
+import { useState } from "react";
 
 /*
 
@@ -39,33 +39,31 @@ function MyButton() {
   }
 */
 
-function handleClick () {
+function handleClick() {}
 
+function LandingPage() {
+  return (
+    <div>
+      <h1>Want To Go For A Walk</h1>
+      <img classname="heroimage" src="href" alt="hero" />
+      <button className="button" onClick={handleClick}>
+        Start exploring...
+      </button>
+      <h2>Why WalkMate?</h2>
+      <h3>Community</h3>
+      <p classname="c1">lorem ipsum</p>
+      <img classname="c1img" src="href" alt="circle" />
+      <h3>Everyone Welcome</h3>
+      <p classname="ew1">lorem ipsum</p>
+      <img classname="ew1img" src="href" alt="triangle" />
+      <h3>Everyone Welcome</h3>
+      <p classname="ew2">lorem ipsum</p>
+      <img classname="ew2img" src="href" alt="arrow1" />
+      <h3>Reliable</h3>
+      <p classname="r1">lorem ipsum</p>
+      <img classname="r1img" src="href" alt="arrow2" />
+    </div>
+  );
 }
-
-
-function LandingPage () {
-    return (
-        <div>
-            <h1>Want To Go For A Walk</h1>
-            <img classname="heroimage" src="href" alt="hero"/>
-            <button className="button" onClick={handleClick}>Start exploring...</button>
-            <h2>Why WalkMate?</h2>
-            <h3>Community</h3>
-            <p classname="c1">lorem ipsum</p>
-            <img classname="c1img" src="href" alt="circle" />
-            <h3>Everyone Welcome</h3>
-            <p classname="ew1">lorem ipsum</p>
-            <img classname="ew1img" src="href" alt="triangle"/>
-            <h3>Everyone Welcome</h3>
-            <p classname="ew2">lorem ipsum</p>
-            <img classname="ew2img" src="href" alt="arrow1"/>
-            <h3>Reliable</h3>
-            <p classname="r1">lorem ipsum</p>
-            <img classname="r1img" src="href" alt="arrow2"/>
-        </div>
-    )
-}
-
 
 export default LandingPage;
