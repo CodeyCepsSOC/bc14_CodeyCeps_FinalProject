@@ -1,4 +1,5 @@
 import './App.css';
+import ExplorePage from './ExplorePage';
 import MapDisplay from './ExplorePage/MapDisplay';
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       {<h1>
         WalkMate Coming Soon!
       </h1> }
-        <MapDisplay/>
+        <ExplorePage/>
     </div>
   );
 }
