@@ -6,12 +6,6 @@ import Search from './Search';
 
 export default function ExplorePage() {
  // defining route detail card props in an object to make it easier to pass to the component. Hard coded for now.
-    let routeDetailCardProps = {
-    name: "Route Name",
-    time: "1 hour",
-    icons: ["dog", "water", "bathroom"],
-    description: "This is a route description"
- } 
 
     let routeDetailArray = [
         {
@@ -19,6 +13,7 @@ export default function ExplorePage() {
             time: "1 hour",
             icons: ["dog-friendly", "coffee-shop", "toilets"],
             description: "This is a route description",
+            map: './walk1.jpeg',
             img: './walk1.jpeg',
             id: 1
          },
@@ -27,6 +22,7 @@ export default function ExplorePage() {
             time: "3 hour",
             icons: ["viewpoint", "coffee-shop", "dog-friendly"],
             description: "This is a route description",
+            map: './walk2.jpeg',
             img: './walk2.jpeg',
             id:2
          },
@@ -35,6 +31,7 @@ export default function ExplorePage() {
             time: "2 hour",
             icons: ["dog-friendly", "viewpoint", "toilets"],
             description: "This is a route description",
+            map: './walk3.jpeg',
             img: './walk3.jpeg',
             id:3
          }
