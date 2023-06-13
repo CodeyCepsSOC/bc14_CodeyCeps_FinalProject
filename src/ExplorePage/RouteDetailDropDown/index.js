@@ -7,17 +7,19 @@ p tag for brief description
 */
 
 import react from 'react';
+import DetailsBar from './DetailsBar';
 
 function RouteDetailDropdown(props) {
 return (
-<div>
+    <div>
         <h1>{props.name}</h1>
         <div className="carousel">
-    
         </div>
-    <DetailsBar/>
-<p>{props.description}</p>
-<img src={props.map} alt="route map"/>
+        <DetailsBar {...props}/>
+        <section className="dropdown-body">            
+            <p>{props.description}</p>
+            <img src={props.map} alt="route map"/>
+        </section>
     </div>
 ) 
 };

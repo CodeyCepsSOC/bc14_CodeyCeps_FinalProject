@@ -3,6 +3,7 @@ import "./explorepage.css"
 import MapDisplay from './MapDisplay';
 import RouteDetailCard from './RouteDetailCard';
 import Search from './Search';
+import RouteDetailDropdown from './RouteDetailDropDown';
 
 export default function ExplorePage() {
  // defining route detail card props in an object to make it easier to pass to the component. Hard coded for now.
@@ -15,7 +16,8 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk1.jpeg',
             img: './walk1.jpeg',
-            id: 1
+            id: 1,
+            distance: 5
          },
          {
             name: "Isaacs Walk",
@@ -24,7 +26,8 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk2.jpeg',
             img: './walk2.jpeg',
-            id:2
+            id:2,
+            distance: 10
          },
          {
             name: "Samis Walk",
@@ -33,20 +36,24 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk3.jpeg',
             img: './walk3.jpeg',
-            id:3
+            id: 3,
+            distance: 21
          }
     ]
 
     return (
         <div className="explore-page">
-            <div className="left-hand-map-panel"> 
-                <Search/>
-                <div className="route-cards">
-                {routeDetailArray.map((route)=> <RouteDetailCard key={route.id} {...route}/>)}
+            <div className="map-section">
+                <div className="left-hand-map-panel"> 
+                    <Search/>
+                    <div className="route-cards">
+                    {routeDetailArray.map((route)=> <RouteDetailCard key={route.id} {...route}/>)}
 
+                    </div>
                 </div>
+                <MapDisplay />
             </div>
-            <MapDisplay />
+            <RouteDetailDropdown {...routeDetailArray[0]}/>
         </div>
     )
 }

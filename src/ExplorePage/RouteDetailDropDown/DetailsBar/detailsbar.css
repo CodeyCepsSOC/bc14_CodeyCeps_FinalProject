@@ -1,0 +1,14 @@
+.details-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    border: 1px solid black;
+}
+
+.icon-and-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid black;
+}

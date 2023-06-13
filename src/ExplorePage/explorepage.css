@@ -1,6 +1,14 @@
 .explore-page {
     display: flex;
+    flex-direction: column;
+    background-color: var(--lightest-value);
+}
+
+.map-section {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 .left-hand-map-panel {
