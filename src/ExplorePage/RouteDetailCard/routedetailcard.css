@@ -31,13 +31,11 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
     gap: 1em;  
 }
 #clock-icon {
     height: 3vh;
     color: white;
-    align-items: start;
     padding-right: 8px;
 }
 .route-time {

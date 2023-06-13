@@ -9,9 +9,21 @@
   --primary-blue: #588AAB;
 }
 
-@import url(./fonts/PPWoodland-Bold.otf);
-@import url(./fonts/PPWoodland-Ultralight.otf);
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@font-face {
+  font-family: "Woodland Ultralight";
+  src: local("PPWoodland Ultralight"),
+   url("./fonts/PPWoodland-Ultralight.ttf") format("truetype");
+  font-weight: light;
+}
+
+ @font-face {
+  font-family: "Woodland Bold";
+  src: local("PPWoodland Bold"),
+   url("./fonts/PPWoodland-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); 
 
 body {
   margin: 0;
@@ -21,8 +33,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'PPWoodland-Bold', sans-serif;
+  font-family: 'Woodland Bold', sans-serif;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
