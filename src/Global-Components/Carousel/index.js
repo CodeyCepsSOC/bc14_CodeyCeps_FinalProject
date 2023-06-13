@@ -11,12 +11,16 @@ export default function CarouselTest() {
                     <p className="legend">Legend 1</p>
                 </div>
                 <div className="div2carousel">
-                    <img className="test2" src="./circle.jpg" />
+                    <img className="test2" src="./random.jpg" />
                     <p className="legend">Legend 2</p>
                 </div>
                 <div className="div3carousel">
-                    <img className="test3" src="./flagdown.jpg" />
+                    <img className="test3" src="./random2.jpg" />
                     <p className="legend">Legend 3</p>
+                </div>
+                <div className="div4carousel">
+                    <img className="test4" src="./random3.jpg" />
+                    <p className="legend">Legend 4</p>
                 </div>
             </Carousel>
         );
