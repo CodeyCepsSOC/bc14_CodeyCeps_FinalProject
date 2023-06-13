@@ -3,6 +3,7 @@
     align-items: flex-end;
     margin: 15px;
     height: 35vh;
+    color: white;
 }
 
 .route-details {
@@ -42,5 +43,6 @@ p {
     align-items: center;
 }
 h2, p {
-    margin: 0;
+    margin-top: 5px;
+    text-align: left;
 }
