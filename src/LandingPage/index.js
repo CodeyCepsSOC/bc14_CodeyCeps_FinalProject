@@ -45,14 +45,9 @@ function handleClick() {}
 function LandingPage() {
   return (
     <div>
+
       <div className="section1">
         <h1>Want To Go For A Walk</h1>
-        {/* <img
-          style={{ width: "100%", height: "100%" }}
-          classname="heroimage1"
-          src="./hero_image.jpg"
-          alt="countryside scenic views"
-        /> */}
         <button className="button" onClick={handleClick}>
           Start exploring...
         </button>
@@ -60,14 +55,15 @@ function LandingPage() {
 
       <div className="section2">
         <h2 className="about-us-heading">Why WalkMate?</h2>
+
           <div className="community">
             <h3>Community</h3>
             <p className="communityP">
               WalkMate is community-driven, we regularly host events to suit
               everyone. We connect people through nature and nature through people.
             </p>
-            {/* <img className="circleimg" src="./circle.jpg" alt="circle" /> */}
           </div>
+
           <div className="welcome1">
             <h3>Everyone Welcome</h3>
             <p className="everyoneWelcomeP">
@@ -75,8 +71,8 @@ function LandingPage() {
               advantage of our stunning landscapes. There is something for everyone
               at WalkMate.
             </p>
-            
           </div>
+
           <div className="enjoyable">
             <h3>Enjoyable</h3>
             <p className="enjoyableP">
@@ -92,8 +88,12 @@ function LandingPage() {
               reliability. Our routes are safe, secure and our events are all
               planned meticulously according to weather predictions.
             </p>
-            
           </div>
+
+      </div>
+
+      <div className="section3">
+        
       </div>
     </div>
   );

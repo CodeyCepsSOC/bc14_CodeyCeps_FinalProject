@@ -81,3 +81,15 @@
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+
+.section3 {
+  background-color: #FDF0D3;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
