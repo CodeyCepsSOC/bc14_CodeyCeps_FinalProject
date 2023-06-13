@@ -59,7 +59,7 @@ function LandingPage() {
       </div>
 
       <div className="section2">
-        <h2>Why WalkMate?</h2>
+        <h2 className="about-us-heading">Why WalkMate?</h2>
           <div className="community">
             <h3>Community</h3>
             <p className="communityP">
