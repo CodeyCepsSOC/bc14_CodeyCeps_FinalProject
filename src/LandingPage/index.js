@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./index.css";
 
 /*
 
@@ -44,7 +45,7 @@ function handleClick() {}
 function LandingPage() {
   return (
     <div>
-      <div classname="section1">
+      <div className="section1">
         <h1>Want To Go For A Walk</h1>
         {/* <img
           style={{ width: "100%", height: "100%" }}
