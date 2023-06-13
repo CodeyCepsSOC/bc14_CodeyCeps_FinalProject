@@ -17,7 +17,7 @@ export default function ExplorePage() {
         {
             name: "Hildas Walk",
             time: "1 hour",
-            icons: ["dog", "water", "bathroom"],
+            icons: ["dog-friendly", "coffee-shop", "toilets"],
             description: "This is a route description",
             img: './walk1.jpeg',
             id: 1
@@ -25,7 +25,7 @@ export default function ExplorePage() {
          {
             name: "Isaacs Walk",
             time: "3 hour",
-            icons: ["dog", "water", "bathroom"],
+            icons: ["viewpoint", "coffee-shop", "dog-friendly"],
             description: "This is a route description",
             img: './walk2.jpeg',
             id:2
@@ -33,7 +33,7 @@ export default function ExplorePage() {
          {
             name: "Samis Walk",
             time: "2 hour",
-            icons: ["dog", "water", "bathroom"],
+            icons: ["dog-friendly", "viewpoint", "toilets"],
             description: "This is a route description",
             img: './walk3.jpeg',
             id:3

@@ -14,12 +14,12 @@ return (
 <div style={backgroundStyling} className="route-detail-card">
     <div className="route-details">
         <h2>{props.name}</h2>
-        <section className="icons">
+        <section className="icon-bar">
             <div className="route-time">
-                <img src="https://img.icons8.com/ios/50/000000/clock--v1.png" alt="clock icon" id="clock-icon"/>
+                <img src="./icons/clock.svg" alt="clock icon" id="clock-icon"/>
                 <p>{props.time}</p>
             </div>
-            {props.icons.map( (icon, index) => {return <img key={index} src={`../../../public/${icon}.png`} alt={`${icon}`} />})}
+            {props.icons.map( (icon, index) => {return <img key={index} src={`./icons/${icon}.svg`} alt={`${icon}`} className="icon"/>})}
         </section>
         <p>{props.description}</p>
     </div>
