@@ -44,45 +44,48 @@ function handleClick() {}
 function LandingPage() {
   return (
     <div>
-      <div>
+      <div classname="section1">
         <h1>Want To Go For A Walk</h1>
-        <img
+        {/* <img
           style={{ width: "100%", height: "100%" }}
           classname="heroimage1"
           src="./hero_image.jpg"
           alt="countryside scenic views"
-        />
+        /> */}
         <button className="button" onClick={handleClick}>
           Start exploring...
         </button>
       </div>
 
-      <h2>Why WalkMate?</h2>
-      <h3>Community</h3>
-      <p classname="communityP">
-        WalkMate is community-driven, we regularly host events to suit everyone.
-        We connect people through nature and nature through people.
-      </p>
-      <img classname="circleimg" src="href" alt="circle" />
-      <h3>Everyone Welcome</h3>
-      <p classname="everyoneWelcomeP">
-        Whether you’re an avid walker, or someone who has never taken advantage
-        of our stunning landscapes. There is something for everyone at WalkMate.
-      </p>
-      <img classname="triangleimg" src="href" alt="triangle" />
-      <h3>Enjoyable</h3>
-      <p classname="enjoyableP">
-        WalkMate is community-driven, we regularly host events to suit everyone.
-        We connect people through nature and nature through people.
-      </p>
-      <img classname="arrowimg" src="href" alt="arrow1" />
-      <h3>Reliable</h3>
-      <p classname="reliableP">
-        100% of our users have given us a 5 star rating in terms of reliability.
-        Our routes are safe, secure and our events are all planned meticulously
-        according to weather predictions.
-      </p>
-      <img classname="arrowimg2" src="href" alt="arrow2" />
+      <div classname="section2">
+        <h2>Why WalkMate?</h2>
+        <h3>Community</h3>
+        <p classname="communityP">
+          WalkMate is community-driven, we regularly host events to suit
+          everyone. We connect people through nature and nature through people.
+        </p>
+        <img classname="circleimg" src="href" alt="circle" />
+        <h3>Everyone Welcome</h3>
+        <p classname="everyoneWelcomeP">
+          Whether you’re an avid walker, or someone who has never taken
+          advantage of our stunning landscapes. There is something for everyone
+          at WalkMate.
+        </p>
+        <img classname="triangleimg" src="href" alt="triangle" />
+        <h3>Enjoyable</h3>
+        <p classname="enjoyableP">
+          WalkMate is community-driven, we regularly host events to suit
+          everyone. We connect people through nature and nature through people.
+        </p>
+        <img classname="arrowimg" src="href" alt="arrow1" />
+        <h3>Reliable</h3>
+        <p classname="reliableP">
+          100% of our users have given us a 5 star rating in terms of
+          reliability. Our routes are safe, secure and our events are all
+          planned meticulously according to weather predictions.
+        </p>
+        <img classname="arrowimg2" src="href" alt="arrow2" />
+      </div>
     </div>
   );
 }
