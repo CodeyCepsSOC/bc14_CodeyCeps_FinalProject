@@ -66,7 +66,7 @@ function LandingPage() {
               WalkMate is community-driven, we regularly host events to suit
               everyone. We connect people through nature and nature through people.
             </p>
-            <img className="circleimg" src="../../public/circle.svg" alt="circle" />
+            <img className="circleimg" src="../../public/circle.jpg" alt="circle" />
           </div>
           <div className="welcome1">
             <h3>Everyone Welcome</h3>
