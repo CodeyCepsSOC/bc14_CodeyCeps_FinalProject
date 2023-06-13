@@ -66,7 +66,7 @@ function LandingPage() {
               WalkMate is community-driven, we regularly host events to suit
               everyone. We connect people through nature and nature through people.
             </p>
-            <img className="circleimg" src="../../public/circle.jpg" alt="circle" />
+            {/* <img className="circleimg" src="./circle.jpg" alt="circle" /> */}
           </div>
           <div className="welcome1">
             <h3>Everyone Welcome</h3>
@@ -75,7 +75,7 @@ function LandingPage() {
               advantage of our stunning landscapes. There is something for everyone
               at WalkMate.
             </p>
-            <img className="triangleimg" src="href" alt="triangle" />
+            
           </div>
           <div className="enjoyable">
             <h3>Enjoyable</h3>
@@ -83,7 +83,7 @@ function LandingPage() {
               WalkMate is community-driven, we regularly host events to suit
               everyone. We connect people through nature and nature through people.
             </p>
-            <img className="arrowimg" src="href" alt="arrow1" />
+            
           </div>
           <div className="reliable">
             <h3>Reliable</h3>
@@ -92,7 +92,7 @@ function LandingPage() {
               reliability. Our routes are safe, secure and our events are all
               planned meticulously according to weather predictions.
             </p>
-            <img className="arrowimg2" src="href" alt="arrow2" />
+            
           </div>
       </div>
     </div>
