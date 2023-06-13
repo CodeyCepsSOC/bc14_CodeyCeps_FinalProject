@@ -2,11 +2,14 @@
 import "./explorepage.css"
 import MapDisplay from './MapDisplay';
 import RouteDetailCard from './RouteDetailCard';
+import { useState } from "react";
 import Search from './Search';
 import RouteDetailDropdown from './RouteDetailDropDown';
 
 export default function ExplorePage() {
  // defining route detail card props in an object to make it easier to pass to the component. Hard coded for now.
+
+ const [activeRoute, setActiveRoute] = useState(0)
 
     let routeDetailArray = [
         {
@@ -16,7 +19,7 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk1.jpeg',
             img: './walk1.jpeg',
-            id: 1,
+            id: 0,
             distance: 5
          },
          {
@@ -26,7 +29,7 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk2.jpeg',
             img: './walk2.jpeg',
-            id:2,
+            id:1,
             distance: 10
          },
          {
@@ -36,10 +39,14 @@ export default function ExplorePage() {
             description: "This is a route description",
             map: './walk3.jpeg',
             img: './walk3.jpeg',
-            id: 3,
+            id: 2,
             distance: 21
          }
     ]
+    
+    function onClickSetRoute(id) {
+        setActiveRoute(id)
+    }
 
     return (
         <div className="explore-page">
@@ -47,13 +54,13 @@ export default function ExplorePage() {
                 <div className="left-hand-map-panel"> 
                     <Search/>
                     <div className="route-cards">
-                    {routeDetailArray.map((route)=> <RouteDetailCard key={route.id} {...route}/>)}
+                    {routeDetailArray.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>)}
 
                     </div>
                 </div>
                 <MapDisplay />
             </div>
-            <RouteDetailDropdown {...routeDetailArray[0]}/>
+            <RouteDetailDropdown {...routeDetailArray[activeRoute]}/>
         </div>
     )
 }
