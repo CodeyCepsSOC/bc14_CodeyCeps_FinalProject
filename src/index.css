@@ -1,10 +1,39 @@
+
+/* CSS color variables - to referance variables use var(variable-name) */
+:root {
+  --primary-green: #354C33;
+  --darkest-value: #232011;
+  --lightest-value: #FDF0D3;
+  --medium-value: #A69774;
+  --accent-color: #f19e38;
+  --primary-blue: #588AAB;
+}
+
+@font-face {
+  font-family: "Woodland Ultralight";
+  src: local("PPWoodland Ultralight"),
+   url("./fonts/PPWoodland-Ultralight.ttf") format("truetype");
+  font-weight: light;
+}
+
+ @font-face {
+  font-family: "Woodland Bold";
+  src: local("PPWoodland Bold"),
+   url("./fonts/PPWoodland-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); 
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Woodland Bold', sans-serif;
 }
 
 code {

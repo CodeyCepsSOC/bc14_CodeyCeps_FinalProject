@@ -1,0 +1,29 @@
+.details-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 93vw;
+    gap: 2em;
+    background-color: var(--primary-green);
+    border-radius: 8px;
+    margin: 1.5em;
+}
+
+.icon-and-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: var(--primary-green);
+    border-radius: 5px;
+    font-size: 2em;
+    font-family: 'PP woodland';
+    color: white;
+    padding: 0.3em;
+}
+
+.bar-icon {
+    width: 3vw;
+    aspect-ratio: 1/1;
+}

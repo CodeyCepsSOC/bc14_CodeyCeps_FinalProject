@@ -1,0 +1,36 @@
+.route-details-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dropdown-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 1em;
+}
+
+#map-image, .dropdown-body p {
+    height: 400px;
+    width: 50%;
+    font-size: 1.2em;
+    margin: 1em;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.carousel {
+    height: 50vh;
+    width: 90vw;
+    border: 1px dotted red
+}
+
+.route-details-dropdown h1 {
+    font-size: 4em;
+    color: var(--primary-green);
+    margin: 0.7em;
+}
