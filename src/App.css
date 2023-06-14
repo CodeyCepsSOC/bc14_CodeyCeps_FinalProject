@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.carousel .thumbs-wrapper {
+  display: none;
+}
+
+.divcarousel1, .divcarousel2, .divcarousel3 {
+  width: 30vw;
+}
+
+.control-arrow {
+  background-color: orange;
+  }
