@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./index.css";
-import CarouselHomePage from "../Global-Components/Carousel";
+import CarouselHomePage from "../../Global-Components/Carousel";
 
 /*
 

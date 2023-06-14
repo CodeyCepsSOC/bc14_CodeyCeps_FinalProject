@@ -1,21 +1,19 @@
 import './App.css';
-import ExplorePage from './ExplorePage';
-import MapDisplay from './ExplorePage/MapDisplay';
-import CarouselTest from './Global-Components/Carousel';
-import LandingPage from './LandingPage';
+import ExplorePage from './pages/ExplorePage';
+import LandingPage from './pages/LandingPage';
+import Layout from './pages/Layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      {<h1>
-        WalkMate Coming Soon!
-      </h1> }
-
-        <ExplorePage/>
-
-      <LandingPage/>
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<LandingPage/>}/>
+          <Route path="explore" element={<ExplorePage/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
