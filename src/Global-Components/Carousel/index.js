@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import "./carousel.css"
 
-export default function CarouselTest() {
+export default function CarouselHomePage() {
         return (
             <Carousel centerMode centerSlidePercentage={33.3} className="carousel">
                 <div className="div1carousel">
