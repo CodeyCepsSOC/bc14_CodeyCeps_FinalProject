@@ -1,3 +1,3 @@
 # CodeyCeps 🍄 - WalkMate, a nature Walk App
 
-You are on the routing branch
+You are on the map-route branch
