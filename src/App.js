@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import Layout from './pages/Layout';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     /*We wrap our content first with <BrowserRouter>.
@@ -19,7 +20,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
         <Route path="/" element={<Layout/>}>
           <Route index element={<LandingPage/>}/>
           <Route path="explore" element={<ExplorePage/>}/>
-        </Route>
+          </Route>
       </Routes>
     </BrowserRouter>
   );
