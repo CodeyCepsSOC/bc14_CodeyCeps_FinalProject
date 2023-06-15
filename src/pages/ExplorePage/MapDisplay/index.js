@@ -6,6 +6,34 @@ import { matchPath } from 'react-router-dom';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY
 
+function addRouteLayer(map, routeName, coordinates, id) {
+
+    map.current.addSource(id, {
+        'type': 'geojson',
+        'data': {
+        'type': 'Feature',
+        'properties': {},
+        'geometry': {
+        'type': 'LineString',
+        'coordinates': coordinates
+        }
+        }
+        });
+        map.current.addLayer({
+        'id': routeName,
+        'type': 'line',
+        'source': id,
+        'layout': {
+        'line-join': 'round',
+        'line-cap': 'round'
+        },
+        'paint': {
+        'line-color': '#354C33',
+        'line-width': 8
+        }
+        });
+        }
+
 export default function MapDisplay(props) {
 
 
@@ -13,6 +41,7 @@ const mapContainer = useRef(null)
 const map = useRef(null)
 
 useEffect(()=> {
+    console.log('useEffect')
     if (map.current) return; // initialize map only once
 
     // Initialize map
@@ -20,42 +49,51 @@ useEffect(()=> {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/outdoors-v12',
-      center: [-0.087305, 50.861966],
-      zoom: 11,
+      center: [-0.07204564221953547, 50.8738136495931],
+      zoom: 5,
     });
+},[])
 
-    map.current.on('load', function () {
-        map.current.addSource('route', {
-            'type': 'geojson',
-            'data': {
-            'type': 'Feature',
-            'properties': {},
-            'geometry': {
-            'type': 'LineString',
-            'coordinates': props.routeDetailArray[props.activeRoute].coordinateArray
-            }
-            }
-            });
-            map.current.addLayer({
-            'id': 'route',
-            'type': 'line',
-            'source': 'route',
-            'layout': {
-            'line-join': 'round',
-            'line-cap': 'round'
-            },
-            'paint': {
-            'line-color': '#354C33',
-            'line-width': 8
-            }
-            });
-            }
-)}, [props.activeRoute, props.routeDetailArray])
+useEffect(()=> {
+    //render initial routes on map
+    // on initial load, map through the array of all routes. For each route, call the addRouteLayer function, handing in the details of that route to 
+    // display it on the map
+    map.current.on('load', () => {
 
+        console.log(props.routeDetailArray)
 
-    return (
-        <div ref={mapContainer} className="map-container"/>
-    )
+        props.routeDetailArray.map((route) => { 
+            if (map.current.getLayer(route.name)) {
+                map.current.removeLayer(route.name);
+            }
+            
+            if (map.current.getSource(route.id)) {
+                map.current.removeSource(route.id);
+            }
+            return(
+            addRouteLayer(map, route.name, route.coordinateArray, route.id)
+            )})
+    })
+
+    // REMOVE BEFORE PUSHING TO PRODUCTION
+    // the below function console.logs the long and lat of where the user clicks on the map, it is used here to 
+    // find the center point of a route for the below function that allows the map to recenter over the active route.
+    map.current.on('click', (e) => {
+    console.log(`A click event has occurred at ${e.lngLat}`);
+    });
+    
+    }, [props.routeDetailArray])
+
+    // the below function recenters the viewpoint of the map smoothly over whichever route has been clicked by the user from 
+    // the left hand list of routes.
+useEffect(()=> {
+    console.log(props.activeRoute)
+    map.current.flyTo({
+        center: props.routeDetailArray[props.activeRoute].center,
+        zoom: 12
+    })
+}, [props.activeRoute, props.routeDetailArray])
+    return (<div ref={mapContainer} className="map-container"/>)
 }
 
 /* this components renders the map onto the page, line 6 assigns the api key stored in the .env 
