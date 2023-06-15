@@ -1,8 +1,6 @@
 import React from "react";
-import { useState } from "react";
 import "./index.css";
 import CarouselHomePage from "../../Global-Components/Carousel";
-import Footer from '../../Global-Components/Footer';
 
 /*
 
@@ -97,9 +95,6 @@ function LandingPage() {
       <div className="section3">
         <h1>Upcoming Events</h1>
         <CarouselHomePage/>
-      </div>
-      <div>
-        <Footer/>
       </div>
     </div>
   );

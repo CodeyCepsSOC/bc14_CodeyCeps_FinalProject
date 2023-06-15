@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Global-Components/Footer';
 import ExplorePage from './pages/ExplorePage';
 import LandingPage from './pages/LandingPage';
 import Layout from './pages/Layout';
@@ -16,12 +17,15 @@ The Landingpage component route does not have a path but has an index attribute.
 Setting the path to * will act as a catch-all for any undefined URLs. This is great for a 404 error page.-- will come back to this !
     */
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<LandingPage/>}/>
-          <Route path="explore" element={<ExplorePage/>}/>
-          </Route>
-      </Routes>
+      <Footer/>
+      <div>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<LandingPage/>}/>
+            <Route path="explore" element={<ExplorePage/>}/>
+            </Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
