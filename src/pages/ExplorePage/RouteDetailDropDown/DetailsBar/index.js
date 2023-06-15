@@ -13,8 +13,8 @@ export default function DetailsBar(props) {
                 <p>{props.time}</p>
             </div>
             {props.icons.map( (icon, index) => {return (
-            <div className="icon-and-text">
-                <img key={index} src={`./icons/${icon}.svg`} alt={`${icon}`} className="bar-icon"/>
+            <div key={index} className="icon-and-text">
+                <img src={`./icons/${icon}.svg`} alt={`${icon}`} className="bar-icon"/>
                 <p>{icon}</p>
             </div>)})}
         </div>

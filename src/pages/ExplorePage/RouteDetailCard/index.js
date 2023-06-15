@@ -11,7 +11,7 @@ const backgroundStyling = {
 }
 
 return (
-<div style={backgroundStyling} className="route-detail-card" onClick={()=> props.onClick(props.id)}>
+<div style={backgroundStyling} className="route-detail-card" onClick={()=> props.onClick(props.index)}>
     <div className="route-details">
         <h2>{props.name}</h2>
         <section className="icon-bar">
