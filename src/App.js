@@ -4,9 +4,38 @@ import ExplorePage from './pages/ExplorePage';
 import LandingPage from './pages/LandingPage';
 import Layout from './pages/Layout';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createClient } from '@supabase/supabase-js'
+import {useState, useEffect} from 'react'
 
 
 function App() {
+
+//establishes connection to supabase by providing it with our database url and public key
+const supabaseURL = process.env.REACT_APP_SUPABASE_DB_CONNECTION
+const supabaseKey = process.env.REACT_APP_SUPABASE_PUBLIC
+const supabase = createClient(supabaseURL, supabaseKey );
+
+
+const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
+
+  useEffect(() => {
+    const fetchRoutes = async () => {
+
+      const { data, error } = await supabase
+        .from('walks')
+        .select()
+      
+      if (data) {
+        console.table(data)
+        setAllRoutes(data)
+      }
+    }
+
+    fetchRoutes()
+
+  }, [])
+
+
   return (
     /*We wrap our content first with <BrowserRouter>.
 Then we define our <Routes>. An application can have multiple <Routes>. 
@@ -18,6 +47,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
     */
     <BrowserRouter>
       <div>
+
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<LandingPage/>}/>
