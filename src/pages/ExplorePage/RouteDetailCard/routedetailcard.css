@@ -1,9 +1,10 @@
 .route-detail-card {
     display: flex;
     align-items: flex-end;
-    margin: 15px;
-    height: 35vh;
+    height: 25vh;
     color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
 .route-details {
@@ -13,16 +14,27 @@
     display: grid;
     grid-template-columns: 5% 90%;
     grid-template-rows: 30% 30% 30%;
+    border-radius: 0px 0px 5px 5px;
 }
 
 h2 {
     grid-row: 1/1;
     grid-column: 2/2;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: left;
 }
 
 p {
     grid-row:3/3;
-    grid-column: 2/2
+    grid-column: 2/2;
+    padding: 5px;
+    text-align: left;
+}
+
+#time-text {
+    font-family: "Woodland Ultralight";
+    padding-top: 10px;
 }
 
 .icon-bar {
@@ -34,32 +46,24 @@ p {
     gap: 1em;  
 }
 #clock-icon {
-    height: 3vh;
     color: white;
-    padding-right: 8px;
+    height: 2vh;
+    aspect-ratio: 1/1;
 }
 .route-time {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: green;
-    padding: 5px;
+    background-color: var(--primary-green);
     border-radius: 4px;
-
-}
-h2 {
-    margin-top: 5px;
-    text-align: left;
-}
-
-p {
-    text-align: left;
-    margin: 0;
+    padding: 5px;
+    height: 2vh;
+    margin: 5px;
 }
 
 .icon {
-    width: 1.5vw;
-    background-color: green;
+    height: 2vh;
+    background-color: var(--primary-green);
     padding: 5px;
     border-radius: 4px;
     aspect-ratio: 1/1;
