@@ -1,0 +1,76 @@
+/*All of the styling in the page was done by using the inspect tool on browser and finding the correct elements to style*/
+
+/*This is the styling for the event IMAGES on the carousel inc the box shadow around the images*/
+.event1, .event2, .event3, .event4 {
+    height: 300px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px;
+}
+
+/*This styles the entire div for each carousel slide (img and smaller div that contains the h2 and p)*/
+.div1carousel, .div2carousel, .div3carousel, .div4carousel {
+    background-color: #364C33;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.carousel .slide .legend {
+    background: #FDF0D3;
+    color: #232011;
+    border-radius: 5px;
+    bottom: 15px;
+}
+
+
+.carousel .carousel-status {
+    display: none;
+}
+
+
+.carousel .carousel-slider {
+    background-color: #364C33;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: flex;
+    align-items: center;
+}
+
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+    background-color: #5e6d53;
+    opacity: 80%;
+    width: 35px;
+}
+
+
+.carousel .control-next.control-arrow:before {
+    border-left: 8px solid #F29F38;
+}
+
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #F29F38;
+}
+
+
+.carousel .thumbs-wrapper {
+    display: none;
+}
+
+
+.carousel {
+    position: relative;
+    width: 90vw;
+    border-radius: 21px;
+}
+
+
+.control-dots {
+    display: none;
+}
+  
+  

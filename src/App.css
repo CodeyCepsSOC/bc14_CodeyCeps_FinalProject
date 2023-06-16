@@ -5,16 +5,3 @@
   align-items: center;
   flex-direction: column;
 }
-
-
-.carousel .thumbs-wrapper {
-  display: none;
-}
-
-.divcarousel1, .divcarousel2, .divcarousel3 {
-  width: 30vw;
-}
-
-.control-arrow {
-  background-color: orange;
-  }
