@@ -41,7 +41,6 @@ const mapContainer = useRef(null)
 const map = useRef(null)
 
 useEffect(()=> {
-    console.log('useEffect')
     if (map.current) return; // initialize map only once
 
     // Initialize map
