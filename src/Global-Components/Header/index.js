@@ -15,7 +15,7 @@ export default function Header() {
                     <li>About us</li>
                     <li>Explore</li>
                     <li>Community</li>
-                    <li><button>Sign up</button></li>
+                    <li><button className = "signupBtn">Sign up</button></li>
                 </ul>
             </div>
         </div>
