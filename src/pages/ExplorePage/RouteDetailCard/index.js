@@ -17,7 +17,7 @@ return (
         <section className="icon-bar">
             <div className="route-time">
                 <img src="./icons/clock.svg" alt="clock icon" id="clock-icon"/>
-                <p>{props.time}</p>
+                <p id="time-text">{props.time}</p>
             </div>
             {props.icons.map( (icon, index) => {return <img key={index} src={`./icons/${icon}.svg`} alt={`${icon}`} className="icon"/>})}
         </section>
