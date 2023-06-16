@@ -12,8 +12,9 @@ import DetailsBar from './DetailsBar';
 function RouteDetailDropdown(props) {
 return (
     <div className="route-details-dropdown">
+        <button className="close-button" /*onClick={props.onClick}*/>X</button>
         <h1>{props.name}</h1>
-        <div className="carousel">
+        <div className="dummy-carousel">
         </div>
         <DetailsBar {...props}/>
         <section className="dropdown-body">            
