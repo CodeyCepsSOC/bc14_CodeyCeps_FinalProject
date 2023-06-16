@@ -3,12 +3,16 @@ import "./search.css"
 
 export default function Search(props) {
 const [inputVal, setInputVal] = useState("")
+function submitSearch () {
+    props.setLocation(inputVal)
+}
 
 return (
-    <form className="search">
-        <label className="searchlabel" aria-hidden="false" htmlFor="searchField">Where do you want to walk? Search for a location.</label>
-        <input type="text" placeholder="Search for a location..." id="searchField" onChange={(e) => setInputVal(e.target.value)} />
-        <button id="searchButton">➤</button>
+
+    <form className="search" onSubmit={(e) => e.preventDefault()}>
+        <label className="searchlabel" aria-hidden="false" htmlFor="searchField">Where do you want to walk?</label>
+        <input type="text" placeholder="Enter a location..." id="searchField" onChange={(e) => setInputVal(e.target.value)} />
+        <button onClick={submitSearch}>Search</button>
     </form>
 )
 }
