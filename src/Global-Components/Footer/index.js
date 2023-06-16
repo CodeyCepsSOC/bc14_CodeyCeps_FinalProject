@@ -11,7 +11,8 @@ export default function Footer() {
       </div>
 
       <div className="footer-links">
-        <div className="home">
+        
+        <div id="home" className="footer-column">
           <ul>
             <img className="minilogo" src="circleNoBg.png" alt="home" />
             <li>Home</li>
@@ -20,21 +21,21 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-explore">
+        <div id="footer-explore" className="footer-column">
           <ul>
             <img className="minilogo" src="flagdownNoBg.png" alt="explore" />
             <li>Explore</li>
           </ul>
         </div>
 
-        <div className="footer-community">
+        <div id="footer-community" className="footer-column">
           <ul>
             <img className="minilogo" src="triangle_cream.png" alt="community" />
             <li>Community</li>
           </ul>
         </div>
 
-        <div className="footer-signup">
+        <div id="footer-signup" className="footer-column">
           <ul>
             <img className="minilogo" src="flagupNoBg.png" alt="signup" />
             <li>Sign up</li>

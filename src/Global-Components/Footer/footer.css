@@ -19,6 +19,27 @@ h2 {
 
 .footer-links {
     display: grid;
+    width: 70vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+.minilogo {
+    height: 1em;
+    width: 1em;
+}
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+    height: 30vh;
+}
+/* 
+.footer-links {
+    display: grid;
+    width: 70vw;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 25% 25%;
     grid-gap: 40px;
@@ -39,7 +60,7 @@ h2 {
     padding-top: 1em;
     padding-bottom: 10em;
     padding-right: 10em;
-}
+} */
      
 .home {
     display: grid;
@@ -59,11 +80,11 @@ h2 {
 .footer-signup {
     grid-column-start: 4;
 }
-li {
-
+.footer-column li {
+    margin: 0;
     color: #FDF0D3;
     font-size: 15px;
-    
+    padding: 0;
 }
 
 
