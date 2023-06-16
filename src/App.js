@@ -7,14 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createClient } from '@supabase/supabase-js'
 import {useState, useEffect} from 'react'
 
-
-function App() {
-
 //establishes connection to supabase by providing it with our database url and public key
 const supabaseURL = process.env.REACT_APP_SUPABASE_DB_CONNECTION
 const supabaseKey = process.env.REACT_APP_SUPABASE_PUBLIC
-const supabase = createClient(supabaseURL, supabaseKey );
+export const supabase = createClient(supabaseURL, supabaseKey );
 
+function App() {
 
 const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
 

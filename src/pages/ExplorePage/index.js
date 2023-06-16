@@ -8,7 +8,7 @@ import RouteDetailDropdown from './RouteDetailDropDown';
 
 export default function ExplorePage() {
 
-
+ const [location, setLocation] = useState("")
  const [activeRoute, setActiveRoute] = useState(0)
  
 let routeDetailArray = [
@@ -124,11 +124,34 @@ let routeDetailArray = [
         setActiveRoute(id)
     }
 
+    /*useEffect(() => {
+        const fetchRoutes = async () => {
+    
+          const { data, error } = await supabase
+            .from('walks')
+            .select()
+          
+          if (data) {
+            console.table(data)
+            setAllRoutes(data)
+          }
+        }
+    
+        fetchRoutes()
+    
+      }, [])*/
+
+    useEffect(() => {
+        console.log(location);
+
+    },[location]
+    )
+
     return (
         <div className="explore-page">
             <div className="map-section">
                 <div className="left-hand-map-panel"> 
-                    <Search/>
+                    <Search setLocation={setLocation}/>
                     <div className="route-cards">
                     {routeDetailArray.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>)}
                     </div>

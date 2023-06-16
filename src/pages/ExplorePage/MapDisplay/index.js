@@ -59,7 +59,7 @@ useEffect(()=> {
     // display it on the map
     map.current.on('load', () => {
 
-        console.log(props.routeDetailArray)
+        
 
         props.routeDetailArray.map((route) => { 
             if (map.current.getLayer(route.name)) {
@@ -86,7 +86,7 @@ useEffect(()=> {
     // the below function recenters the viewpoint of the map smoothly over whichever route has been clicked by the user from 
     // the left hand list of routes.
 useEffect(()=> {
-    console.log(props.activeRoute)
+    
     map.current.flyTo({
         center: props.routeDetailArray[props.activeRoute].center,
         zoom: 12
