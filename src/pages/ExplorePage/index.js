@@ -5,12 +5,14 @@ import RouteDetailCard from './RouteDetailCard';
 import { useState, useEffect } from "react";
 import Search from './Search';
 import RouteDetailDropdown from './RouteDetailDropDown';
+import { supabase } from "../../Utility/config";
 
 export default function ExplorePage() {
 
  const [location, setLocation] = useState("")
  const [activeRoute, setActiveRoute] = useState(0)
- 
+ const [locationRoutes, setLocationRoutes] = useState([])
+
 let routeDetailArray = [
         {
             name: "Hildas Walk",
@@ -124,27 +126,35 @@ let routeDetailArray = [
         setActiveRoute(id)
     }
 
-    /*useEffect(() => {
-        const fetchRoutes = async () => {
-    
-          const { data, error } = await supabase
-            .from('walks')
-            .select()
-          
-          if (data) {
+
+    useEffect(() => { 
+      
+      // this useEffect calls our database every time the location state is changed by a user clicking submit on the searchbar
+      // first we define a function that uses the supabase built in functionality to make a sql query that selects all routes from the 
+      // database where the location column is equal to the location state
+        async function fetchRoutesByLocation(location) {
+          const {data, error} = await supabase
+          .from('walks')
+          .select()
+          .eq('location', location)
+
+          // if no location is found then we console.log a message
+          if(data.length < 1) {
+            console.log('no routes found in that location!')
+          }
+          // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
+          if(data && data.length > 0) {
             console.table(data)
-            setAllRoutes(data)
+            setLocationRoutes(data)
           }
         }
-    
-        fetchRoutes()
-    
-      }, [])*/
+        // now that we have defined the function, we check if there is a location, and then call our function that calls the api.
+        if(location) {
+        fetchRoutesByLocation(location)
+        console.table(locationRoutes)
+        }
 
-    useEffect(() => {
-        console.log(location);
-
-    },[location]
+    },[location] // this useEffect is triggered whenever the location state changes
     )
 
     return (
