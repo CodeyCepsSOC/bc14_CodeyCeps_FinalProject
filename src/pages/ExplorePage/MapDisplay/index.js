@@ -60,7 +60,9 @@ useEffect(()=> {
         console.log('routes changed')
         console.log(props.prevRoutes)
         props.prevRoutes.map(route => {
-            return map.current.removeLayer(route.name)})
+             if (map.current.getLayer(route.name)) {
+                map.current.removeLayer(route.name);
+            }})
         if (props.routeDetailArray.length<1) return 
 
         props.routeDetailArray.map((route) => { 
@@ -88,11 +90,10 @@ useEffect(()=> {
     // the below function recenters the viewpoint of the map smoothly over whichever route has been clicked by the user from 
     // the left hand list of routes.
 useEffect(()=> {
-    
-    if (!props.routeDetailArray) 
+
 
     map.current.flyTo({
-        center: props.routeDetailArray[0].center,
+        center: props.routeDetailArray[props.activeRoute]?.center,
         zoom: 12
     })
 }, [props.activeRoute, props.routeDetailArray])

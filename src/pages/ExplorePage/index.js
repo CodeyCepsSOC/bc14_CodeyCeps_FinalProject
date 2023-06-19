@@ -172,7 +172,7 @@ let routeDetailArray = [
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
                     <div className="route-cards">
-                    {locationRoutes.length>0?locationRoutes.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>):<h2 style={{color: 'red'}}>No Routes Found</h2>}
+                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route} index={index}/>):<h2 style={{color: 'red'}}>No Routes Found</h2>}
                     </div>
                 </div>
                 <MapDisplay routeDetailArray={locationRoutes} activeRoute={activeRoute} prevRoutes={prevRoutes}/>
