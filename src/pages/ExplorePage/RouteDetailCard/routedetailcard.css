@@ -69,3 +69,8 @@ p {
     aspect-ratio: 1/1;
     width: auto;
 }
+
+.route-detail-card:active {
+    transform: scale(0.9);
+    border: 5px orange;
+}
