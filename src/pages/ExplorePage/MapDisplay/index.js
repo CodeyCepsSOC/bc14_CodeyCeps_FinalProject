@@ -59,7 +59,7 @@ useEffect(()=> {
     // display it on the map
     map.current.on('load', () => {
 
-        
+        if (!props.routeDetailArray) return 
 
         props.routeDetailArray.map((route) => { 
             if (map.current.getLayer(route.name)) {
@@ -70,7 +70,7 @@ useEffect(()=> {
                 map.current.removeSource(route.id);
             }
             return(
-            addRouteLayer(map, route.name, route.coordinateArray, route.id)
+            addRouteLayer(map, route.name, route.coordinatearray, route.id)
             )})
     })
 
@@ -87,8 +87,10 @@ useEffect(()=> {
     // the left hand list of routes.
 useEffect(()=> {
     
+    if (!props.routeDetailArray) 
+
     map.current.flyTo({
-        center: props.routeDetailArray[props.activeRoute].center,
+        center: props.routeDetailArray[0].center,
         zoom: 12
     })
 }, [props.activeRoute, props.routeDetailArray])

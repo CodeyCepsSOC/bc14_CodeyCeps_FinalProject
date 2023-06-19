@@ -176,7 +176,7 @@ let routeDetailArray = [
                     {routeDetailArray.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>)}
                     </div>
                 </div>
-                <MapDisplay routeDetailArray={routeDetailArray} activeRoute={activeRoute} />
+                <MapDisplay routeDetailArray={locationRoutes} activeRoute={activeRoute} />
             </div>
             <RouteDetailDropdown {...routeDetailArray[activeRoute]}/>
         </div>
