@@ -12,7 +12,7 @@ export default function ExplorePage() {
  const [location, setLocation] = useState("Brighton")
  const [activeRoute, setActiveRoute] = useState(0)
  const [locationRoutes, setLocationRoutes] = useState([])
-
+ const [prevRoutes, setPrevRoutes] = useState([])
 let routeDetailArray = [
         {
             name: "Hildas Walk",
@@ -133,6 +133,8 @@ let routeDetailArray = [
       // first we define a function that uses the supabase built in functionality to make a sql query that selects all routes from the 
       // database where the location column is equal to the location state
         async function fetchRoutesByLocation(location) {
+          setPrevRoutes(locationRoutes)
+          setLocationRoutes([])
           const {data, error} = await supabase
           .from('walks')
           .select()
@@ -146,12 +148,9 @@ let routeDetailArray = [
           // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
           if(data && data.length > 0) {
             data.map(route => {
-              let arr = new Array(route.coordinatearray)
               let centerarr = new Array(route.center)
-              let routesArray = JSON.parse(arr[0])
               let parsedCenter = JSON.parse(centerarr[0])
-              route.center = parsedCenter
-              return route.coordinatearray = routesArray
+              return route.center = parsedCenter
             })
             data[0].center.map(data=> console.log(data))
 
@@ -173,12 +172,12 @@ let routeDetailArray = [
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
                     <div className="route-cards">
-                    {routeDetailArray.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>)}
+                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route} index={index}/>):<h2 style={{color: 'red'}}>No Routes Found</h2>}
                     </div>
                 </div>
-                <MapDisplay routeDetailArray={routeDetailArray} activeRoute={activeRoute} />
+                <MapDisplay routeDetailArray={locationRoutes} activeRoute={activeRoute} prevRoutes={prevRoutes}/>
             </div>
-            <RouteDetailDropdown {...routeDetailArray[activeRoute]}/>
+            {locationRoutes[activeRoute] ? <RouteDetailDropdown {...locationRoutes[activeRoute]}/> : <></>}
         </div>
     )
 }
