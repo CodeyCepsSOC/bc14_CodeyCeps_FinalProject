@@ -1,9 +1,10 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 import "./footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <nav className="footer">
       <div className="footer-logo-title">
         <img src="./logo.svg" alt="WalkMate Homepage footer logo" />
         <h2>WalkMate</h2>
@@ -15,16 +16,16 @@ export default function Footer() {
         <div id="home" className="footer-column">
           <ul>
             <img className="minilogo" src="circleNoBg.png" alt="home" />
-            <li>Home</li>
-            <li>About us</li>
-            <li>events</li>
+            <li><Link to="/#home">Home</Link></li>
+            <li><Link to="/#about-us">About us</Link></li>
+            <li><Link to="/#events">Events</Link></li>
           </ul>
         </div>
 
         <div id="footer-explore" className="footer-column">
           <ul>
             <img className="minilogo" src="flagdownNoBg.png" alt="explore" />
-            <li>Explore</li>
+            <li><Link to="/explore#explore">Explore</Link></li>
           </ul>
         </div>
 
@@ -43,6 +44,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
