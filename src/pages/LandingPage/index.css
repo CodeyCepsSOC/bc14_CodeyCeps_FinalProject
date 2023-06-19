@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
+  font-size: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +21,17 @@
   display: grid;
   /* grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end]; */
   grid-template-rows: 20% 40% 40%;
+}
+
+.button {
+  background-color: #f19e38;
+  color: #232011;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 20px;
+  margin-bottom: 300px;
+  cursor: pointer;
 }
 
 .about-us-heading {
