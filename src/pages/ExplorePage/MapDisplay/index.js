@@ -57,9 +57,11 @@ useEffect(()=> {
     //render initial routes on map
     // on initial load, map through the array of all routes. For each route, call the addRouteLayer function, handing in the details of that route to 
     // display it on the map
-    map.current.on('load', () => {
-
-        if (!props.routeDetailArray) return 
+        console.log('routes changed')
+        console.log(props.prevRoutes)
+        props.prevRoutes.map(route => {
+            return map.current.removeLayer(route.name)})
+        if (props.routeDetailArray.length<1) return 
 
         props.routeDetailArray.map((route) => { 
             if (map.current.getLayer(route.name)) {
@@ -72,7 +74,7 @@ useEffect(()=> {
             return(
             addRouteLayer(map, route.name, route.coordinatearray, route.id)
             )})
-    })
+
 
     // REMOVE BEFORE PUSHING TO PRODUCTION
     // the below function console.logs the long and lat of where the user clicks on the map, it is used here to 
