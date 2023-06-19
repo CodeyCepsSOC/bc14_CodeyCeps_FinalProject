@@ -121,7 +121,7 @@ function LandingPage() {
 
       </div>
 </div>
-      <div className="section3">
+      <div className="section3" id="events">
         <h1 className="carousel-title">Upcoming Events</h1>
         <CarouselHomePage/>
       </div>

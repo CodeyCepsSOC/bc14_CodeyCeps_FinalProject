@@ -18,7 +18,7 @@ export default function Footer() {
             <img className="minilogo" src="circleNoBg.png" alt="home" />
             <li><Link to="/#home">Home</Link></li>
             <li><Link to="/#about-us">About us</Link></li>
-            <li>events</li>
+            <li><Link to="/#events">Events</Link></li>
           </ul>
         </div>
 
