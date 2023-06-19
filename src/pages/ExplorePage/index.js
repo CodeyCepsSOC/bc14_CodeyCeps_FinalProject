@@ -9,7 +9,7 @@ import { supabase } from "../../Utility/config";
 
 export default function ExplorePage() {
 
- const [location, setLocation] = useState("")
+ const [location, setLocation] = useState("Brighton")
  const [activeRoute, setActiveRoute] = useState(0)
  const [locationRoutes, setLocationRoutes] = useState([])
 
@@ -136,15 +136,25 @@ let routeDetailArray = [
           const {data, error} = await supabase
           .from('walks')
           .select()
-          .eq('location', location)
-
+          .ilike('location', location)
+          
           // if no location is found then we console.log a message
           if(data.length < 1) {
+            setLocationRoutes([])
             console.log('no routes found in that location!')
           }
           // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
           if(data && data.length > 0) {
-            console.table(data)
+            data.map(route => {
+              let arr = new Array(route.coordinatearray)
+              let centerarr = new Array(route.center)
+              let routesArray = JSON.parse(arr[0])
+              let parsedCenter = JSON.parse(centerarr[0])
+              route.center = parsedCenter
+              return route.coordinatearray = routesArray
+            })
+            data[0].center.map(data=> console.log(data))
+
             setLocationRoutes(data)
           }
         }
