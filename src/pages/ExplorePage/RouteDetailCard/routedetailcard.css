@@ -1,0 +1,71 @@
+.route-detail-card {
+    display: flex;
+    align-items: flex-end;
+    height: 25vh;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.route-details {
+    height: 40%;
+    background-color: #354C33CC;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 90%;
+    grid-template-rows: 30% 30% 30%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+h2 {
+    grid-row: 1/1;
+    grid-column: 2/2;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+p {
+    grid-row:3/3;
+    grid-column: 2/2;
+    padding: 5px;
+    text-align: left;
+}
+
+#time-text {
+    font-family: "Woodland Ultralight";
+    padding-top: 10px;
+}
+
+.icon-bar {
+    grid-row: 2/2;
+    grid-column: 2/2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;  
+}
+#clock-icon {
+    color: white;
+    height: 2vh;
+    aspect-ratio: 1/1;
+}
+.route-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--primary-green);
+    border-radius: 4px;
+    padding: 5px;
+    height: 2vh;
+    margin: 5px;
+}
+
+.icon {
+    height: 2vh;
+    background-color: var(--primary-green);
+    padding: 5px;
+    border-radius: 4px;
+    aspect-ratio: 1/1;
+    width: auto;
+}

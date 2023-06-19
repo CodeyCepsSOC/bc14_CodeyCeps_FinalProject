@@ -1,1 +1,0 @@
-//card on side of map to display info about route

@@ -1,0 +1,28 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 0;
+    gap: 5px;
+    width: 30vw;
+}
+.searchlabel {
+    display:none;
+}
+
+#searchField {
+    width: 85%;
+    height: 30px;
+}
+
+#searchButton {
+    margin: 5px;
+    width: 10%;
+    height: 35px;
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+}

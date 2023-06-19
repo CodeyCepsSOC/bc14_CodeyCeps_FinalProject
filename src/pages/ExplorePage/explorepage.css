@@ -1,0 +1,30 @@
+.explore-page {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lightest-value);
+    width: 100vw;
+}
+
+.map-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.left-hand-map-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    height: 80vh;
+}
+
+.route-cards {
+    overflow: scroll;
+    width: 30vw;
+}
+
+.route-cards::-webkit-scrollbar {
+    display: none;
+  }

@@ -1,1 +1,0 @@
-//details at a glance (toilets etc.)

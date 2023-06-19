@@ -1,0 +1,48 @@
+.route-details-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dropdown-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 1em;
+}
+
+#map-image, .dropdown-body p {
+    height: 400px;
+    width: 50%;
+    font-size: 1.2em;
+    margin: 1em;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.dummy-carousel {
+    height: 40vh;
+    width: 90vw;
+    border: 1px dotted red
+}
+
+.route-details-dropdown h1 {
+    font-size: 3em;
+    color: var(--primary-green);
+    margin: 0.7em;
+}
+
+.close-button {
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    padding: 0.3em;
+    margin: 0.5em;
+    align-self: flex-end;
+    aspect-ratio: 1/1;
+}
