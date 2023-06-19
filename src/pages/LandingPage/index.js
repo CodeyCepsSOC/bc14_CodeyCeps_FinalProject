@@ -47,7 +47,7 @@ function LandingPage() {
     <div>
 
       <div className="section1" id="home">
-        <h1>Want To Go For A Walk</h1>
+        <h1>Want To Go For A Walk?</h1>
         <button className="button" onClick={handleClick}>
           Start exploring...
         </button>
