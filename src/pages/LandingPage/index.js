@@ -46,12 +46,13 @@ function LandingPage() {
   return (
     <div>
 
-      <div className="section1">
+      <div className="section1" id="home">
         <h1>Want To Go For A Walk</h1>
         <button className="button" onClick={handleClick}>
           Start exploring...
         </button>
       </div>
+      <div id="about-us">
       <h2 className="about-us-heading">Why WalkMate?</h2>
       <div className="section2">
         
@@ -119,7 +120,7 @@ function LandingPage() {
           </div>
 
       </div>
-
+</div>
       <div className="section3">
         <h1 className="carousel-title">Upcoming Events</h1>
         <CarouselHomePage/>

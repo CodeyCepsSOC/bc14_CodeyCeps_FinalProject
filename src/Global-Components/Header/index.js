@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import './header.css';
 
 
@@ -14,10 +14,10 @@ export default function Header() {
             <div className="nav-links">
                     <ul>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <NavLink to="/explore">Explore</NavLink>
+                            <Link to="/explore#explore">Explore</Link>
                         </li>
                         <li>Community</li>
                         <li><button className = "signupBtn">Sign up</button></li>

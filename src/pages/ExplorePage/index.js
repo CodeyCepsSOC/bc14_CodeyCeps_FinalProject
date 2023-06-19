@@ -158,7 +158,7 @@ let routeDetailArray = [
     )
 
     return (
-        <div className="explore-page">
+        <div className="explore-page" id="explore">
             <div className="map-section">
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
