@@ -145,6 +145,7 @@ let routeDetailArray = [
             setLocationRoutes([])
             console.log('no routes found in that location!')
           }
+          
           // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
           if(data && data.length > 0) {
             data.map(route => {
