@@ -34,3 +34,12 @@ test('onClick prop functions correctly', () =>
     fireEvent.click(screen.getByText('Test Route'))
     expect(handleClick).toHaveBeenCalledTimes(1)
 })
+
+
+test('all icons render correctly', () => 
+{
+    render(<RouteDetailCard {...testProps}/>)
+    testProps.icons.forEach(icon => {
+        expect(screen.getByAltText(icon)).toBeInTheDocument();
+    });
+})
