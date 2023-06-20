@@ -4,37 +4,12 @@ import { render, screen } from '@testing-library/react';
 import MapDisplay from './index.js';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
-    Map: () => ({})
- }));
- 
-//mock the mapboxgl object
-jest.mock('mapbox-gl', () => {
-    // create mock functions for the mapInstance object
-  const addLayer = jest.fn();
-  const removeLayer = jest.fn();
-  const getSource = jest.fn();
-  const removeSource = jest.fn();
-  const addSource = jest.fn();
-  const on = jest.fn();
-  const flyTo = jest.fn();
-
-    // create a mock mapInstance object
-  const mapInstance = {
-    addLayer,
-    removeLayer,
-    getSource,
-    removeSource,
-    addSource,
-    on,
-    flyTo,
-  };
-
-    //return the mapInstance object when the Map constructor is called.
-  return {
-    Map: jest.fn().mockImplementation(() => mapInstance),
-  };
-});
+jest.mock('mapbox-gl', () => ({
+    Map: jest.fn(() => ({
+      on: jest.fn(),
+      otherMethods: jest.fn(),
+    })),
+  }));
 
 const routeDetailArray = [
     {
