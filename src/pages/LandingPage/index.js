@@ -47,7 +47,8 @@ function LandingPage() {
     <div>
 
       <div className="section1" id="home">
-        <h1>Want To Go For A Walk</h1>
+        <h1>Want To Go For A Walk?</h1>
+
         <button className="button" onClick={handleClick}>
           Start exploring...
         </button>
@@ -56,6 +57,7 @@ function LandingPage() {
       <h2 className="about-us-heading">Why WalkMate?</h2>
       <div className="section2">
         
+
 
           <div className="community">
             <img 
@@ -123,8 +125,53 @@ function LandingPage() {
 </div>
       <div className="section3" id="events">
         <h1 className="carousel-title">Upcoming Events</h1>
-        <CarouselHomePage/>
+        <CarouselHomePage />
       </div>
+
+      <div className="section4">
+        <div className="testimonial-header">
+      <img className="testimonial-img1" src="./shapes_4.png" alt="shapes logo"></img>
+      <h1 className="testimonial-title">Testimonials</h1>
+      <img className="testimonial-img2" src="./shapes_4.png" alt="shapes logo"></img>
+      </div>
+
+        <div className="container-grid">
+
+        <div className="testimonial1">
+          <img className="img1" src="./sami.png " alt=""></img>
+          <p className="testimonialP">
+            “WalkMate has helped me overcome my social anxiety ! I don’t like
+            meeting new people in confined spaces. The events have allowed me to
+            meet people outdoors while enjoying a pleasant stroll. It has been
+            wonderful.” <br></br>
+          </p>
+          <p className = "name"> John </p>
+        </div>
+
+        <div className="testimonial2">
+          <img className="img2" src="./hilda.png" alt=""></img>
+          <p className="testimonialP">
+            "I always struggled to find accessible trails near me which were
+            also pram-friendly. It always put me off going for walks as there
+            was never a planned route with an estimated time length. WalkMate
+            has done all the hard work for me !" <br></br>
+          </p>
+          <p className ="name"> Bryony </p>
+        </div>
+
+        <div className="testimonial3">
+          <img className="img3" src="./businessman.png" alt=""></img>
+          <p className="testimonialP">
+            "I never usually find the time to go out as I’m always working. When
+            I’m not at my desk I want to be outside enjoying fresh air. There
+            are many apps for the extreme hiker but WalkMate is the best fit for
+            a casual stroller like me!" <br></br>
+          </p>
+          <p className = "name"> Dave </p>
+        </div>
+        </div>
+      </div>
+      
     </div>
   );
 }

@@ -12,24 +12,24 @@ import ScrollToHashElement from './Global-Components/Scroll to hash element/Scro
 
 function App() {
 
-const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
+// const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
 
-  useEffect(() => {
-    const fetchRoutes = async () => {
+  // useEffect(() => {
+  //   const fetchRoutes = async () => {
 
-      const { data, error } = await supabase
-        .from('walks')
-        .select()
+  //     const { data, error } = await supabase
+  //       .from('walks')
+  //       .select()
       
-      if (data) {
-        console.table(data)
-        setAllRoutes(data)
-      }
-    }
+  //     if (data) {
+  //       console.table(data)
+  //       setAllRoutes(data)
+  //     }
+  //   }
 
-    fetchRoutes()
+  //   fetchRoutes()
 
-  }, [])
+  // }, [])
 
 
   return (

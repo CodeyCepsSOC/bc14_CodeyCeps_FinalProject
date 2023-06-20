@@ -8,18 +8,20 @@ export default function Header() {
     return (
         <nav className="header">
             <div className="logo">
-                <img src="./Logo.svg" alt="WalkMate Logo"/>
+                <Link to="/#home">
+                    <img src="./Logo.svg" alt="WalkMate Logo"/>
+                </Link>
                 <h2 className="navbarh2">WalkMate</h2>
             </div>
             <div className="nav-links">
                     <ul>
-                        <li>
-                            <Link to="/">Home</Link>
+                        <li className='header-link'>
+                            <Link to="/#home">Home</Link>
                         </li>
-                        <li>
+                        <li className='header-link'> 
                             <Link to="/explore#explore">Explore</Link>
                         </li>
-                        <li>Community</li>
+                        <li className='header-link'>Community</li>
                         <li><button className = "signupBtn">Sign up</button></li>
                     </ul>
             </div>

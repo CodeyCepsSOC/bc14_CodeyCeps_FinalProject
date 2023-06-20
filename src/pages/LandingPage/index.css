@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
+  font-size: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +21,27 @@
   align-items: center;
 }
 
+.button {
+  background-color: #f19e38;
+  color: #232011;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 300px;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px;
+}
+
+.button:hover {background-color: #edb269}
+
+.button:active {
+  background-color: #ecb471;
+  box-shadow: 3px 3px 3px #666;
+  transform: translateY(2px);
+}
+
 .about-us-heading {
   font-size: 3em;
   color: var(--primary-green);
@@ -29,6 +51,10 @@
 
 h3 {
   font-size: em;
+}
+
+h1 {
+  color: #232011;
 }
 
 .why-icon{
@@ -132,5 +158,62 @@ h3 {
 .carousel-title {
   font-size: 64px;
   margin-bottom: 80px;
+  color: #354C33;
+}
+
+.section4 {
+  padding: 8%;
+  align-items: center;
+}
+.testimonial-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10%;
+}
+.testimonial-img1 {
+  display:flex;
+  width: 7%;
+  height: 7%;
+  ;
+}
+.testimonial-title {
+  display:flex;
+  font-size: 64px;
+  margin-bottom: 80px;
+  color: #354C33;
+  align-self: center;
+}
+.testimonial-img2 {
+  display:flex;
+  width: 7%;
+  height: 7%;
+}
+.img1 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.img2 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.img3 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.container-grid {
+  display: grid;
+  grid-template-rows: 1fr, 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.name {
+  font-weight: bold;
   color: #354C33;
 }
