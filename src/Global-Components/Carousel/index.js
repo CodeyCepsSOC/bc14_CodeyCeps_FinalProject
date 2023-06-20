@@ -6,11 +6,11 @@ import "./index.css"
 
 export default function CarouselHomePage(props) {
         return (
-            <Carousel centerMode centerSlidePercentage={33.3} className="carousel" infiniteLoop={true}>
-                {props.arr.map((image) => {return <CarouselCard {...image}/>})} {/* map throught the array of props and render a carousel card for each, handing in the information from each index as the props */}
+            <Carousel centerMode centerSlidePercentage={33.3} className="carousel" infiniteLoop={true} showThumbs={false} >
+                {props.arr.map((image, index) => {return <CarouselCard {...image} key={index}/>})} 
             </Carousel>
         );
-    };
+    }
 
 /* Installed the react responsive carousel npm package - once installed I created a React component as usual e.g. export deafualt Function
 within this there is the <Carousel> tag (which is provided by the npm install of react responsive router) between the opening and closing 
@@ -20,3 +20,11 @@ pass props to <Carousel> - these props are provided and appear in the docs on np
 centerSlidePercentage={33.3%} - this displays 3 images. I also used infiniteLoop={true} so that it can loop through all divs infinitley.
 See the css page for styling notes.
 */
+
+// REFACTORED NOTES
+
+/* The carousel now consists of two components, the Carousel itself, and a carousel card component which contains the logic to render the img,
+ title and description based on props handed in by the parent component. To use this component, call <CarouselHomePage arr={props} /> 
+ where props is an array of objects containing img, description, and title key values. 
+ For Example: props= [{img:'./walk.jpg', title: 'example walk', description: 'walk description'}, {img:'./walk.jpg', title: 'example walk', description: 'walk description'}]
+ */
