@@ -3,33 +3,33 @@ import Header from './Global-Components/Header';
 import Footer from './Global-Components/Footer';
 import ExplorePage from './pages/ExplorePage';
 import LandingPage from './pages/LandingPage';
-import Layout from './pages/Layout';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { supabase } from './Utility/config';
 import {useState, useEffect} from 'react'
+import ScrollToHashElement from './Global-Components/Scroll to hash element/ScrollToHashElement';
 
 //establishes connection to supabase by providing it with our database url and public key
 
 function App() {
 
-const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
+// const [allRoutes, setAllRoutes] = useState([]) // state that holds the information from the database when it is returned
 
-  useEffect(() => {
-    const fetchRoutes = async () => {
+  // useEffect(() => {
+  //   const fetchRoutes = async () => {
 
-      const { data, error } = await supabase
-        .from('walks')
-        .select()
+  //     const { data, error } = await supabase
+  //       .from('walks')
+  //       .select()
       
-      if (data) {
-        console.table(data)
-        setAllRoutes(data)
-      }
-    }
+  //     if (data) {
+  //       console.table(data)
+  //       setAllRoutes(data)
+  //     }
+  //   }
 
-    fetchRoutes()
+  //   fetchRoutes()
 
-  }, [])
+  // }, [])
 
 
   return (
@@ -42,17 +42,15 @@ The Landingpage component route does not have a path but has an index attribute.
 Setting the path to * will act as a catch-all for any undefined URLs. This is great for a 404 error page.-- will come back to this !
     */
     <BrowserRouter>
-    <Header/>
-      <div>
-
+    <ScrollToHashElement/>
+      <Header/>
         <Routes>
-          <Route path="/" element={<Layout/>}>
+          <Route path="/"> 
             <Route index element={<LandingPage/>}/>
             <Route path="explore" element={<ExplorePage/>}/>
           </Route>
         </Routes>
-      </div>
-      <Footer/>
+        <Footer/>
     </BrowserRouter>
   );
 }

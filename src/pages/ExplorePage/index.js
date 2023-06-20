@@ -9,10 +9,10 @@ import { supabase } from "../../Utility/config";
 
 export default function ExplorePage() {
 
- const [location, setLocation] = useState("")
+ const [location, setLocation] = useState("Brighton")
  const [activeRoute, setActiveRoute] = useState(0)
  const [locationRoutes, setLocationRoutes] = useState([])
-
+ const [prevRoutes, setPrevRoutes] = useState([])
 let routeDetailArray = [
         {
             name: "Hildas Walk",
@@ -133,18 +133,27 @@ let routeDetailArray = [
       // first we define a function that uses the supabase built in functionality to make a sql query that selects all routes from the 
       // database where the location column is equal to the location state
         async function fetchRoutesByLocation(location) {
+          setPrevRoutes(locationRoutes)
+          setLocationRoutes([])
           const {data, error} = await supabase
           .from('walks')
           .select()
-          .eq('location', location)
-
+          .ilike('location', location)
+          
           // if no location is found then we console.log a message
           if(data.length < 1) {
+            setLocationRoutes([])
             console.log('no routes found in that location!')
           }
           // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
           if(data && data.length > 0) {
-            console.table(data)
+            data.map(route => {
+              let centerarr = new Array(route.center)
+              let parsedCenter = JSON.parse(centerarr[0])
+              return route.center = parsedCenter
+            })
+            data[0].center.map(data=> console.log(data))
+
             setLocationRoutes(data)
           }
         }
@@ -158,17 +167,17 @@ let routeDetailArray = [
     )
 
     return (
-        <div className="explore-page">
+        <div className="explore-page" id="explore">
             <div className="map-section">
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
                     <div className="route-cards">
-                    {routeDetailArray.map((route)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route}/>)}
+                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route} index={index}/>):<h2 style={{color: 'red'}}>No Routes Found</h2>}
                     </div>
                 </div>
-                <MapDisplay routeDetailArray={routeDetailArray} activeRoute={activeRoute} />
+                <MapDisplay routeDetailArray={locationRoutes} activeRoute={activeRoute} prevRoutes={prevRoutes}/>
             </div>
-            <RouteDetailDropdown {...routeDetailArray[activeRoute]}/>
+            {locationRoutes[activeRoute] ? <RouteDetailDropdown {...locationRoutes[activeRoute]}/> : <></>}
         </div>
     )
 }
