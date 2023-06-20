@@ -50,6 +50,7 @@ useEffect(()=> {
       style: 'mapbox://styles/mapbox/outdoors-v12',
       center: [-0.07204564221953547, 50.8738136495931],
       zoom: 5,
+      testMode: true,
     });
 },[])
 

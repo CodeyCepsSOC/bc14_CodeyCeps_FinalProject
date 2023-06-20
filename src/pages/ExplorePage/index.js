@@ -13,7 +13,8 @@ export default function ExplorePage() {
  const [activeRoute, setActiveRoute] = useState(0)
  const [locationRoutes, setLocationRoutes] = useState([])
  const [prevRoutes, setPrevRoutes] = useState([])
-let routeDetailArray = [
+
+ let routeDetailArray = [
         {
             name: "Hildas Walk",
             difficulty:'Beginner',
