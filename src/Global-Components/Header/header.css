@@ -1,10 +1,10 @@
 .header {
   display: flex;
-  justify-content: space-around;
-  width: 100vw;
+  justify-content: space-between;
+  width: 100%;
   height: 70px;
   background-color: #354c33;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -23,7 +23,6 @@
 
 .nav-links {
   display: flex;
-
   width: 70%;
   color: #fdf0d3;
 }
@@ -36,31 +35,42 @@ ul {
   gap: 2em;
 }
 
-li {
+.header-link {
     font-size: 18px;
     text-align: center;
     display: inline-block;
 }
-li:hover {
+
+a, a:link, a:visited, a:focus, a:active{
+  color:#fdf0d3;
+  text-decoration:none;
+  cursor: pointer;
+}
+
+li:hover, a:hover {
     color: #fc9c0c;
     cursor: pointer;
   }
+
+
 .signupBtn {
   background-color: #fdf0d3;
-  color: #142013;
+  color: #232011;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  padding: 15px 40px;
+  padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  float: left; 
+  box-shadow: 0px 3px 3px;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-right: 2em;
 }
