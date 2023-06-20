@@ -160,3 +160,60 @@ h1 {
   margin-bottom: 80px;
   color: #354C33;
 }
+
+.section4 {
+  padding: 8%;
+  align-items: center;
+}
+.testimonial-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10%;
+}
+.testimonial-img1 {
+  display:flex;
+  width: 7%;
+  height: 7%;
+  ;
+}
+.testimonial-title {
+  display:flex;
+  font-size: 64px;
+  margin-bottom: 80px;
+  color: #354C33;
+  align-self: center;
+}
+.testimonial-img2 {
+  display:flex;
+  width: 7%;
+  height: 7%;
+}
+.img1 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.img2 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.img3 {
+  width: 40%;
+  height: 49%;
+  padding-bottom: 5%;
+}
+.container-grid {
+  display: grid;
+  grid-template-rows: 1fr, 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.name {
+  font-weight: bold;
+  color: #354C33;
+}
