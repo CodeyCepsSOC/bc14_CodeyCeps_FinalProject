@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import CarouselHomePage from "../../Global-Components/Carousel";
-
+import { LandingPageCarouselInfo } from "../../Utility/data";
 /*
 
 Create Hero Image
@@ -125,7 +125,7 @@ function LandingPage() {
 </div>
       <div className="section3" id="events">
         <h1 className="carousel-title">Upcoming Events</h1>
-        <CarouselHomePage />
+        <CarouselHomePage arr={LandingPageCarouselInfo}/>
       </div>
 
       <div className="section4">

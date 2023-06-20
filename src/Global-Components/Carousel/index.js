@@ -1,41 +1,13 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import CarouselCard from './CarouselCard'
 import "./index.css"
 
-//see below the function for notes
-
-export default function CarouselHomePage() {
+export default function CarouselHomePage(props) {
         return (
-            <Carousel centerMode centerSlidePercentage={33.3} className="carousel" infiniteLoop={true}>
-                <div className="div1carousel">
-                    <img className="event1" src="./hero_image.jpg" alt="beautiful route"/>
-                    <div className="legend">
-                        <h2>Lone Ranger Expidition</h2>
-                        <p>TEXT TEXT</p>
-                    </div>
-                </div>
-                <div className="div2carousel">
-                    <img className="event2" src="./random.jpg" alt="beautiful route"/>
-                    <div className="legend">
-                        <h2>Lakeside Family Trail</h2>
-                        <p>TEXT TEXT</p>
-                    </div>
-                </div>
-                <div className="div3carousel">
-                    <img className="event3" src="./random2.jpg" alt="beautiful route" />
-                    <div className="legend">
-                        <h2>Forest Fun Run</h2>
-                        <p>TEXT TEXT</p>
-                    </div>
-                </div>
-                <div className="div4carousel">
-                    <img className="event4" src="./random3.jpg" alt="beautiful route" />
-                    <div className="legend">
-                        <h2>Group Social Adventure</h2>
-                        <p>TEXT TEXT</p>
-                    </div>
-                </div>
+            <Carousel centerMode centerSlidePercentage={33.3} className="carousel" infiniteLoop={true} showThumbs={false} >
+                {props.arr.map((image, index) => {return <CarouselCard {...image} key={index}/>})} 
             </Carousel>
         );
     }
@@ -48,3 +20,11 @@ pass props to <Carousel> - these props are provided and appear in the docs on np
 centerSlidePercentage={33.3%} - this displays 3 images. I also used infiniteLoop={true} so that it can loop through all divs infinitley.
 See the css page for styling notes.
 */
+
+// REFACTORED NOTES
+
+/* The carousel now consists of two components, the Carousel itself, and a carousel card component which contains the logic to render the img,
+ title and description based on props handed in by the parent component. To use this component, call <CarouselHomePage arr={props} /> 
+ where props is an array of objects containing img, description, and title key values. 
+ For Example: props= [{img:'./walk.jpg', title: 'example walk', description: 'walk description'}, {img:'./walk.jpg', title: 'example walk', description: 'walk description'}]
+ */
