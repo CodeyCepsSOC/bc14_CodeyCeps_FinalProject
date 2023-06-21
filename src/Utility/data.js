@@ -20,4 +20,9 @@ export const LandingPageCarouselInfo = [{
     time: '1.5 hours'
   }]
 
+export const ExplorePageCarouselInfo = [
+  {img: './random.jpg'},
+  {img: './random2.jpg'},
+  {img: './random3.jpg'},
+]
 
