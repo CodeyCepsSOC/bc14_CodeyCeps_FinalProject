@@ -10,10 +10,7 @@ import DetailsBar from './DetailsBar';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import CarouselHomePage from '../../../Global-Components/Carousel';
 import { ExplorePageCarouselInfo } from '../../../Utility/data';
-
 function RouteDetailDropdown(props) {
-
-
 
 return (
     <div className="route-details-dropdown">
