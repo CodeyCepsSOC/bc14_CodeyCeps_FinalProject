@@ -6,7 +6,7 @@ static image of route - with route map
 p tag for brief description
 */
 import './routedetailsdropdown.css'
-import react from 'react';
+import React from 'react';
 import DetailsBar from './DetailsBar';
 
 function RouteDetailDropdown(props) {
