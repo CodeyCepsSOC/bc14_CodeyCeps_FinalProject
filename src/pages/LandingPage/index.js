@@ -113,13 +113,13 @@ function LandingPage() {
       <div className="section4">
         <div className="testimonial-header">
           <img
-            className="testimonial-img1"
+            className="testimonial-icon"
             src="./shapes_4.png"
             alt="shapes logo"
           ></img>
           <h1 className="testimonial-title">Testimonials</h1>
           <img
-            className="testimonial-img2"
+            className="testimonial-icon"
             src="./shapes_4.png"
             alt="shapes logo"
           ></img>
@@ -127,36 +127,36 @@ function LandingPage() {
 
         <div className="container-grid">
           <div className="testimonial1">
-            <img className="img1" src="./sami.png " alt=""></img>
+            <img className="testimonial-img" src="./sami.png " alt=""></img>
             <p className="testimonialP">
               “WalkMate has helped me overcome my social anxiety ! I don’t like
               meeting new people in confined spaces. The events have allowed me
               to meet people outdoors while enjoying a pleasant stroll. It has
               been wonderful.” <br></br>
             </p>
-            <p className="name"> John </p>
+            <p className="name"> - John </p>
           </div>
 
           <div className="testimonial2">
-            <img className="img2" src="./hilda.png" alt=""></img>
+            <img className="testimonial-img" src="./hilda.png" alt=""></img>
             <p className="testimonialP">
               "I always struggled to find accessible trails near me which were
               also pram-friendly. It always put me off going for walks as there
               was never a planned route with an estimated time length. WalkMate
               has done all the hard work for me !" <br></br>
             </p>
-            <p className="name"> Bryony </p>
+            <p className="name"> - Bryony </p>
           </div>
 
           <div className="testimonial3">
-            <img className="img3" src="./businessman.png" alt=""></img>
+            <img className="testimonial-img" src="./businessman.png" alt=""></img>
             <p className="testimonialP">
               "I never usually find the time to go out as I’m always working.
               When I’m not at my desk I want to be outside enjoying fresh air.
               There are many apps for the extreme hiker but WalkMate is the best
               fit for a casual stroller like me!" <br></br>
             </p>
-            <p className="name"> Dave </p>
+            <p className="name"> - Dave </p>
           </div>
         </div>
       </div>
