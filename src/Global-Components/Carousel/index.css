@@ -72,5 +72,48 @@
 .control-dots {
     display: none;
 }
-  
+
+.carousel-icon {
+    height: 2vh;
+    aspect-ratio: 1/1;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.event-details {
+    display: flex;
+
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 5px;
+    height: 2vh;
+    margin: 5px;
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 5px;
+    width: 3vw;
+    height: 2vh;
+    margin: 5px;
+}
+
+.time p {
+    width: 120%;
+}
+
+.legend h2 {
+    padding: 0px;
+}
   

@@ -1,19 +1,23 @@
 export const LandingPageCarouselInfo = [{
-    title: 'lone ranger expidition',
-    img: './hero_image.jpg',
-    description: 'TEXT TEXT'
+    title: 'Lone Ranger expedition',
+    img: './random.jpg',
+    date: "08/07/2023",
+    time: '2 hours'
   },{
-    title: 'lone ranger expidition',
-    img: './hero_image.jpg',
-    description: 'TEXT TEXT'
+    title: 'Family Fun Trail',
+    img: './random2.jpg',
+    date: '09/07/2023',
+    time: '3 hours'
   },{
-    title: 'lone ranger expidition',
-    img: './hero_image.jpg',
-    description: 'TEXT TEXT'
+    title: 'Walk and Talk Social',
+    img: './random3.jpg',
+    date: '15/07/2023',
+    time: '2 hours'
   },{
-    title: 'lone ranger expidition',
-    img: './hero_image.jpg',
-    description: 'TEXT TEXT'
+    title: 'Local Park Tour',
+    img: './walk1.jpeg',
+    date: '21/07/2023',
+    time: '1.5 hours'
   }]
 
 
