@@ -6,15 +6,18 @@ static image of route - with route map
 p tag for brief description
 */
 import './routedetailsdropdown.css'
-import React from 'react';
 import DetailsBar from './DetailsBar';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import CarouselHomePage from '../../../Global-Components/Carousel';
+import { ExplorePageCarouselInfo } from '../../../Utility/data';
 function RouteDetailDropdown(props) {
+
 return (
     <div className="route-details-dropdown">
         <button className="close-button" onClick={props.onClick}>X</button>
         <h1>{props.name}</h1>
-        <div className="dummy-carousel">
+        <div className="explore-carousel">
+            <CarouselHomePage arr={ExplorePageCarouselInfo} />
         </div>
         <DetailsBar {...props}/>
         <section className="dropdown-body">            

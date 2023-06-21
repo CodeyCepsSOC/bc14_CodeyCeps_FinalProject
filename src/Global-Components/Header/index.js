@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <nav className="header">
             <div className="logo">
-                <Link to="/#home">
+                <Link to="/">
                     <img src="./Logo.svg" alt="WalkMate Logo"/>
                 </Link>
                 <h2 className="navbarh2">WalkMate</h2>
