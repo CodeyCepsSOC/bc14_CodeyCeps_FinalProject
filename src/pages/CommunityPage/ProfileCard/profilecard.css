@@ -2,7 +2,6 @@
     width: 350px;
     flex-wrap: wrap;
     height: 400px;
-    align-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,19 +9,19 @@
     background-color: var(--primary-blue);
     border-radius: 15px;
     margin: 10%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1.5em;
 }
 
 #profile-header {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 80%;
     align-items: center;
     justify-content: center;
     gap: 4em;
-    border-bottom: 2px solid orange
+
 }
 #profile-header h1 {
     color: white;
@@ -32,4 +31,35 @@
     height: 7em;
     aspect-ratio: 1/1;
     border-radius: 50%;
+}
+
+#interests-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#interests-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.5em;
+    gap: 2em;
+}
+
+#interests-icons img {
+    height: 2.5em;
+}
+
+#profile-quote {
+    width: 80%;
+    text-align: center;
+    color: white;
+    padding-bottom: 1.5em;
+}
+
+#profile-quote, #interests-icons {
+    border-bottom: 1.5px solid orange
 }
