@@ -13,7 +13,7 @@ export default function Footer() {
 
       <div className="footer-links">
         
-        <div id="home" className="footer-column">
+        <div className="footer-column">
           <ul>
             <img className="minilogo" src="circleNoBg.png" alt="home" />
             <li><Link to="/#home">Home</Link></li>

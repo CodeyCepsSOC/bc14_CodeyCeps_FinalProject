@@ -63,13 +63,6 @@ h2 {
     padding-right: 10em;
 } */
      
-.home {
-    display: grid;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    align-content: center;
-}
 
 .footer-explore {
     grid-column-start: 2;
