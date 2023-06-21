@@ -27,7 +27,7 @@
   color: #fdf0d3;
 }
 
-ul {
+.header ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@ a, a:link, a:visited, a:focus, a:active{
   cursor: pointer;
 }
 
-li:hover, a:hover {
+.header li:hover, a:hover {
     color: #fc9c0c;
     cursor: pointer;
   }

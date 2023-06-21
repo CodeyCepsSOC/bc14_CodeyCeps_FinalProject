@@ -13,8 +13,8 @@
 }
 
 .section2 {
-  height: 60vh;
-  width: 100vw;
+  height: 80vh;
+  width: 100%;
   display: grid;
   grid-template-rows: 50% 50% ;
   grid-template-columns: 25% 25% 25% 25%;
@@ -87,8 +87,8 @@ h1 {
 .community {
   overflow: hidden;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 275px;
+  width: 275px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -102,8 +102,8 @@ h1 {
 .welcome1 {
   overflow: hidden;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 275px;
+  width: 275px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -117,8 +117,8 @@ h1 {
 .enjoyable {
   overflow: hidden;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 275px;
+  width: 275px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -131,8 +131,8 @@ h1 {
 .reliable {
   overflow: hidden;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 275px;
+  width: 275px;
   display: flex;
   flex-direction: column;
   justify-content: left;
