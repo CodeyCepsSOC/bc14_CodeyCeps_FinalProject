@@ -1,4 +1,5 @@
 import "./profilecard.css";
+import NextEvent from "./NextEvent";
 
 export default function ProfileCard(props) {
   return (
@@ -16,6 +17,7 @@ export default function ProfileCard(props) {
             )} 
         </div>
     </div> 
+    <NextEvent {...props.nextwalk} />
 </div>
   );
 }

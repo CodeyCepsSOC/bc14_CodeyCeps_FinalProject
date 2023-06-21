@@ -1,3 +1,5 @@
+import "./NextEvent.css";
+
 export default function NextEvent(props) {
   const backgroundStyling = {
     backgroundImage: `url(${props.img})`,
@@ -6,9 +8,11 @@ export default function NextEvent(props) {
   };
   return (
     <div className="next-event" style={backgroundStyling}>
+        <div className="text">
       <h1>{props.title}</h1>
-      <h2>{props.date}</h2>
-      <button>Join now</button>
+      <h2>{props.time}</h2>
+      </div>
+      <button>Join</button>
     </div>
   );
 }
