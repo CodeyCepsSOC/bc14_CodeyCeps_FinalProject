@@ -21,7 +21,9 @@ export default function Header() {
                         <li className='header-link'> 
                             <Link to="/explore#explore">Explore</Link>
                         </li>
-                        <li className='header-link'>Community</li>
+                        <li className='header-link'>
+                        <Link to="/community">Community</Link>
+                        </li>
                         <li><button className = "signupBtn">Sign up</button></li>
                     </ul>
             </div>
