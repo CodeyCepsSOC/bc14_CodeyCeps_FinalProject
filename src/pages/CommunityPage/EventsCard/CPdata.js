@@ -4,7 +4,7 @@ export const CommunityPageEvents = [
     title: "Stanmer Walk and Chat",
     description: "event description here...",
     date: "July 7th",
-    time: "13:30",
+    time: "13:30-15:30",
     attendees: ["Samii", "Sami", "Isaac", "Hilda", "Jack", "Safiyah", "Jordan"],
   },
   {
@@ -12,7 +12,7 @@ export const CommunityPageEvents = [
     title: "Foraging in Ashdown Forest",
     description: "Join experienced forager Derek and find some mushrooms",
     date: "August 29th",
-    time: "09:00",
+    time: "09:00-11:00",
     attendees: ["Hilda", "Jack", "Isaac", "Eric"],
   },
   {
@@ -20,7 +20,7 @@ export const CommunityPageEvents = [
     title: "Kingston Early Dog Social",
     description: "event description here...",
     date: "July 15th",
-    time: "07:30",
+    time: "07:30-10:00",
     attendees: [
       "Alan",
       "Jordan",
@@ -38,7 +38,7 @@ export const CommunityPageEvents = [
     title: "Coffee, Chat and Walk",
     description: "event description here...",
     date: "July 12th",
-    time: "08:30",
+    time: "08:30-13:00",
     attendees: ["Safiyah", "Jack", "Isaac", "Hilda", "Debbie"],
   },
   {
@@ -46,7 +46,7 @@ export const CommunityPageEvents = [
     title: "Lake Loop",
     description: "event description here...",
     date: "July 23rd",
-    time: "17:30",
+    time: "17:30-20:00",
     attendees: ["Bryony", "Sami", "Isaac", "James", "Hilda", "Jack"],
   },
   {

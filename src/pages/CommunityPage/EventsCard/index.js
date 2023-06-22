@@ -5,7 +5,8 @@ export default function EventsCard(props) {
 
     return (
         <div className="events-card">
-            <img className="event" src={img} alt="beautiful route"/>
+            <div className="events-card-scroll">
+            <img className="event-image" src={img} alt="beautiful route"/>
             <div className="event-card-details">
                     <h2>{title}</h2>
                     <div className="time-and-date">
@@ -23,8 +24,12 @@ export default function EventsCard(props) {
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
                             <p>Event will be attended by {attendees[0]} and {attendees.length-1} others </p>
                         </div>
-                    <button className="event-button">Join Event</button>
+                    <button className="event-button"><img src="icons/join.svg" alt="join event button"/></button>
                      </div>
+        </div>
+        <div className="additional-event-details">
+            
+        </div>
         </div>
         </div>
     )

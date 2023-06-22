@@ -4,6 +4,7 @@
   border-radius: 0.8em;
   background-color: var(--primary-blue);
   overflow: hidden;
+
 }
 
 .events-card button {
@@ -12,7 +13,11 @@
 }
 
  .event-card-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 1em;
+  height: 160px;
 }
 
 .time-and-date {
@@ -38,11 +43,20 @@
 
 .event-card-details h2 {
   margin: 0;
+  padding: 0;
+
 }
 .user-icon {
   height: 1.5em;
 }
-
+.attendees-and-join {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
 .attendees {
   display: flex;
   flex-direction: row;
@@ -50,5 +64,29 @@
   align-items: center;
   font-family: "Woodland Ultralight";
   font-size: 1em;
-  
+  width: 70%;
+}
+
+button.event-button {
+  border: transparent;
+  height: 3.5em;
+  width: 3.5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: var(--accent-color);
+  position: sticky;
+}
+
+.event-image {
+  width: 400px;
+  height: 250px;
+  background-size: cover;
+}
+.events-card-scroll {
+  height: 200%;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.events-card-scroll:hover {
+  transform: translateY(-30%);
 }
