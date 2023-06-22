@@ -1,5 +1,16 @@
 .events-card {
-   width: 350px;
-   height: 250px;
-   border: 1px dotted red;
+   width: 400px;
+   height: 450px;
+   border-radius: 0.8em;
+   background-color: var(--primary-blue);
+   overflow: hidden;
+}
+
+.events-card button {
+   height: 30px;
+   width: 30px;
+}
+
+.legend {
+
 }

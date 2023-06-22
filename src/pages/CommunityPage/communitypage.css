@@ -1,0 +1,9 @@
+.events-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
