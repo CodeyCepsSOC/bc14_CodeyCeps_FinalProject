@@ -25,6 +25,7 @@
    height: 2.5em;
 }
 
+
 .time-and-date .event-time, .time-and-date .event-date {
    display: flex;
    flex-direction: row;
@@ -37,4 +38,7 @@
 
 .legend h2 {
    margin: 0;
+}
+.user-icon {
+   height: 2.5em;
 }

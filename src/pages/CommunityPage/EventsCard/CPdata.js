@@ -5,7 +5,7 @@ export const CommunityPageEvents = [
     description: 'event description here...',
     date: 'July 7th',
     time:'13:30',
-    attendees: 3,
+    attendees: [ "Abdi", "Sami", "Isaac"],
 },
 {
     img: './walk2.jpeg',
@@ -13,7 +13,7 @@ export const CommunityPageEvents = [
     description: 'Join experienced forager Derek and find some mushrooms',
     date: 'August 29th',
     time:'09:00',
-    attendees: 14,
+    attendees: [ "Hilda", "Jack", "Isaac"],
 }, 
 {   
     img: './walk3.jpeg',
@@ -21,7 +21,7 @@ export const CommunityPageEvents = [
     description: 'event description here...',
     date: 'July 15th',
     time:'07:30',
-    attendees: 2,
+    attendees: [ "Alan", "Sam", "Jordan"]
 },
 {
     img: './walk1.jpeg',
@@ -29,7 +29,7 @@ export const CommunityPageEvents = [
     description: 'event description here...',
     date: 'July 12th',
     time:'08:30',
-    attendees: '6',
+    attendees: [ "Safiyah", "Jack", "Isaac", "Hilda"],
 },
 {
     img: './walk2.jpeg',
@@ -37,7 +37,7 @@ export const CommunityPageEvents = [
     description: 'event description here...',
     date: 'July 23rd',
     time:'17:30',
-    attendees: '8',
+    attendees: [ "Abdi", "Sami", "Isaac"],
 },
 {
     img: './walk3.jpeg',
@@ -45,6 +45,6 @@ export const CommunityPageEvents = [
     description: 'event description here...',
     date: 'July 5th',
     time:'20:30',
-    attendees: '9',
+    attendees: [ "Abdi", "Sami", "Isaac"],
 }
 ]

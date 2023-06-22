@@ -18,8 +18,13 @@ export default function EventsCard(props) {
                         <p>{time}</p>
                         </div>
                     </div>
-                    <p>{attendees}</p>
+                    <div className="attendees-and-join">
+                        <div className='attendees'>
+                            <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
+                            <p>Event will be attended by {attendees[0]} and {attendees.length-1} others </p>
+                        </div>
                     <button className="event-button">Join Event</button>
+                     </div>
         </div>
         </div>
     )
