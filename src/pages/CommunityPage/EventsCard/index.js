@@ -6,7 +6,7 @@ export default function EventsCard(props) {
     return (
         <div className="events-card">
             <img className="event" src={img} alt="beautiful route"/>
-            <div className="legend">
+            <div className="event-card-details">
                     <h2>{title}</h2>
                     <div className="time-and-date">
                         <div className="event-date">

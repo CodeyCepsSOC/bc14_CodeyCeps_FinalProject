@@ -1,44 +1,54 @@
 .events-card {
-   width: 400px;
-   height: 450px;
-   border-radius: 0.8em;
-   background-color: var(--primary-blue);
-   overflow: hidden;
+  width: 400px;
+  height: 450px;
+  border-radius: 0.8em;
+  background-color: var(--primary-blue);
+  overflow: hidden;
 }
 
 .events-card button {
-   height: 30px;
-   width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
-.legend {
-   padding: 1em;
+ .event-card-details{
+  padding: 1em;
 }
 
 .time-and-date {
-   display: flex;
-   flex-direction: row;
-   gap: 2em;
-   align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: center;
 }
 .events-icon img {
-   height: 2.5em;
+  height: 2.5em;
 }
 
-
-.time-and-date .event-time, .time-and-date .event-date {
-   display: flex;
-   flex-direction: row;
-   gap: 0.5em;
-   align-items: center;
-   font-family: 'Woodland Ultralight';
-   font-size: 1.3em;
-   padding-top: 1;
+.time-and-date .event-time,
+.time-and-date .event-date {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
+  font-family: "Woodland Ultralight";
+  font-size: 1.3em;
+  padding-top: 1;
 }
 
-.legend h2 {
-   margin: 0;
+.event-card-details h2 {
+  margin: 0;
 }
 .user-icon {
-   height: 2.5em;
+  height: 1.5em;
+}
+
+.attendees {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
+  font-family: "Woodland Ultralight";
+  font-size: 1em;
+  
 }
