@@ -21,6 +21,9 @@ return (
             </div>
             {props.icons.map( (icon, index) => {return <img key={index} src={`./icons/${icon}.svg`} alt={`${icon}`} className="icon"/>})}
         </section>
+        <div className="button-container">
+            <button className="details-button">More info...</button>
+        </div>
     </div>
 </div>)
 }
