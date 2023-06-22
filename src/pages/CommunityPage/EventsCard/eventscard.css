@@ -4,13 +4,9 @@
   border-radius: 0.8em;
   background-color: var(--primary-blue);
   overflow: hidden;
-
+  margin-bottom: 3em;
 }
 
-.events-card button {
-  height: 30px;
-  width: 30px;
-}
 
  .event-card-details{
   display: flex;
@@ -74,7 +70,15 @@ button.event-button {
   padding: 0.5em;
   border-radius: 0.5em;
   background-color: var(--accent-color);
-  position: sticky;
+  transition: 0.3s ease-in-out;
+}
+
+button.event-button:hover {
+  cursor: pointer;
+  background-color: #edb269;
+}
+button.event-button:active {
+  transform: scale(0.8)
 }
 
 .event-image {
@@ -89,4 +93,13 @@ button.event-button {
 }
 .events-card-scroll:hover {
   transform: translateY(-30%);
+}
+
+.additional-event-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  text-align: center;
 }

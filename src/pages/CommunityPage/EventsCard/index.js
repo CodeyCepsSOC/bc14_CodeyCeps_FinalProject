@@ -28,7 +28,7 @@ export default function EventsCard(props) {
                      </div>
         </div>
         <div className="additional-event-details">
-            
+            <h1>This is where additional info will go about the events</h1>
         </div>
         </div>
         </div>

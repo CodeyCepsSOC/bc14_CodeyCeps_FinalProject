@@ -8,7 +8,6 @@
     height: 600px;
     background-color: var(--primary-blue);
     border-radius: 15px;
-    margin: 10%;
     justify-content: flex-start;
     gap: 1.5em;
 }
@@ -61,5 +60,5 @@
 }
 
 #profile-quote, #interests-icons {
-    border-bottom: 1.5px solid orange
+    border-bottom: 1.5px solid orange;
 }
