@@ -2,25 +2,27 @@
 import "./explorepage.css"
 import MapDisplay from './MapDisplay';
 import RouteDetailCard from './RouteDetailCard';
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Search from './Search';
 import RouteDetailDropdown from './RouteDetailDropDown';
 import { supabase } from "../../Utility/config";
 
+
 export default function ExplorePage() {
 
  const [location, setLocation] = useState("Brighton")
- const [activeRoute, setActiveRoute] = useState(0)
+ const [dropdownRoute, setDropdownRoute] = useState(null)
+ const [mapRoute, setMapRoute] = useState(0)
  const [locationRoutes, setLocationRoutes] = useState([])
  const [prevRoutes, setPrevRoutes] = useState([])
 
 
     function onClickSetRoute(id) {
-        setActiveRoute(id)
+        setMapRoute(id)
     }
 
     function onClickClose() {
-        setActiveRoute(null)
+        setDropdownRoute(null)
     }
 
 
@@ -66,18 +68,33 @@ export default function ExplorePage() {
     
     )
 
+const ref = useRef(null)
+
+useEffect(() => {
+    const scrollDown = () => {
+      if (ref.current) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+    console.log("useEffect going off")
+    setTimeout(scrollDown, 500);
+  
+  }, [dropdownRoute]);
+
+
     return (
         <div className="explore-page" id="explore">
             <div className="map-section">
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
                     <div className="route-cards">
-                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} key={route.id} {...route} index={index}/>):<h2 style={{color: '#f19e38'}}>No Routes Found</h2>}
+                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} onClickButton={(index) => setDropdownRoute(index) } key={route.id} {...route} index={index}/>):<h2 style={{color: '#f19e38'}}>No Routes Found</h2>}
                     </div>
                 </div>
-                <MapDisplay routeDetailArray={locationRoutes} activeRoute={activeRoute} prevRoutes={prevRoutes}/>
+                <MapDisplay routeDetailArray={locationRoutes} activeRoute={mapRoute} prevRoutes={prevRoutes}/>
             </div>
-            {locationRoutes[activeRoute] ? <RouteDetailDropdown {...locationRoutes[activeRoute]} onClick={onClickClose}/> : <></>}
+            <div className="orange-line"></div>
+            {locationRoutes[dropdownRoute] ? <RouteDetailDropdown ref={ref} onClick={onClickClose} {...locationRoutes[dropdownRoute]}/> : <></>}
         </div>
     )
 }
