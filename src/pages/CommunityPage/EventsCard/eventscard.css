@@ -12,5 +12,29 @@
 }
 
 .legend {
+   padding: 1em;
+}
 
+.time-and-date {
+   display: flex;
+   flex-direction: row;
+   gap: 2em;
+   align-items: center;
+}
+.events-icon img {
+   height: 2.5em;
+}
+
+.time-and-date .event-time, .time-and-date .event-date {
+   display: flex;
+   flex-direction: row;
+   gap: 0.5em;
+   align-items: center;
+   font-family: 'Woodland Ultralight';
+   font-size: 1.3em;
+   padding-top: 1;
+}
+
+.legend h2 {
+   margin: 0;
 }
