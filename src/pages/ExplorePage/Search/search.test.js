@@ -23,7 +23,7 @@ test('onClick function fires when button is pressed', ()=> {
     render(<Search {...testProps}/>)
     const inputElement = screen.getByPlaceholderText('Enter a location...')
     fireEvent.change(inputElement, { target: { value: 'New York' }})
-    const buttonElement = screen.getByText('Search')
+    const buttonElement = screen.getByText('➤')
     fireEvent.click(buttonElement)
     expect(setLocationMock).toHaveBeenCalledWith('New York')
 })
