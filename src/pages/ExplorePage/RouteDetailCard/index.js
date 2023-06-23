@@ -10,6 +10,8 @@ const backgroundStyling = {
     backgroundSize: 'cover'
 }
 
+
+
 return (
 <div style={backgroundStyling} className="route-detail-card" onClick={()=> props.onClick(props.index)}>
     <div className="route-details">
@@ -21,6 +23,9 @@ return (
             </div>
             {props.icons.map( (icon, index) => {return <img key={index} src={`./icons/${icon}.svg`} alt={`${icon}`} className="icon"/>})}
         </section>
+        <div className="button-container">
+            <button className="details-button" onClick={() => props.onClickButton(props.index)}>More info...</button>
+        </div>
     </div>
 </div>)
 }
