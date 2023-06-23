@@ -22,7 +22,7 @@
     gap: 4em;
 
 }
-#profile-header h1 {
+#profile-header h1, #interests-section h2 {
     color: white;
 }
 

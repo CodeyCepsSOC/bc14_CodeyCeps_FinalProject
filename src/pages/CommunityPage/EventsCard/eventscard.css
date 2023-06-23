@@ -89,7 +89,7 @@ button.event-button:active {
 .events-card-scroll {
   height: 200%;
   width: 100%;
-  transition: 0.2s ease-in-out;
+  transition: 1s ease-in-out;
 }
 .events-card-scroll:hover {
   transform: translateY(-30%);
@@ -102,4 +102,8 @@ button.event-button:active {
   width: 400px;
   height: 200px;
   text-align: center;
+}
+
+.events-card h1, .events-card h2, .events-card p {
+  color: white;
 }
