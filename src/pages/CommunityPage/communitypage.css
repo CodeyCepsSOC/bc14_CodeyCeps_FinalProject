@@ -1,0 +1,28 @@
+#community-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.events-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--lightest-value); */
+}
+
+
+#profiles-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 2em;
+}

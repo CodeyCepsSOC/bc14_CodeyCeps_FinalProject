@@ -1,7 +1,7 @@
 /*All of the styling in the page was done by using the inspect tool on browser and finding the correct elements to style*/
 
 /*This is the styling for the event IMAGES on the carousel inc the box shadow around the images*/
-.event1, .event2, .event3, .event4 {
+.event, .event1, .event2, .event3, .event4 {
     height: 300px;
     width: 400px;
     border-radius: 5px;
@@ -9,7 +9,7 @@
 }
 
 /*This styles the entire div for each carousel slide (img and smaller div that contains the h2 and p)*/
-.div1carousel, .div2carousel, .div3carousel, .div4carousel {
+.carousel-card {
     background-color: #364C33;
     padding-left: 20px;
     padding-right: 20px;
@@ -72,5 +72,48 @@
 .control-dots {
     display: none;
 }
-  
+
+.carousel-icon {
+    height: 2vh;
+    aspect-ratio: 1/1;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.event-details {
+    display: flex;
+
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 5px;
+    height: 2vh;
+    margin: 5px;
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 5px;
+    width: 3vw;
+    height: 2vh;
+    margin: 5px;
+}
+
+.time p {
+    width: 120%;
+}
+
+.legend h2 {
+    padding: 0px;
+}
   
