@@ -12,8 +12,8 @@
     background-color: #354C33CC;
     width: 100%;
     display: grid;
-    grid-template-columns: 5% 90%;
-    grid-template-rows: 30% 30% 30%;
+    grid-template-columns: 5% 75% 20%;
+    grid-template-rows: 50% 50%;
     border-radius: 0px 0px 5px 5px;
 }
 
@@ -25,11 +25,24 @@ h2 {
     text-align: left;
 }
 
-p {
-    grid-row:3/3;
-    grid-column: 2/2;
-    padding: 5px;
-    text-align: left;
+
+.button-container {
+    grid-row: 2/2;
+    grid-column: 3/3;
+    align-self: center;
+    justify-self: center;
+}
+
+.details-button {
+  background-color: #f19e38;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 11px;
+  font-family: inter;
+  cursor: pointer;
 }
 
 #time-text {
@@ -71,6 +84,6 @@ p {
 }
 
 .route-detail-card:active {
-    transform: scale(0.9);
+    transform: scale(0.96);
     border: 5px orange;
 }

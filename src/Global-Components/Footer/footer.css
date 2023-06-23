@@ -34,6 +34,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 2em;
+    list-style: none;
     height: 25vh;
 }
      
