@@ -24,7 +24,7 @@ export default function Header() {
                         <li className='header-link'>
                         <Link to="/community">Community</Link>
                         </li>
-                        <li><button className = "signupBtn">Sign up</button></li>
+                        <li><Link to="/loginpage"><button className="signupBtn">Sign In</button></Link></li>
                     </ul>
             </div>
             <Outlet />
