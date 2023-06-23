@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #354C33;
-    padding: 2em;
+    padding: 2em 0em 2em 0em;
 }
 
 
@@ -21,7 +21,6 @@
     width: 70vw;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1em;
-    margin-right: 5em;
 }
 
 .minilogo {
@@ -51,6 +50,7 @@
 .footer-column li {
     color: #FDF0D3;
     font-size: 15px;
+    list-style: none;
 }
 
 /* 
