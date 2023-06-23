@@ -3,9 +3,15 @@ import './loginpage.css'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import {supabase} from '../../Utility/config/index'
+import { useNavigate } from 'react-router-dom'
 export default function LogInPage(props) {
     
 const {session, setSession} = props
+  
+const navigate = useNavigate();
+	const goBack = () => {
+		navigate(-1);
+	}
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -22,11 +28,7 @@ const {session, setSession} = props
   }, [setSession])
 
      //handle function for the logout button
-  async function handleLogOut(){
-      const { error } = await supabase.auth.signOut()
-      if (error) console.log('Error logging out:', error.message)
-    }
-
+     
   if (!session) {
     return (<div id="log-in-page">
     <div id="log-in-section">
@@ -43,10 +45,6 @@ const {session, setSession} = props
   </div>)
   }
   else {
-    return (
-    <div>
-      <button onClick={handleLogOut}>Sign out</button>
-      <h1>Logged in!</h1>
-    </div>)
+    goBack()
   }
 }

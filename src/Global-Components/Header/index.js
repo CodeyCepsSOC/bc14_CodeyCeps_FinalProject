@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import './header.css';
+import { handleLogOut } from '../../Utility/logout';
 
 
-
-export default function Header() {
+export default function Header(props) {
     return (
         <nav className="header">
             <div className="logo">
@@ -24,7 +24,9 @@ export default function Header() {
                         <li className='header-link'>
                         <Link to="/community">Community</Link>
                         </li>
-                        <li><Link to="/loginpage"><button className="signupBtn">Sign In</button></Link></li>
+                        <li>
+                        <Link to="/loginpage"><button className="signupBtn">Sign In</button></Link>
+                        </li>
                     </ul>
             </div>
             <Outlet />

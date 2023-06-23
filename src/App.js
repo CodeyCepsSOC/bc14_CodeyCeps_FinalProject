@@ -8,6 +8,7 @@ import LogInPage from './pages/LogInPage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState} from 'react'
 import ScrollToHashElement from './Global-Components/Scroll to hash element/ScrollToHashElement';
+import { handleLogOut } from './Utility/logout';
 
 //establishes connection to supabase by providing it with our database url and public key
 
@@ -36,6 +37,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           </Route>
         </Routes>
         <Footer/>
+        <button onClick={handleLogOut}></button>
     </BrowserRouter>
   );
 }
