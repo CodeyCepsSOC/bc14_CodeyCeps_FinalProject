@@ -1,5 +1,6 @@
 .section1 {
   background-image: url("../../../public/hero_image.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

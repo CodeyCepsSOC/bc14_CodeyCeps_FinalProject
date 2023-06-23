@@ -40,4 +40,11 @@
 
 .next-event button:hover {
   background-color: #edb269;
+  cursor: pointer;
 }
+
+.next-event button:active {
+  transform: scale(0.8);
+}
+
+

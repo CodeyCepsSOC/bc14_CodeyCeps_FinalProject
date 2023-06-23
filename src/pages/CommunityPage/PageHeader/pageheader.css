@@ -1,0 +1,18 @@
+.section-header {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 30vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-header-icons {
+    height: 4.5em;
+    mix-blend-mode: multiply;
+}
+.section-header h1 {
+    font-size: 4em;
+    color: var(--primary-green);
+    text-align: center;
+}
