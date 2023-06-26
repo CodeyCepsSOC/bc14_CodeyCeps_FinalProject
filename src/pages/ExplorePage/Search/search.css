@@ -26,3 +26,10 @@
     border: none;
     border-radius: 4px;
 }
+
+@media (max-width: 576px) {
+    .search {
+        width: 90vw;
+        margin: 0px 30px 30px 30px; 
+    }
+}

@@ -36,3 +36,22 @@
     align-self: center;
     transform: translateY(-50px)
 }
+
+@media (max-width: 576px) {
+   .map-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+    height: auto;
+   }
+
+   .left-hand-map-panel {
+    width: 90vw;
+    margin: 10px 30px 30px 30px;
+   }
+
+    .route-cards {
+    width: 80vw;
+   }
+
+  }
