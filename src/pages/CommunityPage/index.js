@@ -11,11 +11,11 @@ export default function CommunityPage(props) {
 // on load, fetch all users from database
 // on load, fetch all user events from database
 const [events, setEvents] = useState([])
-
+console.log(props.user)
 useEffect(() => {
     // fetch all events from database
     async function fetchEventsWithRouteDetails(){
-        let attendees = []
+        
         const { data, error } = await supabase
         .from('events')
         .select(`
@@ -26,9 +26,9 @@ useEffect(() => {
             )
         `)
 
+        
 
-
-        const formattedEvents = data.map(event => {
+        const formattedEvents = data?.map(event => {
             return {
                 id: event.id,
                 title: event.title,
@@ -41,9 +41,9 @@ useEffect(() => {
                 route: event.walks[0]
             }
         })
+
         setEvents(formattedEvents)
         if (error) console.log(error)
-        console.log(data)
     }
     
 

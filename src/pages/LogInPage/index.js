@@ -12,19 +12,7 @@ const {session, setSession, user} = props
   
 const navigate = useNavigate();
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [setSession])
 
 
 
@@ -45,6 +33,7 @@ const navigate = useNavigate();
     .select()
     .eq('account_id', session.user.id)
 
+
 console.log(data)
   if (data.length > 1) {
     alert("There is more than one profile associated with this account. Please contact support.")
@@ -58,7 +47,6 @@ console.log(data)
     navigate('/accountcreation')
   }
 }
-
       fetchProfileInfo()
     }
   }, [session, navigate, user, props])

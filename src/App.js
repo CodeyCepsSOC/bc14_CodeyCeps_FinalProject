@@ -4,6 +4,7 @@ import Footer from './Global-Components/Footer';
 import ExplorePage from './pages/ExplorePage';
 import LandingPage from './pages/LandingPage';
 import CommunityPage from './pages/CommunityPage';
+import { supabase } from './Utility/config';
 import LogInPage from './pages/LogInPage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState, useEffect} from 'react'
@@ -14,8 +15,47 @@ import AccountCreation from './pages/LogInPage/AccountCreation';
 //establishes connection to supabase by providing it with our database url and public key
 
 function App() {
+
   const [user, setUser] = useState(null)
   const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    if (session) return;
+    
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+    
+
+    return () => subscription.unsubscribe()
+  }, [session])
+
+  useEffect(() => {
+    if (session?.user.id && !user) {
+      async function fetchProfileInfo() {
+        
+        const { data, error } = await supabase
+          .from('profiles')
+          .select()
+          .eq('account_id', session.user.id)
+        if (data.length > 1) {
+          alert("There is more than one profile associated with this account. Please contact support.")
+        }
+        else if (data.length === 1) {
+          setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic, id: session.user.id})
+        }
+   
+      }
+      fetchProfileInfo()
+    }
+  }, [session, user])
+
 
   return (
     /*We wrap our content first with <BrowserRouter>.
@@ -39,7 +79,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           </Route>
         </Routes>
         <Footer/>
-        <button onClick={()=> handleLogOut(setUser)}>Log Out</button>
+        <button onClick={()=> handleLogOut(setUser, setSession)}>Log Out</button>
     </BrowserRouter>
   );
 }

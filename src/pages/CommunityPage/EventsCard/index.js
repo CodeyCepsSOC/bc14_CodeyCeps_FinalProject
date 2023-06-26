@@ -1,38 +1,45 @@
 import './eventscard.css'
 import { supabase } from '../../../Utility/config/index'
+import { useEffect, useState } from 'react'
 export default function EventsCard(props) {
 
     const {img, title, description, date, time, attendees, id, location, user} = props
-    
+    const [attending, setAttending] = useState(false)
+
+    useEffect(() => {
+        if (user && attendees) {
+            setAttending(attendees.find(attendee => attendee.id === user.id))
+        }
+    }, [user, attendees])
+
     async function joinEvent(eventId, userId){
         console.log('Joining event ' + eventId + ' with user ' + userId)
-      
-        // Get the current attendees
-        let { data: events, error } = await supabase
-          .from('events')
-          .select('attendees')
-          .eq('id', eventId)
-      
-        if (error || events.length === 0) {
-          console.error(`Failed to fetch event with ID: ${eventId}. Error: ${error}`)
+        // check if the user is logged in
+        if (!user) {
+          console.log('User is not logged in')
+          return
+        }
+
+        if (!user.firstName) {
+          console.log('User does not have a name')
           return
         }
       
-        let attendees = events[0].attendees || [] // if attendees is null, initialize with an empty array
-      
-        // Check if the user is already an attendee
-        if(attendees.includes(userId)) {
-          console.log('User already joined the event')
+        // check if the user is already an attendee
+        if (attendees.find(user => user.id === userId)) {
+          setAttending(true)
           return
         }
-      
-        // Add user to attendees array
-        attendees.push(userId)
-      
+
+        
+        if(!attending && user.firstName) {
+        attendees.push({id: userId, name: user.firstName})
+        }
         let { data, error: updateError } = await supabase
           .from('events')
           .update({ attendees })
           .eq('id', eventId)
+          setAttending(true)
       
         if (updateError) {
           console.error(`Failed to update event with ID: ${eventId}. Error: ${updateError}`)
@@ -62,16 +69,16 @@ export default function EventsCard(props) {
                     <div className="attendees-and-join">
                         <div className='attendees'>
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
-                            {attendees.length>0?<p>Event will be attended by {attendees[0]} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>}
+                            {attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>}
                         </div>
                     
                      </div>
         </div>
         <div className="additional-event-details">
             <h2>{description}</h2>
-            <button className="event-button" onClick={()=> joinEvent(id, user.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>
+            {attending?<h1>See You There!</h1>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
         </div>
         </div>
         </div>
     )
-};
+}
