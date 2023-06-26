@@ -52,6 +52,9 @@
     display: none;
 }
 
+#mobile-img {
+    visibility: hidden
+}
 
 @media (max-width: 576px) {
     .route-details-dropdown h1{
@@ -64,5 +67,21 @@
 
     #map-image {
         width: 90vw;
+    }
+
+    .explore-carousel {
+        visibility: hidden;
+        height: 1vh;
+    }
+
+    #mobile-img {
+        visibility: visible;
+        width: 90vw;
+    }
+
+    .close-button {
+        margin-right: 0.7em;
+        margin-top: 1em;
+        font-size: 1.5em;
     }
 }

@@ -253,4 +253,10 @@ h1 {
   display:flex;
   flex-direction: column;
 }
+
+.section3 {
+  visibility:hidden;
+  height: 1vh;
+  width: 1vw;
+}
 }

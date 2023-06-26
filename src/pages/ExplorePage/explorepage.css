@@ -54,4 +54,8 @@
     width: 80vw;
    }
 
+   .orange-line {
+    visibility: hidden;
+   }
+
   }

@@ -62,3 +62,9 @@
 #profile-quote, #interests-icons {
     border-bottom: 1.5px solid orange;
 }
+
+@media (max-width: 576px) {
+    .profile-card {
+        margin-bottom: 30px;
+    }
+}

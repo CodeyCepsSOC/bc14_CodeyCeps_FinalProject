@@ -21,6 +21,7 @@ return (
         <div className="explore-carousel">
             <CarouselHomePage arr={ExplorePageCarouselInfo} />
         </div>
+        <img src="./random.jpg" alt="scene from route" id="mobile-img"/>
         <DetailsBar {...props}/>
         <section className="dropdown-body">            
             <p>{props.description}</p>
