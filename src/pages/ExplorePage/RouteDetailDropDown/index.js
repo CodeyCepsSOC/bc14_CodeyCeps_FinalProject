@@ -13,13 +13,17 @@ import { ExplorePageCarouselInfo } from '../../../Utility/data';
 import { forwardRef,  } from 'react';
 
 const RouteDetailDropdown = forwardRef((props, ref) => {
+let {carousel_images} = props
+if (!carousel_images) {
+    carousel_images = ExplorePageCarouselInfo
+}
 
 return (
     <div className="route-details-dropdown" ref={ref}>
         <button className="close-button" onClick={props.onClick}>X</button>
         <h1>{props.name}</h1>
         <div className="explore-carousel">
-            <CarouselHomePage arr={ExplorePageCarouselInfo} />
+            <CarouselHomePage arr={carousel_images} />
         </div>
         <DetailsBar {...props}/>
         <section className="dropdown-body">            
