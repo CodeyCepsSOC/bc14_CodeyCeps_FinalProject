@@ -66,11 +66,22 @@
 button.event-button {
   border: transparent;
   height: 3.5em;
-  width: 3.5em;
+  width: 20em;
   padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7em;
   border-radius: 0.5em;
   background-color: var(--accent-color);
   transition: 0.3s ease-in-out;
+  font-family: "Woodland Bold";
+  font-size: 1em;
+}
+
+#join-button {
+  height: 2.5em;
 }
 
 button.event-button:hover {
@@ -98,10 +109,12 @@ button.event-button:active {
 .additional-event-details {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 400px;
   height: 200px;
   text-align: center;
+  margin-top: 5%;
 }
 
 .events-card h1, .events-card h2, .events-card p {

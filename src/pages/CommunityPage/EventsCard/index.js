@@ -1,7 +1,54 @@
 import './eventscard.css'
+import { supabase } from '../../../Utility/config/index'
+import { useEffect, useState } from 'react'
 export default function EventsCard(props) {
 
-    const {img, title, description, date, time, attendees} = props
+    const {img, title, description, date, time, attendees, id, location, user} = props
+    const [attending, setAttending] = useState(false)
+
+    useEffect(() => {
+        if (user && attendees) {
+            setAttending(attendees.find(attendee => attendee.id === user.id))
+        }
+    }, [user, attendees])
+
+    async function joinEvent(eventId, userId){
+        console.log('Joining event ' + eventId + ' with user ' + userId)
+        // check if the user is logged in
+        if (!user) {
+          console.log('User is not logged in')
+          return
+        }
+
+        if (!user.firstName) {
+          console.log('User does not have a name')
+          return
+        }
+      
+        // check if the user is already an attendee
+        if (attendees.find(user => user.id === userId)) {
+          setAttending(true)
+          return
+        }
+
+        
+        if(!attending && user.firstName) {
+        attendees.push({id: userId, name: user.firstName})
+        }
+        let { data, error: updateError } = await supabase
+          .from('events')
+          .update({ attendees })
+          .eq('id', eventId)
+          setAttending(true)
+      
+        if (updateError) {
+          console.error(`Failed to update event with ID: ${eventId}. Error: ${updateError}`)
+          return
+        }
+      
+        console.log('Event joined')
+      }
+      
 
     return (
         <div className="events-card">
@@ -22,15 +69,16 @@ export default function EventsCard(props) {
                     <div className="attendees-and-join">
                         <div className='attendees'>
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
-                            <p>Event will be attended by {attendees[0]} and {attendees.length-1} others </p>
+                            {attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>}
                         </div>
-                    <button className="event-button"><img src="icons/join.svg" alt="join event button"/></button>
+                    
                      </div>
         </div>
         <div className="additional-event-details">
-            <h1>This is where additional info will go about the events</h1>
+            <h2>{description}</h2>
+            {attending?<h1>See You There!</h1>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
         </div>
         </div>
         </div>
     )
-};
+}

@@ -57,8 +57,6 @@ useEffect(()=> {
     //render initial routes on map
     // on initial load, map through the array of all routes. For each route, call the addRouteLayer function, handing in the details of that route to 
     // display it on the map
-        console.log('routes changed')
-        console.log(props.prevRoutes)
         props.prevRoutes.map(route => {
              if (map.current.getLayer(route.name)) {
                 map.current.removeLayer(route.name);

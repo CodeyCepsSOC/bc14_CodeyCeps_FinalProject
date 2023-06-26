@@ -3,8 +3,53 @@ import EventsCard from "./EventsCard"
 import { CommunityPageEvents } from "./EventsCard/CPdata"
 import PageHeader from './PageHeader'
 import './communitypage.css'
+import { useEffect, useState } from "react"
+import { supabase } from "../../Utility/config"
 
 export default function CommunityPage(props) {
+// on load, fetch all events from database
+// on load, fetch all users from database
+// on load, fetch all user events from database
+const [events, setEvents] = useState([])
+console.log(props.user)
+useEffect(() => {
+    // fetch all events from database
+    async function fetchEventsWithRouteDetails(){
+        
+        const { data, error } = await supabase
+        .from('events')
+        .select(`
+            *,
+            walks:route_id (
+                name,
+                difficulty
+            )
+        `)
+
+        
+
+        const formattedEvents = data?.map(event => {
+            return {
+                id: event.id,
+                title: event.title,
+                description: event.description,
+                date: event.date,
+                time: event.time,
+                attendees: event.attendees,
+                location: event.location,
+                img: event.img,
+                route: event.walks[0]
+            }
+        })
+
+        setEvents(formattedEvents)
+        if (error) console.log(error)
+    }
+    
+
+    fetchEventsWithRouteDetails()
+}, [])
+
 
     return (
     <div id="community-page">
@@ -16,7 +61,7 @@ export default function CommunityPage(props) {
         </div>
         <PageHeader sectionName='Upcoming Events' />
         <div className="events-container"> 
-        {CommunityPageEvents.map((event, index) => <EventsCard {...event} key={index}/>
+        {events?.map((event, index) => <EventsCard {...event} key={index} user={props.user}/>
         )}
 
         </div>
