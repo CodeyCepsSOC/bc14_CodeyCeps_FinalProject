@@ -11,7 +11,9 @@ export default function Header() {
                 <Link to="/">
                     <img src="./assets/Logo.svg" alt="WalkMate Logo"/>
                 </Link>
+                <Link to="/">
                 <h2 className="navbarh2">WalkMate</h2>
+                </Link>
             </div>
             <div className="nav-links">
                     <ul>

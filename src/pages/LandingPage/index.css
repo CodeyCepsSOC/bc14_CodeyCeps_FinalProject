@@ -18,8 +18,9 @@
   width: 100%;
   display: grid;
   grid-template-rows: 50% 50% ;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 20% 25% 10% 25% 20%;
   align-items: center;
+  justify-items: center;
 }
 
 .button {
@@ -35,7 +36,9 @@
   box-shadow: 3px 3px 3px;
 }
 
-.button:hover {background-color: #edb269}
+.button:hover {
+  background-color: #edb269
+}
 
 .button:active {
   background-color: #ecb471;
@@ -111,8 +114,8 @@ h1 {
   align-items: left;
   grid-row-start: 1;
   grid-row-end: 2;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
 
 .enjoyable {
@@ -140,8 +143,8 @@ h1 {
   align-items: left;
   grid-row-start: 2;
   grid-row-end: 3;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
 
 

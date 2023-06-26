@@ -127,7 +127,7 @@ function LandingPage() {
 
         <div className="container-grid">
           <div className="testimonial1">
-            <img className="testimonial-img" src="./assets/sami.png " alt=""></img>
+            <img className="testimonial-img" src="./assets/male-testimonial.png " alt=""></img>
             <p className="testimonialP">
               “WalkMate has helped me overcome my social anxiety ! I don’t like
               meeting new people in confined spaces. The events have allowed me
