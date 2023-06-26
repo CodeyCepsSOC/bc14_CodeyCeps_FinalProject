@@ -4,14 +4,13 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import {supabase} from '../../Utility/config/index'
 import { useNavigate } from 'react-router-dom'
+
+
 export default function LogInPage(props) {
     
-const {session, setSession} = props
+const {session, setSession, user} = props
   
 const navigate = useNavigate();
-	const goBack = () => {
-		navigate(-1);
-	}
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -27,8 +26,42 @@ const navigate = useNavigate();
     return () => subscription.unsubscribe()
   }, [setSession])
 
-     //handle function for the logout button
-     
+
+
+// when user logs in query the database for their profile info
+// if there is no profile info, redirect to account creation page
+// if there is profile info, redirect to explore page
+
+  useEffect(() => {
+    
+    if (session?.user.id) {
+      console.log(session.user.id)
+
+      async function fetchProfileInfo() {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select()
+          .eq('account_id', session.user.id)
+
+      console.log(data)
+        if (data.length > 1) {
+          alert("There is more than one profile associated with this account. Please contact support.")
+        }
+        else if (data.length === 1) {
+          props.setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic})
+          navigate('/explore')
+        }
+        
+        if (data.length < 1) {
+          navigate('/accountcreation')
+        }
+      }
+
+      fetchProfileInfo()
+    }
+  }, [session, navigate, user, props])
+
+
   if (!session) {
     return (<div id="log-in-page">
     <div id="log-in-section">
@@ -44,7 +77,5 @@ const navigate = useNavigate();
     </div>
   </div>)
   }
-  else {
-    goBack()
-  }
+
 }

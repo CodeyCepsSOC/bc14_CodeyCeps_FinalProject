@@ -25,7 +25,7 @@ export default function Header(props) {
                         <Link to="/community">Community</Link>
                         </li>
                         <li>
-                        <Link to="/loginpage"><button className="signupBtn">Sign In</button></Link>
+                        {props.user ? <h4>welcome back {props.user.firstName}</h4>:<Link to="/loginpage"><button className="signupBtn">Sign In</button></Link>}
                         </li>
                     </ul>
             </div>

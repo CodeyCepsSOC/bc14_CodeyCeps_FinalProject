@@ -6,14 +6,15 @@ import LandingPage from './pages/LandingPage';
 import CommunityPage from './pages/CommunityPage';
 import LogInPage from './pages/LogInPage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import ScrollToHashElement from './Global-Components/Scroll to hash element/ScrollToHashElement';
 import { handleLogOut } from './Utility/logout';
+import AccountCreation from './pages/LogInPage/AccountCreation';
 
 //establishes connection to supabase by providing it with our database url and public key
 
 function App() {
-
+  const [user, setUser] = useState(null)
   const [session, setSession] = useState(null)
 
   return (
@@ -27,13 +28,14 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
     */
     <BrowserRouter>
     <ScrollToHashElement/>
-      <Header/>
+      <Header user={user}/>
         <Routes>
           <Route path="/"> 
             <Route index element={<LandingPage/>}/>
             <Route path="explore" element={<ExplorePage/>}/>
             <Route path="community" element={<CommunityPage/>}/>
-            <Route path="loginpage" element={<LogInPage session={session} setSession={setSession}/>}/>
+            <Route path="loginpage" element={<LogInPage session={session} setSession={setSession} user={user} setUser={setUser}/>}/>
+            <Route path="accountcreation" element={<AccountCreation user={user} setUser={setUser} session={session} />}/>
           </Route>
         </Routes>
         <Footer/>
