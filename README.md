@@ -41,7 +41,10 @@ Deployment: Render, Netlify
 ## Our workflow
 
 For planning and organisation, we used trello and implemented the kanban framework to help us keep track of our tasks. We had daily stand-ups to discuss our progress and any blockers we were facing. We also had daily retrospectives to discuss what went well and what we could improve on. We used pair programming to collaboratively solve problems and to help us learn from each other.   We used Slack as our main form of communication and sharing resources. We used Figma and Figjam to help us with our design process which included our wireframes. We used Google Drive to help us with our documentation.
+< screenshot of trello and figjam board>
 
 
 ## Our Design process
 
+After carrying out research we decided on a colour pallette which incorporated green, yellow, beige and sky blue- all the wonderful colours that represent nature. We chose colours that exude calmness, serenity and peacefulness. We wanted to create a design that was simple, clean, accessible and easy to navigate. We wanted to create a design that was visually appealing and engaging. We decided to create a nature themed logo which we could manipulate shapes from and which would act as emblems in our app.
+git 
