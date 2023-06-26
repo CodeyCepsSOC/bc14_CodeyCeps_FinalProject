@@ -214,7 +214,7 @@ h1 {
     font-size: 30px;
   }
 
-  .about-us-heading {
+  .about-us-heading{
     font-size: 30px
   }
 
@@ -229,4 +229,37 @@ h1 {
   font-size: 30px;
 }
 
+.testimonial-title {
+  font-size: 30px;
+  justify-content: center;
+  margin: 30px 30px 40px 30px;
+}
+
+.testimonial-header {
+  padding-bottom: 0px;
+}
+
+.container-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-img {
+  width: 25vw;
+  align-self: center;
+  margin-left: 0px;
+  padding-bottom: 15px;
+}
+
+.testimonial1, .testimonial2, .testimonial3 {
+  display:flex;
+  flex-direction: column;
+}
+
+.section3 {
+  visibility:hidden;
+  height: 1vh;
+  width: 1vw;
+}
 }

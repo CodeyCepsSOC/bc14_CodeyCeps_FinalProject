@@ -79,5 +79,28 @@
     padding-right: 10em;
 } */
 
-  
+@media (max-width: 576px) {
+    .footer-logo-title{
+        visibility: hidden;
+        width: 0vw;
+        height: 0vh;
+        margin: 0px;
+    }
+
+    .footer {
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        gap: 2.2em;
+    }
+
+    .footer-column ul {
+        gap: 1.2em;
+    }
+
+    .minilogo {
+        width: 3vw;
+    }
+}
   

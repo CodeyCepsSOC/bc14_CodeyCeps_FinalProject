@@ -29,6 +29,7 @@ export default function Header() {
                         <li><button className = "signupBtn">Sign up</button></li>
                     </ul>
             </div>
+            
             <Outlet />
         </nav>
     )

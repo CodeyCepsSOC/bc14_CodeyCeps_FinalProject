@@ -32,3 +32,21 @@ p {
     margin: 0;
     padding: 5px;
 }
+
+@media (max-width: 576px) {
+    .details-bar {
+        width: 90vw;
+        gap: 1em;
+    }  
+
+    .icon-and-text {
+        font-size: 0.7em;
+    }
+
+    .dropdown-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}

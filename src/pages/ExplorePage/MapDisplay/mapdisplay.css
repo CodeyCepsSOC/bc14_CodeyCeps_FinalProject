@@ -4,3 +4,12 @@
     border-radius: 15px;
     margin-top: 15px;
   }
+
+  @media (max-width: 576px) {
+    .map-container {
+      height: 60vh;
+      width: 90vw;
+      margin: 30px
+    }
+
+  }

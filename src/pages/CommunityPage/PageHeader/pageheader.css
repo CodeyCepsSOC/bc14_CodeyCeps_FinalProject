@@ -16,3 +16,13 @@
     color: var(--primary-green);
     text-align: center;
 }
+
+@media (max-width: 576px) {
+    .section-header h1 {
+        font-size:30px;
+    }
+
+    .section-header {
+        height: 15vh
+    }
+}
