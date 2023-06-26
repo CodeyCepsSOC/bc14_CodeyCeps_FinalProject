@@ -39,7 +39,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           </Route>
         </Routes>
         <Footer/>
-        <button onClick={handleLogOut}></button>
+        <button onClick={()=> handleLogOut(setUser)}>Log Out</button>
     </BrowserRouter>
   );
 }

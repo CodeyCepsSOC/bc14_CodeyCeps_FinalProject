@@ -1,7 +1,14 @@
 import './eventscard.css'
 export default function EventsCard(props) {
 
-    const {img, title, description, date, time, attendees} = props
+    const {img, title, description, date, time, attendees, id, location} = props
+    
+    async function joinEvent(eventId){
+        // add user to event attendees
+        // add event to user events
+        // add event to user calendar
+        console.log('event joined')
+    }
 
     return (
         <div className="events-card">
@@ -24,7 +31,7 @@ export default function EventsCard(props) {
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
                             <p>Event will be attended by {attendees[0]} and {attendees.length-1} others </p>
                         </div>
-                    <button className="event-button"><img src="icons/join.svg" alt="join event button"/></button>
+                    <button className="event-button"><img src="icons/join.svg" alt="join event button" onClick={()=> joinEvent(id)}/></button>
                      </div>
         </div>
         <div className="additional-event-details">

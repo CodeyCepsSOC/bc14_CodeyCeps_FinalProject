@@ -3,8 +3,35 @@ import EventsCard from "./EventsCard"
 import { CommunityPageEvents } from "./EventsCard/CPdata"
 import PageHeader from './PageHeader'
 import './communitypage.css'
+import { useEffect, useState } from "react"
+import { supabase } from "../../Utility/config"
 
 export default function CommunityPage(props) {
+// on load, fetch all events from database
+// on load, fetch all users from database
+// on load, fetch all user events from database
+const [events, setEvents] = useState([])
+
+useEffect(() => {
+    // fetch all events from database
+    async function fetchEventsWithRouteDetails(){
+        const { data, error } = await supabase
+        .from('events')
+        .select(`
+            *,
+            walks:route_id (
+                name,
+                difficulty
+            )
+        `)
+        if (error) console.log(error)
+        console.log(data)
+    }
+    
+
+    fetchEventsWithRouteDetails()
+}, [])
+
 
     return (
     <div id="community-page">
