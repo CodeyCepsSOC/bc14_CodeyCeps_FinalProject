@@ -4,7 +4,7 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import {supabase} from '../../Utility/config/index'
 import { useNavigate } from 'react-router-dom'
-
+import { fetchProfileInfo } from '../../Utility/fetchProfileInfo'
 
 export default function LogInPage(props) {
     
@@ -37,25 +37,27 @@ const navigate = useNavigate();
     if (session?.user.id) {
       console.log(session.user.id)
 
-      async function fetchProfileInfo() {
-        const { data, error } = await supabase
-          .from('profiles')
-          .select()
-          .eq('account_id', session.user.id)
+     
+  async function fetchProfileInfo() {
 
-      console.log(data)
-        if (data.length > 1) {
-          alert("There is more than one profile associated with this account. Please contact support.")
-        }
-        else if (data.length === 1) {
-          props.setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic})
-          navigate('/explore')
-        }
-        
-        if (data.length < 1) {
-          navigate('/accountcreation')
-        }
-      }
+  const { data, error } = await supabase
+    .from('profiles')
+    .select()
+    .eq('account_id', session.user.id)
+
+console.log(data)
+  if (data.length > 1) {
+    alert("There is more than one profile associated with this account. Please contact support.")
+  }
+  else if (data.length === 1) {
+    props.setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic, id: session.user.id})
+    navigate('/explore')
+  }
+  
+  if (data.length < 1) {
+    navigate('/accountcreation')
+  }
+}
 
       fetchProfileInfo()
     }

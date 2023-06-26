@@ -15,6 +15,7 @@ const [events, setEvents] = useState([])
 useEffect(() => {
     // fetch all events from database
     async function fetchEventsWithRouteDetails(){
+        let attendees = []
         const { data, error } = await supabase
         .from('events')
         .select(`
@@ -24,6 +25,23 @@ useEffect(() => {
                 difficulty
             )
         `)
+
+
+
+        const formattedEvents = data.map(event => {
+            return {
+                id: event.id,
+                title: event.title,
+                description: event.description,
+                date: event.date,
+                time: event.time,
+                attendees: event.attendees,
+                location: event.location,
+                img: event.img,
+                route: event.walks[0]
+            }
+        })
+        setEvents(formattedEvents)
         if (error) console.log(error)
         console.log(data)
     }
@@ -43,7 +61,7 @@ useEffect(() => {
         </div>
         <PageHeader sectionName='Upcoming Events' />
         <div className="events-container"> 
-        {CommunityPageEvents.map((event, index) => <EventsCard {...event} key={index}/>
+        {events?.map((event, index) => <EventsCard {...event} key={index} user={props.user}/>
         )}
 
         </div>

@@ -29,7 +29,7 @@ const submitProfile = async () => {
             alert(error)
         }
         else {
-            props.setUser({firstName: firstName, lastName: lastName, profilePic: profilePic})
+            props.setUser({firstName: firstName, lastName: lastName, profilePic: profilePic, id: props.session?.user.id})
             navigate('/explore')
         }
     }

@@ -33,7 +33,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           <Route path="/"> 
             <Route index element={<LandingPage/>}/>
             <Route path="explore" element={<ExplorePage/>}/>
-            <Route path="community" element={<CommunityPage/>}/>
+            <Route path="community" element={<CommunityPage user={user}/>}/>
             <Route path="loginpage" element={<LogInPage session={session} setSession={setSession} user={user} setUser={setUser}/>}/>
             <Route path="accountcreation" element={<AccountCreation user={user} setUser={setUser} session={session} />}/>
           </Route>
