@@ -8,7 +8,7 @@ export const CommunityPageEvents = [
     attendees: ["Samii", "Sami", "Isaac", "Hilda", "Jack", "Safiyah", "Jordan"],
   },
   {
-    img: "./walk2.jpeg",
+    img: "./assets/walk2.jpeg",
     title: "Foraging in Ashdown Forest",
     description: "Join experienced forager Derek and find some mushrooms",
     date: "August 29th",
@@ -16,7 +16,7 @@ export const CommunityPageEvents = [
     attendees: ["Hilda", "Jack", "Isaac", "Eric"],
   },
   {
-    img: "./walk3.jpeg",
+    img: "./assets/walk3.jpeg",
     title: "Kingston Early Dog Social",
     description: "event description here...",
     date: "July 15th",
@@ -42,7 +42,7 @@ export const CommunityPageEvents = [
     attendees: ["Safiyah", "Jack", "Isaac", "Hilda", "Debbie"],
   },
   {
-    img: "./walk2.jpeg",
+    img: "./assets/walk2.jpeg",
     title: "Lake Loop",
     description: "event description here...",
     date: "July 23rd",
@@ -50,7 +50,7 @@ export const CommunityPageEvents = [
     attendees: ["Bryony", "Sami", "Isaac", "James", "Hilda", "Jack"],
   },
   {
-    img: "./walk3.jpeg",
+    img: "./assets/walk3.jpeg",
     title: "Summer Evening Park Stroll",
     description: "event description here...",
     date: "July 5th",

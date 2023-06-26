@@ -9,9 +9,11 @@ export default function Header() {
         <nav className="header">
             <div className="logo">
                 <Link to="/">
-                    <img src="./Logo.svg" alt="WalkMate Logo"/>
+                    <img src="./assets/Logo.svg" alt="WalkMate Logo"/>
                 </Link>
+                <Link to="/">
                 <h2 className="navbarh2">WalkMate</h2>
+                </Link>
             </div>
             <div className="nav-links">
                     <ul>
