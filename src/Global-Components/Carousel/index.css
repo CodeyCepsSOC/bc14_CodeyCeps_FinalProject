@@ -117,3 +117,7 @@
     padding: 0px;
 }
   
+.carousel-time-icon {
+    height: 2vh;
+    transform: translateX(-25px);
+}

@@ -53,17 +53,21 @@ useEffect(() => {
 
     return (
     <div id="community-page">
-        <PageHeader sectionName='Meet Our Community' />
-        <div id="profiles-container">
-            <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
-            <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
-            <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
+        <div className="section1-community">
+            <PageHeader sectionName='Meet Our Community' />
+            <div id="profiles-container">
+                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
+                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
+                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
+            </div>
         </div>
-        <PageHeader sectionName='Upcoming Events' />
-        <div className="events-container"> 
-        {events?.map((event, index) => <EventsCard {...event} key={index} user={props.user}/>
-        )}
-
+        <div className="orange-line-2"></div>
+        <div className="section2-community">
+            <PageHeader sectionName='Upcoming Events' />
+            <div className="events-container"> 
+                {events?.map((event, index) => <EventsCard {...event} key={index} user={props.user}/>
+                )}
+            </div>
         </div>
     </div>
     
