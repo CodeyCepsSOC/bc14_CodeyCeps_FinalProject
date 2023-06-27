@@ -1,29 +1,36 @@
 import './eventscard.css'
 import { supabase } from '../../../Utility/config/index'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 export default function EventsCard(props) {
 
     const {img, title, description, date, time, attendees, id, location, user} = props
     const [attending, setAttending] = useState(false)
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (user && attendees) {
             setAttending(attendees.find(attendee => attendee.id === user.id))
         }
     }, [user, attendees])
 
+    async function checkLoggedIn() {
+      if (!user) {
+        alert('you are not logged in! please log in to join events')
+        return navigate('/loginpage')
+        
+      }
+
+      if (!user.firstName) {
+        console.log('User does not have a name')
+        return false
+      }
+      return true;
+    }
+
     async function joinEvent(eventId, userId){
         console.log('Joining event ' + eventId + ' with user ' + userId)
         // check if the user is logged in
-        if (!user) {
-          console.log('User is not logged in')
-          return
-        }
-
-        if (!user.firstName) {
-          console.log('User does not have a name')
-          return
-        }
+        if(checkLoggedIn()) {
       
         // check if the user is already an attendee
         if (attendees.find(user => user.id === userId)) {
@@ -31,8 +38,8 @@ export default function EventsCard(props) {
           return
         }
 
-        
-        if(!attending && user.firstName) {
+      
+        if(!attending && user?.firstName) {
         attendees.push({id: userId, name: user.firstName})
         }
         let { data, error: updateError } = await supabase
@@ -48,7 +55,61 @@ export default function EventsCard(props) {
       
         console.log('Event joined')
       }
+      }
       
+      async function leaveEvent(eventId, userId){
+        console.log('Leaving event ' + eventId + ' with user ' + userId)
+        // check if the user is logged in
+        if(checkLoggedIn()) {
+      
+        // check if the user is already an attendee
+        if (attendees.find(user => user.id === userId)) {
+          setAttending(true)
+          
+        }
+        console.log(attending)
+        if(attending && user.firstName) {
+          console.log('logged in and attending event')
+
+          let userIndex = attendees.findIndex(user => user.id === userId)
+          attendees.splice(userIndex, 1)
+
+          let { data, error: updateError } = await supabase
+            .from('events')
+            .update({ attendees })
+            .eq('id', eventId)
+            setAttending(false)
+        }
+        console.log(attendees)
+      }
+    }
+
+    function formatAttendingText() {
+      if (!attendees) return;
+
+      if (attendees.length === 0) {
+        return 'Be the first to sign up for this walk!'
+      }
+      if (attendees.length === 1 && attending) {
+        return 'You are the first person attending this event!'
+      }
+      if (attendees.length === 1 && !attending) {
+        return `Event will be attended by ${attendees[0].name}`
+      }
+      
+      if (attendees.length === 2 && attending) {
+        return 'You and one other person are attending this event!'
+      }
+      if (attendees.length === 2 && !attending) {
+        return `Event will be attended by ${attendees[0].name} and ${attendees[1].name}`
+      }
+      if (attendees.length > 2) {
+        return `Event will be attended by ${attendees[0].name} and ${attendees.length - 1} others`
+      }
+    }
+
+      //attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>
+    
 
     return (
         <div className="events-card">
@@ -69,14 +130,14 @@ export default function EventsCard(props) {
                     <div className="attendees-and-join">
                         <div className='attendees'>
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
-                            {attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>}
+                            {<p>{formatAttendingText()}</p>}
                         </div>
                     
                      </div>
         </div>
         <div className="additional-event-details">
             <h2>{description}</h2>
-            {attending?<h1>See You There!</h1>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
+            {attending?<button className="event-button" id="leave-button" onClick={()=> {leaveEvent(id, user?.id)}}><img src="icons/leave.svg" alt="join event button" id="join-button"/>Leave Event</button>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
         </div>
         </div>
         </div>

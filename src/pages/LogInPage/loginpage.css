@@ -13,11 +13,16 @@
     width: 50%;
   }
   #log-in-section {
-    width: 30%;
-    background-color: rgba(10, 10, 10, 0.4);
+    width: 35%;
+    background-color: rgba(8, 47, 1, 0.4);
     backdrop-filter: blur(10px);
     padding: 2%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     color: white;
+    text-align: center;
+  }
+
+  #log-in-title {
+    color: var(--lightest-value);
   }

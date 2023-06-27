@@ -122,6 +122,11 @@ button.event-button:active {
   color: white;
 }
 
+
+#leave-button {
+  background-color: rgb(239, 63, 63);
+  color: white;
+}
 .additional-event-details h2 {
   font-family: "Inter";
   font-size: 1em;
@@ -129,4 +134,5 @@ button.event-button:active {
   padding-left: 1.5em;
   padding-bottom: 1.5em;
   padding-top: none;
+
 }
