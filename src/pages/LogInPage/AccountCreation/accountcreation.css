@@ -1,0 +1,106 @@
+#account-creation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    background-color: var(--lightest-value);
+}
+
+#account-creation-page h1 {
+    font-family: 'Woodland Bold';
+    font-size: 2em;
+    color: var(--primary-green);
+}
+
+.account-creation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 450px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+#first, #last {
+    width: 350px;
+    height: 30px;
+    border: transparent;
+    border-bottom: 1px solid #ccc;
+
+    margin: 10px;
+}
+
+.username-label {
+    display: none;
+}
+
+.profile-picture-option {
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: ease-in-out 0.2s;
+}
+
+.profile-picture-option:hover {
+    cursor: pointer;
+    outline: 6px solid var(--accent-color);
+}
+
+.profile-picture-option:active {
+    transform: scale(0.9);
+}
+#active {
+    outline: 6px solid var(--accent-color);
+}
+
+.account-creation-form .searchButton {
+    width: 150px;
+    height: 40px;
+    border: transparent;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    transition: ease-in-out 0.2s;
+    font-family: 'Woodland Bold';
+    font-size: 1.1em;
+    transition: ease-in-out 0.2s;
+}
+
+.account-creation-form .searchButton:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.account-creation-form .searchButton:active {
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 600px) {
+    .account-creation-form {
+        width: 300px;
+        height: 400px;
+        text-align: center;
+    }
+
+    #first, #last {
+        width: 250px;
+    }
+
+    .profile-picture-option {
+        width: 75px;
+    }
+
+    .account-creation-form .searchButton {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+    
+  }
