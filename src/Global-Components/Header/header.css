@@ -75,7 +75,26 @@ a, a:link, a:visited, a:focus, a:active{
   padding-right: 2em;
 }
 
+.toggle-button {
+  position: absolute;
+  top: 2.1rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+}
+
+.toggle-button .bar {
+	height: 4px;
+	width: 100%;
+	background-color: var(--lightest-value);
+	border-radius: 10px;
+}
+
 @media (max-width: 576px) {
+ 
   .logo img {
     width: 15vw;
     margin-top: 5px;
@@ -84,4 +103,52 @@ a, a:link, a:visited, a:focus, a:active{
   .navbarh2 {
     font-size: 30px;
   }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 99%;
+    align-items: flex-start;
+    background-color: var(--primary-green);
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .nav-links ul {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 0px;
+  }
+
+  .nav-links li {
+    padding-right: 1rem;
+  }
+
+  .header-link {
+    padding: 0rem;
+  }
+
+  .header ul {
+    gap: 1em;
+    padding: 0px;
+    margin: 0px;
+  }
+
+ .nav-links.active {
+  display: flex;
+  padding: 0px
+ }
+ .nav-links.active li:hover, a:hover {
+  color: #fc9c0c;
+  cursor: pointer;
+}
 }

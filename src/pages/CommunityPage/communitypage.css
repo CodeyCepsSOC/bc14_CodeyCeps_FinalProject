@@ -25,4 +25,17 @@
     justify-content: space-around;
     flex-wrap: wrap; 
     gap: 2em;
+    padding-bottom: 7em;
+}
+
+.section1-community {
+    background-color: #FDF0D3;
+}
+
+.orange-line-2 {
+    border-top: 3px solid #f19e38;
+    padding-bottom: 10px;
+    width: 60%;
+    align-self: center;
+    transform: translateY(-3px);
 }
