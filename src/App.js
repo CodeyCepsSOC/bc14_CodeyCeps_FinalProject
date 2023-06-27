@@ -9,7 +9,6 @@ import LogInPage from './pages/LogInPage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import ScrollToHashElement from './Global-Components/Scroll to hash element/ScrollToHashElement';
-import { handleLogOut } from './Utility/logout';
 import AccountCreation from './pages/LogInPage/AccountCreation';
 
 //establishes connection to supabase by providing it with our database url and public key
@@ -19,6 +18,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [session, setSession] = useState(null)
 
+  // set session when user is logged in 
   useEffect(() => {
     if (session) return;
     
@@ -36,6 +36,7 @@ function App() {
     return () => subscription.unsubscribe()
   }, [session])
 
+  // fetches user profile when user id exists
   useEffect(() => {
     if (session?.user.id && !user) {
       async function fetchProfileInfo() {
@@ -46,6 +47,9 @@ function App() {
           .eq('account_id', session.user.id)
         if (data.length > 1) {
           alert("There is more than one profile associated with this account. Please contact support.")
+        }
+        if (error) {
+          console.log('Error')
         }
         else if (data.length === 1) {
           setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic, id: session.user.id})
@@ -79,7 +83,6 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           </Route>
         </Routes>
         <Footer/>
-        
     </BrowserRouter>
   );
 }

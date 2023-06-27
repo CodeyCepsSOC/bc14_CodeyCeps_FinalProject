@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 export default function Footer() {
@@ -8,11 +8,9 @@ export default function Footer() {
       <div className="footer-logo-title">
         <img src="./assets/logo.svg" alt="WalkMate Homepage footer logo" />
         <h2>WalkMate</h2>
-    
       </div>
 
       <div className="footer-links">
-        
         <div className="footer-column">
           <ul>
             <img className="minilogo" src="/assets/circleNoBg.png" alt="home" />
