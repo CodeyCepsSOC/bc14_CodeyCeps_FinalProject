@@ -55,13 +55,22 @@ console.log(data)
   if (!session) {
     return (<div id="log-in-page">
     <div id="log-in-section">
-      <h1>Log in or Create an Account</h1>
-      <Auth supabaseClient={supabase} providers={['google']} appearance={{ theme: ThemeSupa, variables: {
+      <h1 id="log-in-title">Log in or Create an Account</h1>
+      <Auth supabaseClient={supabase} providers={[]} appearance={{ theme: ThemeSupa, variables: {
       dark: {
         colors: {
+          brand: '#f19e38',
+          brandAccent: '#f19f00',
           inputText: 'white',
           inputLabelText: 'white',
+          messageText: 'white',
         },
+        fonts: {
+        bodyFontFamily: `Woodland Bold`,
+        buttonFontFamily: `Woodland Bold`,
+        inputFontFamily: `ui-sans-serif, sans-serif`,
+        labelFontFamily: `ui-sans-serif, sans-serif`,
+  },
       },
     }, }} theme="dark" />
     </div>
