@@ -23,6 +23,10 @@ export default function ExplorePage() {
 
     function onClickClose() {
         setDropdownRoute(null)
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        })
     }
 
 
