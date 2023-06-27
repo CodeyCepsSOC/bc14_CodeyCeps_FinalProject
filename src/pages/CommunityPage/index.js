@@ -56,9 +56,9 @@ useEffect(() => {
         <div className="section1-community">
             <PageHeader sectionName='Meet Our Community' />
             <div id="profiles-container">
-                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
-                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
-                <ProfileCard name="Sami" profileimage="./assets/hilda.png" quote="WalkMate is a gamechanger! I love their regular events, they are so organised and they have the best routes" interests={['cycling', 'gaming', 'skiing', 'basketball']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './walk1.jpeg'}}/>
+                <ProfileCard name="Sandra" profileimage="./assets/profile1-sandra.png" quote="WalkMate has changed my life! I have met so many wonderful people and made great friends. " interests={['cycling', 'skiing', 'dog-friendly']} nextwalk={{title: 'Foraging in Ashdown Forest', time: '09:00 29th August', img: './assets/stanmer_car2.webp'}}/>
+                <ProfileCard name="Aatik" profileimage="./assets/profile2-aatik.png" quote="WalkMate is a gamechanger! The events are very well organised and they have the best routes" interests={[ 'gaming', 'basketball', 'coffee-shop']} nextwalk={{title: 'Stanmer Walk and Chat', time: '13:30 7th July', img: './assets/fletcher_car1.jpeg'}}/>
+                <ProfileCard name="Rosa" profileimage="./assets/profile3-rosa.png" quote="I am so happy I found WalkMate! I feel much better in myself mentally and physically since joining!" interests={['basketball', 'skiing', 'cycling']} nextwalk={{title: 'Forest Fun Trail', time: '14:30 6th June', img: './assets/fletcher_car4.jpeg'}}/>
             </div>
         </div>
         <div className="orange-line-2"></div>
