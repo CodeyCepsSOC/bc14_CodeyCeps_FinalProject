@@ -5,19 +5,23 @@ import { useNavigate } from 'react-router-dom'
 export default function EventsCard(props) {
 
     const {img, title, description, date, time, attendees, id, location, user} = props
+    // state used for keeping track of if user is attending or not
     const [attending, setAttending] = useState(false)
+    
     const navigate = useNavigate();
+
+    // checks if user is in array of the event, if he is it sets attending to true
     useEffect(() => {
         if (user && attendees) {
             setAttending(attendees.find(attendee => attendee.id === user.id))
         }
     }, [user, attendees])
 
+    // security check to make sure user is logged in and has a profile before they are allowed to sign up for an event
     async function checkLoggedIn() {
       if (!user) {
         alert('you are not logged in! please log in to join events')
         return navigate('/loginpage')
-        
       }
 
       if (!user.firstName) {
@@ -28,7 +32,6 @@ export default function EventsCard(props) {
     }
 
     async function joinEvent(eventId, userId){
-        console.log('Joining event ' + eventId + ' with user ' + userId)
         // check if the user is logged in
         if(checkLoggedIn()) {
       
@@ -38,7 +41,7 @@ export default function EventsCard(props) {
           return
         }
 
-      
+        // if they are not attending and do have an account, add them to attendee array and push it to the DB
         if(!attending && user?.firstName) {
         attendees.push({id: userId, name: user.firstName})
         }
@@ -52,24 +55,20 @@ export default function EventsCard(props) {
           console.error(`Failed to update event with ID: ${eventId}. Error: ${updateError}`)
           return
         }
-      
-        console.log('Event joined')
       }
-      }
+      };
       
       async function leaveEvent(eventId, userId){
-        console.log('Leaving event ' + eventId + ' with user ' + userId)
         // check if the user is logged in
         if(checkLoggedIn()) {
-      
         // check if the user is already an attendee
         if (attendees.find(user => user.id === userId)) {
           setAttending(true)
           
         }
-        console.log(attending)
+
+        // if user is attending and has a name, remove them from the array and then push new array to DB
         if(attending && user.firstName) {
-          console.log('logged in and attending event')
 
           let userIndex = attendees.findIndex(user => user.id === userId)
           attendees.splice(userIndex, 1)
@@ -79,8 +78,12 @@ export default function EventsCard(props) {
             .update({ attendees })
             .eq('id', eventId)
             setAttending(false)
+
+          if (updateError) {
+            console.error(`Failed to update event with ID: ${eventId}. Error: ${updateError}`)
+            return
+          }
         }
-        console.log(attendees)
       }
     }
 
@@ -108,14 +111,13 @@ export default function EventsCard(props) {
       }
     }
 
-      //attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>
     
 
     return (
         <div className="events-card">
-            <div className="events-card-scroll">
+          <div className="events-card-scroll">
             <img className="event-image" src={img} alt="beautiful route"/>
-            <div className="event-card-details">
+            <section className="event-card-details">
                     <h2>{title}</h2>
                     <div className="time-and-date">
                         <div className="event-date">
@@ -132,14 +134,13 @@ export default function EventsCard(props) {
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
                             {<p>{formatAttendingText()}</p>}
                         </div>
-                    
                      </div>
-        </div>
-        <div className="additional-event-details">
-            <h2>{description}</h2>
-            {attending?<button className="event-button" id="leave-button" onClick={()=> {leaveEvent(id, user?.id)}}><img src="icons/leave.svg" alt="join event button" id="join-button"/>Leave Event</button>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
-        </div>
-        </div>
+            </section>
+            <section className="additional-event-details">
+              <h2>{description}</h2>
+              {attending?<button className="event-button" id="leave-button" onClick={()=> {leaveEvent(id, user?.id)}}><img src="icons/leave.svg" alt="join event button" id="join-button"/>Leave Event</button>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
+           </section>
+          </div>
         </div>
     )
 }

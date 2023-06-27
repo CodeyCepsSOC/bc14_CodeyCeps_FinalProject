@@ -1,18 +1,24 @@
 import React from 'react';
-
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import {useState} from 'react';
 import { handleLogOut } from '../../Utility/logout';
 import './header.css';
 
 export default function Header(props) {
-   const {setSession, setUser} = props
+    //state to use for user log in feature
+    const {setSession, setUser} = props
     const navigate = useNavigate();
-      const [isActive, setIsActive] = useState(false);
+    //state to use for burger menu
+    const [isActive, setIsActive] = useState(false);
 
+    // when burger menu is clicked state changes to active/false
     const handleClick = () => {
         setIsActive(!isActive);
     };
+
+    function logOutAndHome () {
+        handleLogOut(setSession, setUser); 
+        navigate('/')};
 
     return (
         <nav className="header">
@@ -21,7 +27,7 @@ export default function Header(props) {
                     <img src="./assets/Logo.svg" alt="WalkMate Logo"/>
                 </Link>
                 <Link to="/">
-                <h2 className="navbarh2">WalkMate</h2>
+                    <h2 className="navbarh2">WalkMate</h2>
                 </Link>
             </div>
             <div className="burger-menu">
@@ -43,9 +49,7 @@ export default function Header(props) {
                             <Link to="/community">Community</Link>
                         </li>
                         <li>
-
-                        {props.user ? <button className="signupBtn"onClick={()=> {handleLogOut(setSession, setUser); navigate('/')}}>Log Out</button>:<Link to="/loginpage"><button className="signupBtn">Sign In</button></Link>}
-
+                        {props.user ? <button className="signupBtn"onClick={logOutAndHome}>Log Out</button>:<Link to="/loginpage"><button className="signupBtn">Sign In</button></Link>}
                         </li>
                     </ul>
             </div>

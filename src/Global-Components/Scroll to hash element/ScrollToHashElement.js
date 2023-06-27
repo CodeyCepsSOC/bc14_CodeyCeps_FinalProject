@@ -1,7 +1,7 @@
 import { useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-//https://github.com/ncoughlin/scroll-to-hash-element/blob/main/ScrollToHashElement.js
+// This code was taken from https://github.com/ncoughlin/scroll-to-hash-element/blob/main/ScrollToHashElement.js
 const ScrollToHashElement = () => {
   let location = useLocation();
 
@@ -24,7 +24,6 @@ const ScrollToHashElement = () => {
     if (hashElement) {
       hashElement.scrollIntoView({
         behavior: "smooth",
-        // block: "end",
         inline: "nearest",
       });
     }

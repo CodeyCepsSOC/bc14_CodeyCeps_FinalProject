@@ -134,7 +134,7 @@ function LandingPage() {
               to meet people outdoors while enjoying a pleasant stroll. It has
               been wonderful.” <br></br>
             </p>
-            <p className="name"> - John </p>
+            <p className="name"> - Jacob </p>
           </div>
 
           <div className="testimonial2">
@@ -145,7 +145,7 @@ function LandingPage() {
               was never a planned route with an estimated time length. WalkMate
               has done all the hard work for me !" <br></br>
             </p>
-            <p className="name"> - Bryony </p>
+            <p className="name"> - Isolde </p>
           </div>
 
           <div className="testimonial3">
@@ -156,7 +156,7 @@ function LandingPage() {
               There are many apps for the extreme hiker but WalkMate is the best
               fit for a casual stroller like me!" <br></br>
             </p>
-            <p className="name"> - Dave </p>
+            <p className="name"> - David </p>
           </div>
         </div>
       </div>
