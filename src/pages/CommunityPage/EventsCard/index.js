@@ -68,7 +68,7 @@ export default function EventsCard(props) {
         console.log(attending)
         if(attending && user.firstName) {
           console.log('logged in and attending event')
-          
+
           let userIndex = attendees.findIndex(user => user.id === userId)
           attendees.splice(userIndex, 1)
 
@@ -82,6 +82,28 @@ export default function EventsCard(props) {
       }
     }
 
+    function formatAttendingText() {
+      if (!attendees) return;
+
+      if (attendees.length === 0) {
+        return 'Be the first to sign up for this walk!'
+      }
+      if (attendees.length === 1 && attending) {
+        return 'You are the first person attending this event!'
+      }
+      if (attendees.length === 2 && attending) {
+        return 'You and one other person are attending this event!'
+      }
+      if (attendees.length === 2 && !attending) {
+        return `Event will be attended by ${attendees[0].name} and ${attendees[1].name}`
+      }
+      if (attendees.length > 2) {
+        return `Event will be attended by ${attendees[0].name} and ${attendees.length - 1} others`
+      }
+    }
+
+      //attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>
+    
 
     return (
         <div className="events-card">
@@ -102,7 +124,7 @@ export default function EventsCard(props) {
                     <div className="attendees-and-join">
                         <div className='attendees'>
                             <img src='/icons/users.svg' alt="attendees icon" className="user-icon"/>
-                            {attendees?.length>0?<p>Event will be attended by {attendees[0].name} and {attendees.length-1} others </p>:<p>Be the first to sign up for this walk!</p>}
+                            {<p>{formatAttendingText()}</p>}
                         </div>
                     
                      </div>
