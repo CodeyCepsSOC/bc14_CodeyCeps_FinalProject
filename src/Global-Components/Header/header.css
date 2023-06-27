@@ -145,5 +145,10 @@ a, a:link, a:visited, a:focus, a:active{
 
  .nav-links.active {
   display: flex;
+  padding: 0px
  }
+ .nav-links.active li:hover, a:hover {
+  color: #fc9c0c;
+  cursor: pointer;
+}
 }

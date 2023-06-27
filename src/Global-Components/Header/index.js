@@ -1,17 +1,16 @@
 import React from 'react';
+import {useState} from 'react';
 import { Outlet, Link } from "react-router-dom";
 import './header.css';
 import { handleLogOut } from '../../Utility/logout';
 
-
-const toggleButton = document.getElementsByClassName('toggle-button')[0]
-const navLinks = document.getElementsByClassName('nav-links')[0]
-
-toggleButton.addEventListener('click', () => {
-	navLinks.classList.toggle('active')
-});
-
 export default function Header(props) {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = () => {
+        setIsActive(!isActive);
+    };
+
     return (
         <nav className="header">
             <div className="logo">
@@ -23,13 +22,13 @@ export default function Header(props) {
                 </Link>
             </div>
             <div className="burger-menu">
-                <a href="#" className="toggle-button">
+                <a href="#" className="toggle-button" onClick={handleClick}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
                 </a>
             </div>
-            <div className="nav-links">
+            <div className={`nav-links ${isActive ? 'active' : ''}`}>
                     <ul>
                         <li className='header-link'>
                             <Link to="/#home">Home</Link>
@@ -45,8 +44,7 @@ export default function Header(props) {
                         </li>
                     </ul>
             </div>
-            
             <Outlet />
         </nav>
-    )
+    );
 }
