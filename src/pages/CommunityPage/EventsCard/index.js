@@ -1,11 +1,12 @@
 import './eventscard.css'
 import { supabase } from '../../../Utility/config/index'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 export default function EventsCard(props) {
 
     const {img, title, description, date, time, attendees, id, location, user} = props
     const [attending, setAttending] = useState(false)
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (user && attendees) {
             setAttending(attendees.find(attendee => attendee.id === user.id))
@@ -14,8 +15,9 @@ export default function EventsCard(props) {
 
     async function checkLoggedIn() {
       if (!user) {
-        console.log('User is not logged in')
-        return false
+        alert('you are not logged in! please log in to join events')
+        return navigate('/loginpage')
+        
       }
 
       if (!user.firstName) {
@@ -37,7 +39,7 @@ export default function EventsCard(props) {
         }
 
       
-        if(!attending && user.firstName) {
+        if(!attending && user?.firstName) {
         attendees.push({id: userId, name: user.firstName})
         }
         let { data, error: updateError } = await supabase
@@ -91,6 +93,10 @@ export default function EventsCard(props) {
       if (attendees.length === 1 && attending) {
         return 'You are the first person attending this event!'
       }
+      if (attendees.length === 1 && !attending) {
+        return `Event will be attended by ${attendees[0].name}`
+      }
+      
       if (attendees.length === 2 && attending) {
         return 'You and one other person are attending this event!'
       }

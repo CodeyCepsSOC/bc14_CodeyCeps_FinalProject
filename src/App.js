@@ -68,7 +68,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
     */
     <BrowserRouter>
     <ScrollToHashElement/>
-      <Header user={user}/>
+      <Header user={user} setSession={setSession} setUser={setUser}/>
         <Routes>
           <Route path="/"> 
             <Route index element={<LandingPage/>}/>
@@ -79,7 +79,7 @@ Setting the path to * will act as a catch-all for any undefined URLs. This is gr
           </Route>
         </Routes>
         <Footer/>
-        <button onClick={()=> handleLogOut(setUser, setSession)}>Log Out</button>
+        {/* <button onClick={()=> handleLogOut(setUser, setSession)}>Log Out</button> */}
     </BrowserRouter>
   );
 }
