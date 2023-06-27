@@ -7,8 +7,7 @@
   margin-bottom: 3em;
 }
 
-
- .event-card-details{
+.event-card-details {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -40,7 +39,6 @@
 .event-card-details h2 {
   margin: 0;
   padding: 0;
-
 }
 .user-icon {
   height: 1.5em;
@@ -66,11 +64,22 @@
 button.event-button {
   border: transparent;
   height: 3.5em;
-  width: 3.5em;
+  width: 20em;
   padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7em;
   border-radius: 0.5em;
   background-color: var(--accent-color);
   transition: 0.3s ease-in-out;
+  font-family: "Woodland Bold";
+  font-size: 1em;
+}
+
+#join-button {
+  height: 2.5em;
 }
 
 button.event-button:hover {
@@ -78,7 +87,7 @@ button.event-button:hover {
   background-color: #edb269;
 }
 button.event-button:active {
-  transform: scale(0.8)
+  transform: scale(0.8);
 }
 
 .event-image {
@@ -98,12 +107,32 @@ button.event-button:active {
 .additional-event-details {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 400px;
   height: 200px;
   text-align: center;
+  margin-top: 5%;
+ 
 }
 
-.events-card h1, .events-card h2, .events-card p {
+.events-card h1,
+.events-card h2,
+.events-card p {
   color: white;
+}
+
+
+#leave-button {
+  background-color: rgb(239, 63, 63);
+  color: white;
+}
+.additional-event-details h2 {
+  font-family: "Inter";
+  font-size: 1em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  padding-bottom: 1.5em;
+  padding-top: none;
+
 }

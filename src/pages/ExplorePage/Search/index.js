@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./search.css"
 
 export default function Search(props) {
@@ -11,7 +11,7 @@ return (
 
     <form className="search" onSubmit={(e) => e.preventDefault()}>
         <label className="searchlabel" aria-hidden="false" htmlFor="searchField">Where do you want to walk?</label>
-        <input type="text" placeholder="Enter a location..." id="searchField" onChange={(e) => setInputVal(e.target.value)} />
+        <input type="text" placeholder="Enter a city..." id="searchField" onChange={(e) => setInputVal(e.target.value)} />
         <button className="searchButton" onClick={submitSearch}>➤</button>
     </form>
 )

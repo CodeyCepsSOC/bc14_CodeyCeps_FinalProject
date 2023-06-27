@@ -23,6 +23,10 @@ export default function ExplorePage() {
 
     function onClickClose() {
         setDropdownRoute(null)
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        })
     }
 
 
@@ -39,20 +43,19 @@ export default function ExplorePage() {
           .select()
           .ilike('location', location)
           
-          // if no location is found then we console.log a message
+          // if no location is found then we set location routes to empty
           if(data.length < 1) {
             setLocationRoutes([])
-            console.log('no routes found in that location!')
           }
           
-          // if there is a location found, we console.log the info and set our LocationRoutes state to the array of data
+          // if there is a location found, we set our LocationRoutes state to the array of data
           if(data && data.length > 0) {
             data.map(route => {
               let centerarr = new Array(route.center)
               let parsedCenter = JSON.parse(centerarr[0])
               return route.center = parsedCenter
             })
-            data[0].center.map(data=> console.log(data))
+         
 
             setLocationRoutes(data)
           }
@@ -60,7 +63,6 @@ export default function ExplorePage() {
         // now that we have defined the function, we check if there is a location, and then call our function that calls the api.
         if(location) {
         fetchRoutesByLocation(location)
-        console.table(locationRoutes)
         }
 
     },[location] // this useEffect is triggered whenever the location state changes
@@ -76,7 +78,6 @@ useEffect(() => {
         ref.current.scrollIntoView({ behavior: "smooth" });
       }
     };
-    console.log("useEffect going off")
     setTimeout(scrollDown, 500);
   
   }, [dropdownRoute]);
@@ -102,5 +103,5 @@ useEffect(() => {
 /* 
 This is the main page for the explore page. 
 It contains the search bar and the route cards in a panel on the left hand side. 
-Then it shows the map display on the right hand side.
+Then it shows the map display on the right hand side. If route is clicked it takes you to the drop down. 
 */

@@ -57,7 +57,7 @@ function LandingPage() {
         <h2 className="about-us-heading">Why WalkMate?</h2>
         <div className="section2">
           <div className="community">
-            <img className="why-icon" src="/circle.jpg" alt="graphic icon" />
+            <img className="why-icon" src="/assets/circle.jpg" alt="graphic icon" />
             <div className="why-text">
               <h3>Community</h3>
               <p className="communityP">
@@ -69,7 +69,7 @@ function LandingPage() {
           </div>
 
           <div className="welcome1">
-            <img className="why-icon" src="/flagdown.jpg" alt="graphic icon" />
+            <img className="why-icon" src="/assets/flagdown.jpg" alt="graphic icon" />
             <div className="why-text">
               <h3>Everyone Welcome</h3>
               <p className="everyoneWelcomeP">
@@ -81,7 +81,7 @@ function LandingPage() {
           </div>
 
           <div className="enjoyable">
-            <img className="why-icon" src="/triangle.jpg" alt="graphic icon" />
+            <img className="why-icon" src="/assets/triangle.jpg" alt="graphic icon" />
             <div className="why-text">
               <h3>Enjoyable</h3>
               <p className="enjoyableP">
@@ -93,7 +93,7 @@ function LandingPage() {
           </div>
 
           <div className="reliable">
-            <img className="why-icon" src="/flagup.jpg" alt="graphic icon" />
+            <img className="why-icon" src="/assets/flagup.jpg" alt="graphic icon" />
             <div className="why-text">
               <h3>Reliable</h3>
               <p className="reliableP">
@@ -114,49 +114,49 @@ function LandingPage() {
         <div className="testimonial-header">
           <img
             className="testimonial-icon"
-            src="./shapes_4.png"
+            src="./assets/shapes_4.png"
             alt="shapes logo"
           ></img>
           <h1 className="testimonial-title">Testimonials</h1>
           <img
             className="testimonial-icon"
-            src="./shapes_4.png"
+            src="./assets/shapes_4.png"
             alt="shapes logo"
           ></img>
         </div>
 
         <div className="container-grid">
           <div className="testimonial1">
-            <img className="testimonial-img" src="./sami.png " alt=""></img>
+            <img className="testimonial-img" src="./assets/male-testimonial.png " alt=""></img>
             <p className="testimonialP">
               “WalkMate has helped me overcome my social anxiety ! I don’t like
               meeting new people in confined spaces. The events have allowed me
               to meet people outdoors while enjoying a pleasant stroll. It has
               been wonderful.” <br></br>
             </p>
-            <p className="name"> - John </p>
+            <p className="name"> - Jacob </p>
           </div>
 
           <div className="testimonial2">
-            <img className="testimonial-img" src="./hilda.png" alt=""></img>
+            <img className="testimonial-img" src="./assets/mum-testimonial.png" alt=""></img>
             <p className="testimonialP">
               "I always struggled to find accessible trails near me which were
               also pram-friendly. It always put me off going for walks as there
               was never a planned route with an estimated time length. WalkMate
               has done all the hard work for me !" <br></br>
             </p>
-            <p className="name"> - Bryony </p>
+            <p className="name"> - Isolde </p>
           </div>
 
           <div className="testimonial3">
-            <img className="testimonial-img" src="./businessman.png" alt=""></img>
+            <img className="testimonial-img" src="./assets/businessman.png" alt=""></img>
             <p className="testimonialP">
               "I never usually find the time to go out as I’m always working.
               When I’m not at my desk I want to be outside enjoying fresh air.
               There are many apps for the extreme hiker but WalkMate is the best
               fit for a casual stroller like me!" <br></br>
             </p>
-            <p className="name"> - Dave </p>
+            <p className="name"> - David </p>
           </div>
         </div>
       </div>

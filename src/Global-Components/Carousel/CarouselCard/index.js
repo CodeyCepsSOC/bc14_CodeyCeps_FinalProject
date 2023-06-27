@@ -14,7 +14,7 @@ const {img, title, date, time} = props
                         </div>
                         <div className="time">
                             <p>{time}</p>
-                            <img className="carousel-icon" src="./icons/black-clock.svg" alt="clock icon"></img>
+                            <img className="carousel-time-icon" src="./icons/black-clock.svg" alt="clock icon"></img>
                         </div>
                     </div>
                 </div>

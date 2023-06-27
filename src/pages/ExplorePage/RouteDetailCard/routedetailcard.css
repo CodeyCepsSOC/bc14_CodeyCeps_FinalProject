@@ -5,6 +5,7 @@
     color: white;
     margin-bottom: 15px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .route-details {
@@ -45,6 +46,15 @@ h2 {
   cursor: pointer;
 }
 
+.details-button:hover {
+    background-color: #edb269;
+    border: 2px solid #354C33;
+}
+
+.details-button:active {
+    transform: scale(0.85);
+}
+
 #time-text {
     font-family: "Woodland Ultralight";
     padding-top: 10px;
@@ -83,7 +93,7 @@ h2 {
     width: auto;
 }
 
-.route-detail-card:active {
+/* .route-detail-card:active {
     transform: scale(0.96);
     border: 5px orange;
-}
+} */
