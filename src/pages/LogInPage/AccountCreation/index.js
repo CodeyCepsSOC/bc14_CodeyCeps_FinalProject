@@ -16,7 +16,7 @@ const navigate = useNavigate();
 // then query the database for their profile info
 // if there is no profile info, redirect to account creation page
 // if there is profile info, redirect to explore page
-const submitProfile = async () => {
+async function submitProfile() {
 
 
 

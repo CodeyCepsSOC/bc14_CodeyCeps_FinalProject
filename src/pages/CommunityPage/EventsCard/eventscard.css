@@ -120,3 +120,8 @@ button.event-button:active {
 .events-card h1, .events-card h2, .events-card p {
   color: white;
 }
+
+#leave-button {
+  background-color: rgb(239, 63, 63);
+  color: white;
+}

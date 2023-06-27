@@ -12,18 +12,23 @@ export default function EventsCard(props) {
         }
     }, [user, attendees])
 
+    async function checkLoggedIn() {
+      if (!user) {
+        console.log('User is not logged in')
+        return false
+      }
+
+      if (!user.firstName) {
+        console.log('User does not have a name')
+        return false
+      }
+      return true;
+    }
+
     async function joinEvent(eventId, userId){
         console.log('Joining event ' + eventId + ' with user ' + userId)
         // check if the user is logged in
-        if (!user) {
-          console.log('User is not logged in')
-          return
-        }
-
-        if (!user.firstName) {
-          console.log('User does not have a name')
-          return
-        }
+        if(checkLoggedIn()) {
       
         // check if the user is already an attendee
         if (attendees.find(user => user.id === userId)) {
@@ -31,7 +36,7 @@ export default function EventsCard(props) {
           return
         }
 
-        
+      
         if(!attending && user.firstName) {
         attendees.push({id: userId, name: user.firstName})
         }
@@ -48,7 +53,35 @@ export default function EventsCard(props) {
       
         console.log('Event joined')
       }
+      }
       
+      async function leaveEvent(eventId, userId){
+        console.log('Leaving event ' + eventId + ' with user ' + userId)
+        // check if the user is logged in
+        if(checkLoggedIn()) {
+      
+        // check if the user is already an attendee
+        if (attendees.find(user => user.id === userId)) {
+          setAttending(true)
+          
+        }
+        console.log(attending)
+        if(attending && user.firstName) {
+          console.log('logged in and attending event')
+          
+          let userIndex = attendees.findIndex(user => user.id === userId)
+          attendees.splice(userIndex, 1)
+
+          let { data, error: updateError } = await supabase
+            .from('events')
+            .update({ attendees })
+            .eq('id', eventId)
+            setAttending(false)
+        }
+        console.log(attendees)
+      }
+    }
+
 
     return (
         <div className="events-card">
@@ -76,7 +109,7 @@ export default function EventsCard(props) {
         </div>
         <div className="additional-event-details">
             <h2>{description}</h2>
-            {attending?<h1>See You There!</h1>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
+            {attending?<button className="event-button" id="leave-button" onClick={()=> {leaveEvent(id, user?.id)}}><img src="icons/leave.svg" alt="join event button" id="join-button"/>Leave Event</button>:<button className="event-button" onClick={()=> joinEvent(id, user?.id)}><img src="icons/join.svg" alt="join event button" id="join-button"/>Join Event</button>}
         </div>
         </div>
         </div>
