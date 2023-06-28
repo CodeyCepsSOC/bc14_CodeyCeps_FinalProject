@@ -89,10 +89,10 @@ useEffect(() => {
                 <div className="left-hand-map-panel"> 
                     <Search setLocation={setLocation}/>
                     <div className="route-cards">
-                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} onClickButton={(index) => setDropdownRoute(index) } key={route.id} {...route} index={index}/>):<h2 style={{color: '#f19e38'}}>No Routes Found</h2>}
+                    {locationRoutes.length>0?locationRoutes.map((route, index)=> <RouteDetailCard onClick={onClickSetRoute} onClickButton={(index) => setDropdownRoute(index) } key={route.id} {...route} index={index} activeRoute={mapRoute}/>):<h2 style={{color: '#f19e38'}}>No Routes Found</h2>}
                     </div>
                 </div>
-                <MapDisplay routeDetailArray={locationRoutes} activeRoute={mapRoute} prevRoutes={prevRoutes}/>
+                <MapDisplay routeDetailArray={locationRoutes} activeRoute={mapRoute} prevRoutes={prevRoutes} setActiveRoute={setMapRoute}/>
             </div>
             <div className="orange-line"></div>
             {locationRoutes[dropdownRoute] ? <RouteDetailDropdown ref={ref} onClick={onClickClose} {...locationRoutes[dropdownRoute]}/> : <></>}
