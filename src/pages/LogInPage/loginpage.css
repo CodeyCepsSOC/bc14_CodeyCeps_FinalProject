@@ -26,3 +26,9 @@
   #log-in-title {
     color: var(--lightest-value);
   }
+
+  @media (max-width: 576px) {
+    #log-in-section {
+      width: 80%;
+    }
+  }
