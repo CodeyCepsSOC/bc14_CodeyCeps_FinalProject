@@ -83,14 +83,6 @@ useEffect(()=> {
     catch (error) {
         console.log(error)
     }
-
-
-    // REMOVE BEFORE PUSHING TO PRODUCTION
-    // the below function console.logs the long and lat of where the user clicks on the map, it is used here to 
-    // find the center point of a route for the below function that allows the map to recenter over the active route.
-    // map.current.on('click', (e) => {
-    // console.log(`A click event has occurred at ${e.lngLat}`);
-    // });
     
     }, [props.routeDetailArray])
 
