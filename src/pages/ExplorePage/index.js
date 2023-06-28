@@ -12,7 +12,7 @@ export default function ExplorePage() {
 
  const [location, setLocation] = useState("Brighton")
  const [dropdownRoute, setDropdownRoute] = useState(null)
- const [mapRoute, setMapRoute] = useState(0)
+ const [mapRoute, setMapRoute] = useState(null)
  const [locationRoutes, setLocationRoutes] = useState([])
  const [prevRoutes, setPrevRoutes] = useState([])
 

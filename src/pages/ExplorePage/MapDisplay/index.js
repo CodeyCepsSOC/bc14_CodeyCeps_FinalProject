@@ -51,7 +51,7 @@ useEffect(()=> {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/outdoors-v12',
       center: [-0.07204564221953547, 50.8738136495931],
-      zoom: 5,
+      zoom: 8,
     });
 },[])
 
@@ -98,12 +98,24 @@ useEffect(()=> {
     // the left hand list of routes.
 useEffect(()=> {
 
+    if(props.activeRoute === null) {
+        map.current.flyTo({
+            center: [-0.07204564221953547, 50.8738136495931],
+            zoom: 10
+        })
+        return;
+    }
+    
+    else {
 
     map.current.flyTo({
         center: props.routeDetailArray[props.activeRoute]?.center,
         zoom: 12
     })
+}
 }, [props.activeRoute, props.routeDetailArray])
+
+
     return (<div ref={mapContainer} className="map-container"/>)
 }
 
