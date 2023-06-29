@@ -93,7 +93,7 @@ h2 {
     width: auto;
 }
 
-/* .route-detail-card:active {
-    transform: scale(0.96);
-    border: 5px orange;
-} */
+#active-card {
+    transform: scale(0.98);
+    border: 5px solid orange;
+} 

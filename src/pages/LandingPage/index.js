@@ -85,9 +85,10 @@ function LandingPage() {
             <div className="why-text">
               <h3>Enjoyable</h3>
               <p className="enjoyableP">
-                WalkMate is community-driven, we regularly host events to suit
-                everyone. We connect people through nature and nature through
-                people.
+                We want to make sure that everyone has a great time when they
+                use WalkMate. We have a range of routes to suit all abilities
+                and interests, such as routes with great suggestions for foraging
+                or stunning views.
               </p>
             </div>
           </div>
@@ -97,9 +98,10 @@ function LandingPage() {
             <div className="why-text">
               <h3>Reliable</h3>
               <p className="reliableP">
-                100% of our users have given us a 5 star rating in terms of
-                reliability. Our routes are safe, secure and our events are all
-                planned meticulously according to weather predictions.
+                We strive to make all of our routes as accessible as possible, 
+                so that everyone can enjoy the beauty of nature. All our routes 
+                are tested by our team of walkers to ensure they are safe and
+                enjoyable.
               </p>
             </div>
           </div>

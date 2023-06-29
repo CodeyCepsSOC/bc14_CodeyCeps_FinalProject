@@ -40,7 +40,7 @@ console.log(data)
   }
   else if (data.length === 1) {
     props.setUser({firstName: data[0].first_name, lastName: data[0].last_name, profilePic: data[0].profile_pic, id: session.user.id})
-    navigate('/explore')
+    navigate('/community')
   }
   
   if (data.length < 1) {

@@ -5,6 +5,7 @@
     justify-content: space-around;
     height: 100vh;
     background-color: var(--lightest-value);
+    text-align: center;
 }
 
 #account-creation-page h1 {

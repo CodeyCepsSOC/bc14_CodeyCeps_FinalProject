@@ -72,6 +72,9 @@
         gap: 1.2em;
     }
 
+    #footer-signup {
+        display: none;
+    }
     .minilogo {
         width: 3vw;
     }

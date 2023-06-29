@@ -93,7 +93,7 @@ a, a:link, a:visited, a:focus, a:active{
 	border-radius: 10px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 750px) {
  
   .logo img {
     width: 15vw;
