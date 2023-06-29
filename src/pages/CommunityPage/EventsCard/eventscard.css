@@ -136,3 +136,9 @@ button.event-button:active {
   padding-top: none;
 
 }
+
+@media (max-width: 576px) {
+  .events-card {
+    transform: scale(0.9);
+  }
+}

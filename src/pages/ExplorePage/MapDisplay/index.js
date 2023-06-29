@@ -1,12 +1,11 @@
 // map display from API
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './mapdisplay.css'
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import { matchPath } from 'react-router-dom';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY
 
-function addRouteLayer(map, routeName, coordinates, id) {
+function addRouteLayer(map, routeName, coordinates, id, index, setMapRoute) {
 
     map.current.addSource(id, {
         'type': 'geojson',
@@ -32,6 +31,9 @@ function addRouteLayer(map, routeName, coordinates, id) {
         'line-width': 8
         }
         });
+        map.current.on('click', routeName, function (e) {
+            setMapRoute(index)
+        });
         }
 
 export default function MapDisplay(props) {
@@ -49,7 +51,7 @@ useEffect(()=> {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/outdoors-v12',
       center: [-0.07204564221953547, 50.8738136495931],
-      zoom: 5,
+      zoom: 8,
     });
 },[])
 
@@ -60,11 +62,13 @@ useEffect(()=> {
     try {
         props.prevRoutes.map(route => {
              if (map.current.getLayer(route.name)) {
-                map.current.removeLayer(route.name);
-            }})
-        if (props.routeDetailArray.length<1) return 
+                return map.current.removeLayer(route.name);
+            }
+            return true;
+        })
+        if (props.routeDetailArray.length<1) return;
 
-        props.routeDetailArray.map((route) => { 
+        props.routeDetailArray.map((route, index) => { 
             if (map.current.getLayer(route.name)) {
                 map.current.removeLayer(route.name);
             }
@@ -73,20 +77,12 @@ useEffect(()=> {
                 map.current.removeSource(route.id);
             }
             return(
-            addRouteLayer(map, route.name, route.coordinatearray, route.id)
+            addRouteLayer(map, route.name, route.coordinatearray, route.id, index, props.setActiveRoute)
             )})
     }
     catch (error) {
         console.log(error)
     }
-
-
-    // REMOVE BEFORE PUSHING TO PRODUCTION
-    // the below function console.logs the long and lat of where the user clicks on the map, it is used here to 
-    // find the center point of a route for the below function that allows the map to recenter over the active route.
-    map.current.on('click', (e) => {
-    console.log(`A click event has occurred at ${e.lngLat}`);
-    });
     
     }, [props.routeDetailArray])
 
@@ -94,12 +90,24 @@ useEffect(()=> {
     // the left hand list of routes.
 useEffect(()=> {
 
+    if(props.activeRoute === null) {
+        map.current.flyTo({
+            center: [-0.07204564221953547, 50.8738136495931],
+            zoom: 10
+        })
+        return;
+    }
+    
+    else {
 
     map.current.flyTo({
         center: props.routeDetailArray[props.activeRoute]?.center,
         zoom: 12
     })
+}
 }, [props.activeRoute, props.routeDetailArray])
+
+
     return (<div ref={mapContainer} className="map-container"/>)
 }
 
