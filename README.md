@@ -4,47 +4,51 @@
 Welcome to WalkMate
 
 ## Our Team
+We are a team of six passionate developers who share a love for the outdoors and recognize its positive impact on mental and physical health. All of us are proud graduates of the School of Code, a rigorous 16-week Full Stack Software Development bootcamp. This project marks the culmination of our learning journey.
 
-We are a team of 6 developers who are passionate about the outdoors and the positive impact it can have on your mental and physical health. We are all graduates of the School of Code Full Stack Software Development course and this is our final project.
+Safiyah Seedat - www.linkedin.com/in/safiyahseedat/
 
-< insert screenshot here of the team>
+Hildigunnur Sigvaldadóttir - www.linkedin.com/in/hildasig 
+
+Sami Sile - www.linkedin.com/in/
+
+Isaac Boxall - www.linkedin.com/in/
+
+Jordan Rutnam - www.linkedin.com/in/
+
+Abdullahi Hussein - www.linkedin.com/in/codingabdi
+
 
 ## Our Problem statement
-Living in a busy fast-paced society, it can be difficult to find the time to get outdoors and meet new people. We are all guilty of spending too much time indoors, whether it be working from home, watching TV, playing video games or spending too much time on our phones and social media. We are all aware of the benefits of getting outdoors and going for a walk but we often find it difficult to get started. We all want to do some sort of physcial activity without having the mental and financial pressure of joining a gym or doing intensive exercise classes. But how do we get started? Where do we go? What do we do? We want to create an app that will help people get outdoors and enjoy nature.
+
+Living in a fast-paced society, finding the time to enjoy nature and meet new people can be challenging. We're all guilty of spending excessive time indoors, whether it's due to work, TV, video games, or excessive phone and social media use. While we understand the benefits of going for a walk, taking that first step often proves difficult. We yearn for physical activity that doesn't require joining a gym or participating in intense exercise classes. But where do we begin? Where should we go? What should we do? Our mission is to create an app that addresses these questions, helping people get outdoors and connect with others through nature.
 
 ## Our Mission
+We strive to inspire more individuals to venture outside and enjoy nature, improving their physical and mental well-being. Studies show that going on short daily walks and having a supportive community can have a significant positive impact on health. Our app, WalkMate, aims to reintroduce people from all walks of life to the joys of the outdoors, enabling them to connect with fellow walkers in their communities. We want to make the process of going for a walk accessible to everyone.
 
-We want to encourage more people to venture outside to improve their physical and mental well-being. Going on short daily walks and having a community around you has been shown to have a positive impact on your health.
 
-Our app aims to get people from all walks of life back outdoors enjoying all that nature has to offer and to help them connect with others in their community. We want to make the process of going for a walk accessible to everyone.
 
-## Our App
+## Introducing WalkMate
+WalkMate is a mobile app designed to help users find exciting walking routes in their local area, join a vibrant community of walkers, and participate in events tailored to diverse interests. While there are existing apps for specific sports activities such as hiking, biking, and intense workouts catering to fitness enthusiasts, we wanted to create an app that includes everyone. WalkMate goes beyond focusing solely on the physical aspects of walking; it also emphasises the social aspect. Users can explore scenic walking routes based on their location and have the opportunity to meet new people by creating an account and signing up to events.
 
-Our app is called WalkMate and it is a mobile app that allows users to find walk routes in their local area, join a community of walkers and sign up to events that cater to a wide range of interests. There are apps out there that offer a wide range of sports-related activities such as hiking, bike-riding and intensive sports catered to fitness enthusiasts. We intended to create an app that was inclusive of everyone. Whether they have a busy lifestyle or find it difficult to get out and about, our app is designed to help them get started. Our app is unique in the sense that it does not just focus on the physical aspect of walking but also the social aspect. Our app allows users to search for walking routes based on location with the option to meet new people if they sign up for events.
 
 ## Our Tech Stack
+-Languages: JavaScript, CSS3
+-Libraries: React.js
+-Server: Node.js, dotenv
+-Testing: Jest, React Testing Library
+-Backend: Supabase
+-Database: PostgreSQL
+-Deployment: Netlify
 
--Languages: CSS3, Javascript, PostgreSQL
-
--Libraries: React.js, TailwindCSS
-
--Frameworks: Next.js, express.js, 
-
--Server: Node.js, morgan, pg, nodemon, dotenv
-
--Testing: Jest, Supertest, Cypress, React Testing Library
-
-Authentication & Authorisation: Auth0, supabase
-
-Deployment: Render, Netlify
-
-## Our workflow
-
-For planning and organisation, we used trello and implemented the kanban framework to help us keep track of our tasks. We had daily stand-ups to discuss our progress and any blockers we were facing. We also had daily retrospectives to discuss what went well and what we could improve on. We used pair programming to collaboratively solve problems and to help us learn from each other.   We used Slack as our main form of communication and sharing resources. We used Figma and Figjam to help us with our design process which included our wireframes. We used Google Drive to help us with our documentation.
-< screenshot of trello and figjam board>
-
+## Our Workflow
+To ensure effective planning and organisation, we utilised Trello, implementing the Kanban framework to manage our tasks efficiently. Daily stand-ups allowed us to discuss progress and address any obstacles we encountered. Retrospectives provided an opportunity to reflect on what went well and identify areas for improvement. We embraced pair programming, fostering collaboration and knowledge sharing among team members. Slack served as our primary communication and resource-sharing platform. Figma and Figjam facilitated our design process, enabling us to create wireframes and visually appealing, intuitive designs. We relied on Google Drive for documentation purposes.
 
 ## Our Design process
+ After conducting thorough research, we carefully selected a colour palette that evokes the essence of nature. Incorporating shades of green, yellow, beige, and sky blue, our chosen colours radiate calmness, serenity, and peacefulness. We aimed to create a clean, accessible, and visually engaging design, ensuring ease of navigation. We also checked the colour contrast of the palette chosen to ensure it met web accessibility requirements. Inspired by nature, we designed a nature-themed logo, leveraging its shapes as distinctive emblems within our app.
 
-After carrying out research we decided on a colour pallette which incorporated green, yellow, beige and sky blue- all the wonderful colours that represent nature. We chose colours that exude calmness, serenity and peacefulness. We wanted to create a design that was simple, clean, accessible and easy to navigate. We wanted to create a design that was visually appealing and engaging. We decided to create a nature themed logo which we could manipulate shapes from and which would act as emblems in our app.
-git 
+## Research
+Research
+
+We dedicated a significant portion of our time in carrying out consumer/competitor research. First we conducted questionnaires to hand out to the wider cohort to see if there was an interest for our initial idea. Then we collated the feedback and further discussed which features would be a priority for us to implement.
+We did accessibility research to make sure our app would be widely accessible to everyone as a key theme for our app is inclusivity. We looked at competitor websites and looked at what makes their UI/UX successful so we could also incorporate similar features and design.
