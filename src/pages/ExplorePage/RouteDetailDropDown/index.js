@@ -19,7 +19,7 @@ return (
         <div className="explore-carousel">
             <CarouselHomePage arr={carousel_images} />
         </div>
-        <img src="./random.jpg" alt="scene from route" id="mobile-img"/>
+        <img src="./assets/walk1.jpeg" alt="scene from route" id="mobile-img"/>
         <DetailsBar {...props}/>
         <section className="dropdown-body">            
             <p>{props.description}</p>
