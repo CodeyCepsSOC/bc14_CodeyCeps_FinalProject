@@ -54,7 +54,7 @@
 }
 
 #mobile-img {
-    visibility: hidden
+    display: none;
 }
 
 @media (max-width: 576px) {
@@ -71,12 +71,12 @@
     }
 
     .explore-carousel {
-        visibility: hidden;
+        display: none;
         height: 1vh;
     }
 
     #mobile-img {
-        visibility: visible;
+        display: block;
         width: 90vw;
     }
 
